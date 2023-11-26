@@ -45,7 +45,7 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn tsc
-          yarn build --config app-config.yaml
+          yarn build
 
       # Docker Login
       # https://github.com/marketplace/actions/docker-login
