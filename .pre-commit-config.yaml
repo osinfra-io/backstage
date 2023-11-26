@@ -1,0 +1,57 @@
+# Pre-commit
+# https://github.com/pre-commit/pre-commit
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-symlinks
+      - id: no-commit-to-branch
+
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.83.6
+    hooks:
+      # To speed up local validation add the following to your ~/.zshrc:
+      # export TF_PLUGIN_CACHE_DIR=$HOME/.terraform.d/plugin-cache
+
+      - id: terraform_validate
+        args:
+          - --hook-config=--retry-once-with-cleanup=true
+          - --tf-init-args=-upgrade
+
+      - id: terraform_docs
+        args:
+          - --hook-config=--path-to-file=README.md
+          - --hook-config=--add-to-exiting-file=true
+          - --hook-config=--create-file-if-not-exist=false
+
+      - id: infracost_breakdown
+        args:
+          - --args=--sync-usage-file
+          - --args=--usage-file=global/infra/infracost/sandbox.yml
+          - --args=--path=global/infra
+          - --args=--terraform-var-file=tfvars/sandbox.tfvars
+
+      - id: infracost_breakdown
+        args:
+          - --args=--sync-usage-file
+          - --args=--usage-file=global/infra/infracost/production.yml
+          - --args=--path=global/infra
+          - --args=--terraform-var-file=tfvars/production.tfvars
+
+      - id: infracost_breakdown
+        args:
+          - --args=--sync-usage-file
+          - --args=--usage-file=regional/infra/infracost/us-east1-sandbox.yml
+          - --args=--path=regional/infra
+          - --args=--terraform-var-file=tfvars/us-east1-sandbox.tfvars
+
+      - id: infracost_breakdown
+        args:
+          - --args=--sync-usage-file
+          - --args=--usage-file=regional/infra/infracost/us-east1-production.yml
+          - --args=--path=regional/infra
+          - --args=--terraform-var-file=tfvars/us-east1-production.tfvars
