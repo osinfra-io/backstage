@@ -1,6 +1,12 @@
 # Input Variables
 # https://www.terraform.io/language/values/variables
 
+variable "enable_sql_instance" {
+  description = "Enable the creation of the SQL instance"
+  type        = bool
+  default     = false
+}
+
 variable "environment" {
   description = "The environment suffix for example: `sb` (Sandbox), `nonprod` (Non-Production), `prod` (Production)"
   type        = string

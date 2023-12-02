@@ -16,7 +16,7 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloud_sql_instances"></a> [cloud\_sql\_instances](#module\_cloud\_sql\_instances) | github.com/osinfra-io/terraform-google-cloud-sql//regional | v0.1.0 |
+| <a name="module_cloud_sql_instance"></a> [cloud\_sql\_instance](#module\_cloud\_sql\_instance) | github.com/osinfra-io/terraform-google-cloud-sql//regional | v0.1.0 |
 
 ## Resources
 
@@ -30,6 +30,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Whether or not to allow Terraform to destroy the instance | `bool` | `true` | no |
+| <a name="input_enable_sql_instance"></a> [enable\_sql\_instance](#input\_enable\_sql\_instance) | Enable the creation of the SQL instance | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | The environment suffix for example: `sb` (Sandbox), `nonprod` (Non-Production), `prod` (Production) | `string` | `"sb"` | no |
 | <a name="input_host_project_id"></a> [host\_project\_id](#input\_host\_project\_id) | Host project ID for the shared VPC | `string` | n/a | yes |
 | <a name="input_machine_tier"></a> [machine\_tier](#input\_machine\_tier) | The machine type to use. Postgres supports only shared-core machine types, and custom machine types such as db-custom-2-13312 | `string` | `"db-f1-micro"` | no |
