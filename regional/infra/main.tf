@@ -78,7 +78,7 @@ module "cloud_sql_instances" {
 
   deletion_protection            = var.deletion_protection
   host_project_id                = var.host_project_id
-  instance_name                  = var.instance_name
+  instance_name                  = "backstage"
   machine_tier                   = var.machine_tier
   network                        = "standard-shared"
   point_in_time_recovery_enabled = true
