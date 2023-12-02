@@ -94,6 +94,9 @@ module "cloud_sql_instance" {
 # https://www.terraform.io/docs/providers/google/r/sql_database.html
 
 resource "google_sql_database" "this" {
+
+  count = var.enable_sql_instance ? 1 : 0
+
   instance = module.cloud_sql_instance[0].sql_instance
   name     = "backstage"
   project  = local.global.project_id
