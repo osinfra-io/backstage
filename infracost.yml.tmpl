@@ -7,7 +7,7 @@ projects:
 {{- range $path := $paths }}
   {{- range $project := matchPaths (print $path "/infra/tfvars/:env.tfvars") }}
     - path: {{ print $path "/infra" }}
-      name: "{{ $path }}/infra:{{ $project.env }}"
+      name: "{{ $path }}/infra: {{ $project.env }}"
       terraform_var_files:
         - {{ print "tfvars/" $project.env ".tfvars" }}
       usage_file: {{ print $path "/infra/infracost/" $project.env ".yml" }}
