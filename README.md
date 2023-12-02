@@ -1,4 +1,4 @@
-# <img align="left" width="45" height="45" src="https://github.com/osinfra-io/backstage/assets/1610100/9a2afb97-282d-4050-83c5-2e41925e4dc6"> Backstage
+# <img align="left" width="45" height="45" src="https://github.com/osinfra-io/backstage/assets/1610100/2ab0e52e-d14f-426a-b496-bf79aedbec9e"> Backstage
 
 **[GitHub Actions](https://github.com/osinfra-io/backstage/actions):**
 
