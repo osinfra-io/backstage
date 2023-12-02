@@ -84,7 +84,8 @@ resource "google_iap_brand" "this" {
 
   # This email address can either be a user's address or a Google Groups alias. While service accounts also have an email address,
   # they are not actual valid email addresses, and cannot be used when creating a brand. However, a service account can be the owner
-  # of a Google Group.
+  # of a Google Group. Either create a new Google Group or configure an existing group and set the desired service account as an
+  # owner of the group
 
   support_email = "backstage@osinfra.io"
 }

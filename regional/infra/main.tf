@@ -31,7 +31,7 @@ data "terraform_remote_state" "global" {
 # https://github.com/osinfra-io/terraform-google-cloud-sql
 
 module "cloud_sql_instances" {
-  source = "git@github.com:osinfra-io/terraform-google-cloud-sql//regional?ref=v0.1.0"
+  source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=v0.1.0"
 
   availability_type = "REGIONAL"
 

@@ -16,7 +16,7 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloud_sql_instances"></a> [cloud\_sql\_instances](#module\_cloud\_sql\_instances) | git@github.com:osinfra-io/terraform-google-cloud-sql//regional | v0.1.0 |
+| <a name="module_cloud_sql_instances"></a> [cloud\_sql\_instances](#module\_cloud\_sql\_instances) | github.com/osinfra-io/terraform-google-cloud-sql//regional | v0.1.0 |
 
 ## Resources
 
