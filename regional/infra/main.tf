@@ -24,7 +24,7 @@ data "terraform_remote_state" "global" {
     prefix = "backstage"
   }
 
-  workspace = "global-${var.environment}"
+  workspace = "global-${local.workspace_environment}"
 }
 
 # Google Cloud SQL Module (osinfra.io)
