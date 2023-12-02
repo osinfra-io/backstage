@@ -6,7 +6,7 @@
 
 **[Infracost](https://www.infracost.io):**
 
-[![infracost](https://img.shields.io/endpoint?url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/19dee006-53a6-4007-be23-d2e44617e789/branch/95a827e0-1914-470d-8faf-78413ec29595)](https://dashboard.infracost.io/org/osinfra-io/repos/19dee006-53a6-4007-be23-d2e44617e789?tab=settings)
+[![infracost](https://img.shields.io/endpoint?url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/9f16fb7d-e831-4162-8295-652c0e8342d0/branch/4ea7eb55-1fcf-4d2f-b66b-ce4ba78ff328)](https://dashboard.infracost.io/org/osinfra-io/repos/9f16fb7d-e831-4162-8295-652c0e8342d0?tab=settings)
 
 ## Repository Description
 
