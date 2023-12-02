@@ -1,29 +1,25 @@
-# Infracost Config File
-# https://www.infracost.io/docs/features/config_file
+# Infracost Template
+# https://www.infracost.io/docs/features/config_file/#template-syntax
 
 version: 0.1
-
 projects:
-  - name: "backstage - Sandbox Infrastructure: global"
-    path: global/infra
-    terraform_var_files:
-      - tfvars/sandbox.tfvars
-    usage_file: global/infra/infracost/sandbox.yml
-
-  - name: "backstage - Sandbox Infrastructure: us-east1"
-    path: regional/infra
-    terraform_var_files:
-      - tfvars/us-east1-sandbox.tfvars
-    usage_file: regional/infra/infracost/us-east1-sandbox.yml
-
-  - name: "backstage - Production Infrastructure: global"
-    path: global/infra
-    terraform_var_files:
-      - tfvars/production.tfvars
-    usage_file: global/infra/infracost/production.yml
-
-  - name: "backstage - Production Infrastructure: us-east1"
-    path: regional/infra
-    terraform_var_files:
-      - tfvars/us-east1-production.tfvars
-    usage_file: regional/infra/infracost/us-east1-production.yml
+    - path: global/infra
+      name: "production - Infrastructure: global"
+      terraform_var_files:
+        - tfvars/production.tfvars
+      usage_file: global/infra/infracost/production.yml
+    - path: global/infra
+      name: "sandbox - Infrastructure: global"
+      terraform_var_files:
+        - tfvars/sandbox.tfvars
+      usage_file: global/infra/infracost/sandbox.yml
+    - path: regional/infra
+      name: "us-east1-production - Infrastructure: regional"
+      terraform_var_files:
+        - tfvars/us-east1-production.tfvars
+      usage_file: regional/infra/infracost/us-east1-production.yml
+    - path: regional/infra
+      name: "us-east1-sandbox - Infrastructure: regional"
+      terraform_var_files:
+        - tfvars/us-east1-sandbox.tfvars
+      usage_file: regional/infra/infracost/us-east1-sandbox.yml
