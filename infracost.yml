@@ -1,0 +1,25 @@
+# Infracost Template
+# https://www.infracost.io/docs/features/config_file/#template-syntax
+
+version: 0.1
+projects:
+    - path: global/infra
+      name: "global/infra: production"
+      terraform_var_files:
+        - tfvars/production.tfvars
+      usage_file: global/infra/infracost/production.yml
+    - path: global/infra
+      name: "global/infra: sandbox"
+      terraform_var_files:
+        - tfvars/sandbox.tfvars
+      usage_file: global/infra/infracost/sandbox.yml
+    - path: regional/infra
+      name: "regional/infra: us-east1-production"
+      terraform_var_files:
+        - tfvars/us-east1-production.tfvars
+      usage_file: regional/infra/infracost/us-east1-production.yml
+    - path: regional/infra
+      name: "regional/infra: us-east1-sandbox"
+      terraform_var_files:
+        - tfvars/us-east1-sandbox.tfvars
+      usage_file: regional/infra/infracost/us-east1-sandbox.yml

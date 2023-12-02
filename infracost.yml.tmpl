@@ -1,0 +1,15 @@
+# Infracost Template
+# https://www.infracost.io/docs/features/config_file/#template-syntax
+
+version: 0.1
+projects:
+{{- $paths := list "global" "regional" -}}
+{{- range $path := $paths }}
+  {{- range $project := matchPaths (print $path "/infra/tfvars/:env.tfvars") }}
+    - path: {{ print $path "/infra" }}
+      name: "{{ $path }}/infra: {{ $project.env }}"
+      terraform_var_files:
+        - {{ print "tfvars/" $project.env ".tfvars" }}
+      usage_file: {{ print $path "/infra/infracost/" $project.env ".yml" }}
+  {{- end }}
+{{- end }}
