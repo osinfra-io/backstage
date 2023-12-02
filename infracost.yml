@@ -9,7 +9,7 @@ projects:
         - tfvars/production.tfvars
       usage_file: global/infra/infracost/production.yml
     - path: global/infra
-      #name: "global/infra/sandbox"
+      name: "TESTTESTglobal/infra/sandbox"
       terraform_var_files:
         - tfvars/sandbox.tfvars
       usage_file: global/infra/infracost/sandbox.yml
