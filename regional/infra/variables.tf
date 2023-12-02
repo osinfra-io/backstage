@@ -18,11 +18,6 @@ variable "host_project_id" {
   type        = string
 }
 
-variable "instance_name" {
-  description = "The name of the instance"
-  type        = string
-}
-
 variable "machine_tier" {
   description = "The machine type to use. Postgres supports only shared-core machine types, and custom machine types such as db-custom-2-13312"
   type        = string

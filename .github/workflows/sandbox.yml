@@ -58,23 +58,3 @@ jobs:
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
       infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
-
-  us_east4_infra:
-    name: "Infra: us-east4"
-    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/plan-and-apply.yml@v0.1.8
-    if: github.actor != 'dependabot[bot]'
-    needs: global_infra
-    with:
-      checkout_ref: ${{ github.ref }}
-      environment: us-east4-sandbox
-      github_environment: "Sandbox Infrastructure: Regional - us-east4"
-      service_account: plt-backstage-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com
-      terraform_plan_args: -var-file=tfvars/us-east4-sandbox.tfvars
-      terraform_state_bucket: plt-backstage-2c8b-sb
-      terraform_version: ${{ vars.TERRAFORM_VERSION }}
-      terraform_workspace: us-east4-sandbox
-      working_directory: regional/infra
-      workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
-    secrets:
-      gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-      infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
