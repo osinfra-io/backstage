@@ -45,7 +45,7 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn tsc
-          yarn build:backend --config app-config.yaml
+          yarn build:backend --config ../../app-config.yaml
 
 
       # Docker Login
