@@ -1,5 +1,8 @@
-# Infracost Template
-# https://www.infracost.io/docs/features/config_file/#template-syntax
+{{/* Infracost Template: https://www.infracost.io/docs/features/config_file/#template-syntax */}}
+# Infracost Configuration
+# https://www.infracost.io/docs/config_file
+
+# This file is manged by the infracost.yml.tmpl file, do not edit directly.
 
 version: 0.1
 projects:
@@ -13,3 +16,31 @@ projects:
       usage_file: {{ print $path "/infra/infracost/" $project.env ".yml" }}
   {{- end }}
 {{- end }}
+
+{{- $paths := list "regional/app" "global/app" -}}
+{{- range $path := $paths }}
+  {{- range $project := matchPaths (print $path "/backstage/tfvars/:env.tfvars") }}
+    - path: {{ print $path "/backstage" }}
+      name: "{{ $path }}/backstage: {{ $project.env }}"
+      terraform_var_files:
+        - {{ print "tfvars/" $project.env ".tfvars" }}
+      usage_file: {{ print $path "/backstage/infracost/" $project.env ".yml" }}
+  {{- end }}
+{{- end }}
+
+{{/* This code causes an indentation issue in the infracost.yml
+
+{{- $paths := list "regional/app" "global/app" -}}
+{{- range $path := $paths }}
+  {{- range $dir := list "backstage" }}
+    {{- range $project := matchPaths (print $path "/" $dir "/tfvars/:env.tfvars") }}
+      - path: {{ print $path "/" $dir }}
+        name: "{{ $path }}/{{ $dir }}: {{ $project.env }}"
+        terraform_var_files:
+          - {{ print "tfvars/" $project.env ".tfvars" }}
+        usage_file: {{ print $path "/" $dir "/infracost/" $project.env ".yml" }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+*/}}

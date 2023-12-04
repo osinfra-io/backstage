@@ -14,6 +14,8 @@ repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.83.6
     hooks:
+      - id: terraform_fmt
+
       # To speed up local validation add the following to your ~/.zshrc:
       # export TF_PLUGIN_CACHE_DIR=$HOME/.terraform.d/plugin-cache
 
