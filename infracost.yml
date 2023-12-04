@@ -1,5 +1,8 @@
-# Infracost Template
-# https://www.infracost.io/docs/features/config_file/#template-syntax
+
+# Infracost Configuration
+# https://www.infracost.io/docs/config_file
+
+# This file is manged by the infracost.yml.tmpl file, do not edit directly.
 
 version: 0.1
 projects:
@@ -23,3 +26,13 @@ projects:
       terraform_var_files:
         - tfvars/us-east1-sandbox.tfvars
       usage_file: regional/infra/infracost/us-east1-sandbox.yml
+    - path: regional/app/backstage
+      name: "regional/app/backstage: us-east1-production"
+      terraform_var_files:
+        - tfvars/us-east1-production.tfvars
+      usage_file: regional/app/backstage/infracost/us-east1-production.yml
+    - path: regional/app/backstage
+      name: "regional/app/backstage: us-east1-sandbox"
+      terraform_var_files:
+        - tfvars/us-east1-sandbox.tfvars
+      usage_file: regional/app/backstage/infracost/us-east1-sandbox.yml
