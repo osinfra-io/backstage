@@ -2206,9 +2206,9 @@
     zod "^3.21.4"
 
 "@backstage/catalog-client@^1.5.0-next.0":
-  version "1.5.0-next.0"
-  resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.0.tgz#13e56a9a20240ae9ffe2c654d32d0bd04caa1cda"
-  integrity sha512-DjczUHb8amU4ji5QkJ8f7ADRadji1DpUkg6q95FKn15mBkol0MCS9Wmc+zBw8AwuYtFfxuD7WR6pg6W8HM+mqA==
+  version "1.5.0-next.1"
+  resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
+  integrity sha512-IzrHKKlL53xInGHM3um/s7rpj7WLpzg+AngdIu3b6E1oK5AJtVF39Ooq4nK7+89BqH7AeB/pGOP3glvsK9QS4Q==
   dependencies:
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/errors" "^1.2.3"
