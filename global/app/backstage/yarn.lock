@@ -2224,27 +2224,7 @@
     winston "^3.2.1"
     zod "^3.21.4"
 
-"@backstage/catalog-client@^1.5.0-next.0":
-  version "1.5.0-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
-  integrity sha512-IzrHKKlL53xInGHM3um/s7rpj7WLpzg+AngdIu3b6E1oK5AJtVF39Ooq4nK7+89BqH7AeB/pGOP3glvsK9QS4Q==
-  dependencies:
-    "@backstage/catalog-model" "^1.4.3"
-    "@backstage/errors" "^1.2.3"
-    cross-fetch "^4.0.0"
-    uri-template "^2.0.0"
-
-"@backstage/catalog-client@^1.5.0-next.1":
-  version "1.5.0-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
-  integrity sha512-IzrHKKlL53xInGHM3um/s7rpj7WLpzg+AngdIu3b6E1oK5AJtVF39Ooq4nK7+89BqH7AeB/pGOP3glvsK9QS4Q==
-  dependencies:
-    "@backstage/catalog-model" "^1.4.3"
-    "@backstage/errors" "^1.2.3"
-    cross-fetch "^4.0.0"
-    uri-template "^2.0.0"
-
-"@backstage/catalog-client@^1.5.0-next.1":
+"@backstage/catalog-client@^1.5.0-next.0", "@backstage/catalog-client@^1.5.0-next.1":
   version "1.5.0-next.1"
   resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
   integrity sha512-IzrHKKlL53xInGHM3um/s7rpj7WLpzg+AngdIu3b6E1oK5AJtVF39Ooq4nK7+89BqH7AeB/pGOP3glvsK9QS4Q==
@@ -8159,15 +8139,10 @@
   resolved "https://registry.yarnpkg.com/@types/lunr/-/lunr-2.3.7.tgz#378a98ecf7a9fafc42466f67f73173c34a6265a0"
   integrity sha512-Tb/kUm38e8gmjahQzdCKhbdsvQ9/ppzHFfsJ0dMs3ckqQsRj+P5IkSAwFTBrBxdyr3E/LoMUUrZngjDYAjiE3A==
 
-"@types/luxon@^2.0.4":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-2.4.0.tgz#897d3abc23b68d78b69d76a12c21e01eb5adab95"
-  integrity sha512-oCavjEjRXuR6URJEtQm0eBdfsBiEcGBZbq21of8iGkeKxU1+1xgKuFPClaBZl2KB8ZZBSWlgk61tH6Mf+nvZVw==
-
-"@types/luxon@^3.0.0", "@types/luxon@~3.3.0":
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-3.3.5.tgz#ffdcec196994998dbef6284523b3ac88a9e6c45f"
-  integrity sha512-1cyf6Ge/94zlaWIZA2ei1pE6SZ8xpad2hXaYa5JEFiaUH0YS494CZwyi4MXNpXD9oEuv6ZH0Bmh0e7F9sPhmZA==
+"@types/luxon@^3.0.0", "@types/luxon@^3.3.7", "@types/luxon@~3.3.0":
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-3.3.7.tgz#043d413b6492a012de47503907bdf3ec4f827933"
+  integrity sha512-gKc9P2d4g5uYwmy4s/MO/yOVPmvHyvzka1YH6i5dM03UrFofHSmgc0D0ymbDRStFWHusk6cwwF6nhLm/ckBbbQ==
 
 "@types/mdast@^3.0.0":
   version "3.0.15"
