@@ -2420,14 +2420,14 @@
     "@types/react" "^16.13.1 || ^17.0.0"
 
 "@backstage/core-components@^0.13.9-next.1":
-  version "0.13.9-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.9-next.1.tgz#fb62f0ffbbd9d494a8b18ccdebc1da8af1b932b9"
-  integrity sha512-U7xSkIHWGYDTP7zpvTjv95C5qvM1j0Qcy9U0NjPFH7SExxKtQux7mD4HmUPJFcDdA+7Y+6n5frF0l7FvboCSNw==
+  version "0.13.9-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.9-next.2.tgz#1e7eac724f3bf06b700681947f90e75880efa3ad"
+  integrity sha512-QqwjMy3nmPlMJv5VLvyRefA+l5ml+nXm5FyXM/F7Hn1c8QskULnq205y0Z7LK7Q/TEMIKQMuRrecqztB2zPuWg==
   dependencies:
     "@backstage/config" "^1.1.1"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
     "@backstage/errors" "^1.2.3"
-    "@backstage/theme" "^0.5.0-next.0"
+    "@backstage/theme" "^0.5.0-next.1"
     "@backstage/version-bridge" "^1.0.7"
     "@date-io/core" "^1.3.13"
     "@material-table/core" "^3.1.0"
@@ -3611,10 +3611,10 @@
     i18next "^22.4.15"
     zen-observable "^0.10.0"
 
-"@backstage/theme@^0.5.0-next.0":
-  version "0.5.0-next.0"
-  resolved "https://registry.yarnpkg.com/@backstage/theme/-/theme-0.5.0-next.0.tgz#1907ac6b783b8436bd3d0f68f6073f16dab80d4c"
-  integrity sha512-1LhoNh3gx/a2pwykIe1UWAQj0O4P9Kl5XB41Y4dXSac7hX+fRq2vSOoXUqEKqFZbnoZoiZfQWS9HGGbYgGiS0w==
+"@backstage/theme@^0.5.0-next.0", "@backstage/theme@^0.5.0-next.1":
+  version "0.5.0-next.1"
+  resolved "https://registry.yarnpkg.com/@backstage/theme/-/theme-0.5.0-next.1.tgz#2ee14481497cc6c59cd29445b3ee72755181185e"
+  integrity sha512-slF5qvBHQeuDe8d+xMSzh4JJxYZ0LiVzAgRDIsPkc70TpElvq1vor9kSjZf+1bnX+WhR+AtxtJVWzqG2smeuew==
   dependencies:
     "@emotion/react" "^11.10.5"
     "@emotion/styled" "^11.10.5"
