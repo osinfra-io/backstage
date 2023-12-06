@@ -2224,27 +2224,7 @@
     winston "^3.2.1"
     zod "^3.21.4"
 
-"@backstage/catalog-client@^1.5.0-next.0":
-  version "1.5.0-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
-  integrity sha512-IzrHKKlL53xInGHM3um/s7rpj7WLpzg+AngdIu3b6E1oK5AJtVF39Ooq4nK7+89BqH7AeB/pGOP3glvsK9QS4Q==
-  dependencies:
-    "@backstage/catalog-model" "^1.4.3"
-    "@backstage/errors" "^1.2.3"
-    cross-fetch "^4.0.0"
-    uri-template "^2.0.0"
-
-"@backstage/catalog-client@^1.5.0-next.1":
-  version "1.5.0-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
-  integrity sha512-IzrHKKlL53xInGHM3um/s7rpj7WLpzg+AngdIu3b6E1oK5AJtVF39Ooq4nK7+89BqH7AeB/pGOP3glvsK9QS4Q==
-  dependencies:
-    "@backstage/catalog-model" "^1.4.3"
-    "@backstage/errors" "^1.2.3"
-    cross-fetch "^4.0.0"
-    uri-template "^2.0.0"
-
-"@backstage/catalog-client@^1.5.0-next.1":
+"@backstage/catalog-client@^1.5.0-next.0", "@backstage/catalog-client@^1.5.0-next.1":
   version "1.5.0-next.1"
   resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
   integrity sha512-IzrHKKlL53xInGHM3um/s7rpj7WLpzg+AngdIu3b6E1oK5AJtVF39Ooq4nK7+89BqH7AeB/pGOP3glvsK9QS4Q==
@@ -2660,15 +2640,15 @@
     swagger-ui-react "^5.0.0"
 
 "@backstage/plugin-app-backend@^0.3.56-next.1":
-  version "0.3.56-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-app-backend/-/plugin-app-backend-0.3.56-next.1.tgz#d6042a2a6e7c6b255f592a51baa4f7362ef0b1ec"
-  integrity sha512-F81AziVgP8VYcLkj1GXR3vrFdLB3BwQexSCVZVuwb1djilZ31kjN/iHCTNYu2DBl7UaAmDckOpzmob85YgziSg==
+  version "0.3.56-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-app-backend/-/plugin-app-backend-0.3.56-next.2.tgz#e8b3810998e9507a917f20f1d19bb509f7775406"
+  integrity sha512-VMKeM4RnIGxY7wg+5ab2/Q8SEIjx+UcQKTNjLfP2CQhylz87PcV1alf2QQQ1KpZ1SfnI9WCMg8v9QgFsPaL/Xg==
   dependencies:
-    "@backstage/backend-common" "^0.20.0-next.1"
-    "@backstage/backend-plugin-api" "^0.6.8-next.1"
+    "@backstage/backend-common" "^0.20.0-next.2"
+    "@backstage/backend-plugin-api" "^0.6.8-next.2"
     "@backstage/config" "^1.1.1"
-    "@backstage/config-loader" "^1.5.3"
-    "@backstage/plugin-app-node" "^0.1.8-next.1"
+    "@backstage/config-loader" "^1.6.0-next.0"
+    "@backstage/plugin-app-node" "^0.1.8-next.2"
     "@backstage/types" "^1.1.1"
     "@types/express" "^4.17.6"
     express "^4.17.1"
@@ -2682,12 +2662,12 @@
     winston "^3.2.1"
     yn "^4.0.0"
 
-"@backstage/plugin-app-node@^0.1.8-next.1":
-  version "0.1.8-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-app-node/-/plugin-app-node-0.1.8-next.1.tgz#427e76b43e766856f8f053c73e4a3803cec7244c"
-  integrity sha512-jAVSnLMkHbiTgWa80hp9KZfsWUolEvkZ/HV3aGBxOt4nba9JT+QX9CLWF1lLU94tLvxVyqeZZw8PvVNE9P29Jw==
+"@backstage/plugin-app-node@^0.1.8-next.2":
+  version "0.1.8-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-app-node/-/plugin-app-node-0.1.8-next.2.tgz#dbff0efc6c8b77f5f5ef1602153dd1963cf33541"
+  integrity sha512-NH/gT68KrFzzfI4NHWgGL2096uhRmlV6Nwlw6QpnHu+juiNr4gG/pCr2/FPztABxfHDUgDsaVauW1Bp54JhG6A==
   dependencies:
-    "@backstage/backend-plugin-api" "^0.6.8-next.1"
+    "@backstage/backend-plugin-api" "^0.6.8-next.2"
     "@types/express" "^4.17.6"
     express "^4.17.1"
 
