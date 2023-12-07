@@ -2378,28 +2378,6 @@
     yn "^4.0.0"
     zod "^3.21.4"
 
-"@backstage/config-loader@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@backstage/config-loader/-/config-loader-1.5.3.tgz#5a011cf9dd0242d83c2a116f3703bcdb1942bb78"
-  integrity sha512-4w21LCoPztNcEV5vUg/A8A5sbbLQJI8tqrKc/cv2gyqIUPRosAPFihignKrdZ9/FZUwJo172XXrJ5xwgKlAq7g==
-  dependencies:
-    "@backstage/cli-common" "^0.1.13"
-    "@backstage/config" "^1.1.1"
-    "@backstage/errors" "^1.2.3"
-    "@backstage/types" "^1.1.1"
-    "@types/json-schema" "^7.0.6"
-    ajv "^8.10.0"
-    chokidar "^3.5.2"
-    fs-extra "10.1.0"
-    json-schema "^0.4.0"
-    json-schema-merge-allof "^0.8.1"
-    json-schema-traverse "^1.0.0"
-    lodash "^4.17.21"
-    minimist "^1.2.5"
-    node-fetch "^2.6.7"
-    typescript-json-schema "^0.62.0"
-    yaml "^2.0.0"
-
 "@backstage/config-loader@^1.6.0-next.0":
   version "1.6.0-next.0"
   resolved "https://registry.yarnpkg.com/@backstage/config-loader/-/config-loader-1.6.0-next.0.tgz#706172f6a9ca9768df91b21365ee38ba1c0a5dab"
@@ -3229,19 +3207,19 @@
     zod "^3.21.4"
     zod-to-json-schema "^3.20.4"
 
-"@backstage/plugin-scaffolder-react@^1.6.2-next.1":
-  version "1.6.2-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-scaffolder-react/-/plugin-scaffolder-react-1.6.2-next.1.tgz#d4dc38de2840b031b6719aaf72e450c4623226e0"
-  integrity sha512-bDuy2UaXI9Rw2BPgynZ1HB0j+ObA2wJkRwV4QVirdWfGWZH7QDOrMVHD2luo7QFnLb2NnuRlAIQTR8D3juWkzQ==
+"@backstage/plugin-scaffolder-react@^1.6.2-next.2":
+  version "1.6.2-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-scaffolder-react/-/plugin-scaffolder-react-1.6.2-next.2.tgz#522b384fc56ab82263ea2c33158bfaff0da73796"
+  integrity sha512-CN7q655VGnM0r+Rf3ktbalkOcYJUsanbQt9zCPPLQ1DCWWdeestgQwclmToW/vRP1odCTw2SDoI8DzreNMzEzg==
   dependencies:
-    "@backstage/catalog-client" "^1.5.0-next.0"
+    "@backstage/catalog-client" "^1.5.0-next.1"
     "@backstage/catalog-model" "^1.4.3"
-    "@backstage/core-components" "^0.13.9-next.1"
+    "@backstage/core-components" "^0.13.9-next.2"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
     "@backstage/errors" "^1.2.3"
-    "@backstage/plugin-catalog-react" "^1.9.2-next.1"
+    "@backstage/plugin-catalog-react" "^1.9.2-next.2"
     "@backstage/plugin-scaffolder-common" "^1.4.3"
-    "@backstage/theme" "^0.5.0-next.0"
+    "@backstage/theme" "^0.5.0-next.1"
     "@backstage/types" "^1.1.1"
     "@backstage/version-bridge" "^1.0.7"
     "@material-ui/core" "^4.12.2"
@@ -3269,24 +3247,24 @@
     zod-to-json-schema "^3.20.4"
 
 "@backstage/plugin-scaffolder@^1.16.2-next.1":
-  version "1.16.2-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-scaffolder/-/plugin-scaffolder-1.16.2-next.1.tgz#76219acf67a571bf8ca61697d51cd64f735afa1e"
-  integrity sha512-oB3UwXUjOSVq67d4A9XdYEovr12SQVZ3ptZcmyzBPoInZiOzDh1OLoqlBlG0TJmS4aYSm+q4MmcSYJHrEVYuQQ==
+  version "1.16.2-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-scaffolder/-/plugin-scaffolder-1.16.2-next.2.tgz#1e72619b94dacdb4bd3d18bde5c04b3e70444b14"
+  integrity sha512-NsBgbCiUgHoLtfNRH5CryZq9vu43UpjaRhCY0JBWUYXkN/jYSzTWXaL8/PxA8QB50fRmCin5rhPh2HG9Irk7zw==
   dependencies:
-    "@backstage/catalog-client" "^1.5.0-next.0"
+    "@backstage/catalog-client" "^1.5.0-next.1"
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/config" "^1.1.1"
-    "@backstage/core-components" "^0.13.9-next.1"
+    "@backstage/core-components" "^0.13.9-next.2"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
     "@backstage/errors" "^1.2.3"
     "@backstage/integration" "^1.8.0-next.1"
     "@backstage/integration-react" "^1.1.22-next.1"
     "@backstage/plugin-catalog-common" "^1.0.18"
-    "@backstage/plugin-catalog-react" "^1.9.2-next.1"
+    "@backstage/plugin-catalog-react" "^1.9.2-next.2"
     "@backstage/plugin-permission-react" "^0.4.18-next.1"
     "@backstage/plugin-scaffolder-common" "^1.4.3"
-    "@backstage/plugin-scaffolder-react" "^1.6.2-next.1"
-    "@backstage/theme" "^0.5.0-next.0"
+    "@backstage/plugin-scaffolder-react" "^1.6.2-next.2"
+    "@backstage/theme" "^0.5.0-next.1"
     "@backstage/types" "^1.1.1"
     "@codemirror/language" "^6.0.0"
     "@codemirror/legacy-modes" "^6.1.0"
