@@ -2438,6 +2438,17 @@
     "@backstage/frontend-plugin-api" "^0.4.0-next.1"
     "@types/react" "^16.13.1 || ^17.0.0"
 
+"@backstage/core-compat-api@^0.1.0-next.2":
+  version "0.1.0-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/core-compat-api/-/core-compat-api-0.1.0-next.2.tgz#47fe9d804f0c6f59e6b2acca5b95e0eff52dc4cf"
+  integrity sha512-E4Zu0w6SrSGzq7P2kvh+kWrut4SfePKUOrb/Tv3It7H0dsjs5v1G0csOi3a6Q0tVhw3GTEE9CqxbB5JXoJvzwQ==
+  dependencies:
+    "@backstage/core-app-api" "^1.11.2-next.1"
+    "@backstage/core-plugin-api" "^1.8.1-next.1"
+    "@backstage/frontend-plugin-api" "^0.4.0-next.2"
+    "@backstage/version-bridge" "^1.0.7"
+    "@types/react" "^16.13.1 || ^17.0.0"
+
 "@backstage/core-components@^0.13.9-next.1", "@backstage/core-components@^0.13.9-next.2":
   version "0.13.9-next.2"
   resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.9-next.2.tgz#1e7eac724f3bf06b700681947f90e75880efa3ad"
@@ -2521,23 +2532,7 @@
     "@manypkg/get-packages" "^1.1.3"
     minimatch "^5.1.2"
 
-"@backstage/frontend-plugin-api@^0.4.0-next.1":
-  version "0.4.0-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/frontend-plugin-api/-/frontend-plugin-api-0.4.0-next.1.tgz#534f8a409136e7510641b31379d2f6f853702a62"
-  integrity sha512-QRHty5/Hx0wiWOd5090QzNds8Jk3jeMRTtqiwLhOdQSGGkfZ73jiSe/ZzhOKUtW1jJ/KwJAHWjBwLQMa8yErbw==
-  dependencies:
-    "@backstage/config" "^1.1.1"
-    "@backstage/core-components" "^0.13.9-next.1"
-    "@backstage/core-plugin-api" "^1.8.1-next.1"
-    "@backstage/types" "^1.1.1"
-    "@backstage/version-bridge" "^1.0.7"
-    "@material-ui/core" "^4.12.4"
-    "@types/react" "^16.13.1 || ^17.0.0"
-    lodash "^4.17.21"
-    zod "^3.21.4"
-    zod-to-json-schema "^3.21.4"
-
-"@backstage/frontend-plugin-api@^0.4.0-next.2":
+"@backstage/frontend-plugin-api@^0.4.0-next.1", "@backstage/frontend-plugin-api@^0.4.0-next.2":
   version "0.4.0-next.2"
   resolved "https://registry.yarnpkg.com/@backstage/frontend-plugin-api/-/frontend-plugin-api-0.4.0-next.2.tgz#435894e468954be015b4b1d8e753594c400900f8"
   integrity sha512-FCRYUx+AU1Y8bxFbsX/Rw+4N8acRwLymqC5pcCNVHAPh4T7u6QSnv6VZV0ZvUYu3GyNnPWQgeU+AfGLZ7W+A2w==
@@ -3450,15 +3445,15 @@
     react-use "^17.2.4"
 
 "@backstage/plugin-tech-radar@^0.6.11-next.2":
-  version "0.6.11-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-tech-radar/-/plugin-tech-radar-0.6.11-next.2.tgz#fee042cf6429738ff30d629c1a3850cac7c8ad5d"
-  integrity sha512-PFUw4cym4jWjTui3KJ2JZn+1wfo3K0C/HqD2HCgH0slDLrfmo4ysKS1/+SNLIkhJu6GTj2CiDtU2g3QUujyL1g==
+  version "0.6.11-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-tech-radar/-/plugin-tech-radar-0.6.11-next.3.tgz#d99a3f995bb8d002c28fe984d87deff4f46257dc"
+  integrity sha512-mm+cSZODMY/x/wo+RVrsgvw5aaWIcFrGGExJL2rpOASFjCZAqXc+zly8+Dnmr4hcawoYDyy2UYLgZ5mOm3Wr7w==
   dependencies:
-    "@backstage/core-compat-api" "^0.0.1-next.1"
-    "@backstage/core-components" "^0.13.9-next.1"
+    "@backstage/core-compat-api" "^0.1.0-next.2"
+    "@backstage/core-components" "^0.13.9-next.2"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
-    "@backstage/frontend-plugin-api" "^0.4.0-next.1"
-    "@backstage/theme" "^0.5.0-next.0"
+    "@backstage/frontend-plugin-api" "^0.4.0-next.2"
+    "@backstage/theme" "^0.5.0-next.1"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
     "@material-ui/lab" "4.0.0-alpha.61"
