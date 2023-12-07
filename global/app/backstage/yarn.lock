@@ -2378,28 +2378,6 @@
     yn "^4.0.0"
     zod "^3.21.4"
 
-"@backstage/config-loader@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@backstage/config-loader/-/config-loader-1.5.3.tgz#5a011cf9dd0242d83c2a116f3703bcdb1942bb78"
-  integrity sha512-4w21LCoPztNcEV5vUg/A8A5sbbLQJI8tqrKc/cv2gyqIUPRosAPFihignKrdZ9/FZUwJo172XXrJ5xwgKlAq7g==
-  dependencies:
-    "@backstage/cli-common" "^0.1.13"
-    "@backstage/config" "^1.1.1"
-    "@backstage/errors" "^1.2.3"
-    "@backstage/types" "^1.1.1"
-    "@types/json-schema" "^7.0.6"
-    ajv "^8.10.0"
-    chokidar "^3.5.2"
-    fs-extra "10.1.0"
-    json-schema "^0.4.0"
-    json-schema-merge-allof "^0.8.1"
-    json-schema-traverse "^1.0.0"
-    lodash "^4.17.21"
-    minimist "^1.2.5"
-    node-fetch "^2.6.7"
-    typescript-json-schema "^0.62.0"
-    yaml "^2.0.0"
-
 "@backstage/config-loader@^1.6.0-next.0":
   version "1.6.0-next.0"
   resolved "https://registry.yarnpkg.com/@backstage/config-loader/-/config-loader-1.6.0-next.0.tgz#706172f6a9ca9768df91b21365ee38ba1c0a5dab"
@@ -3125,12 +3103,12 @@
     swr "^2.0.0"
 
 "@backstage/plugin-proxy-backend@^0.4.6-next.1":
-  version "0.4.6-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-proxy-backend/-/plugin-proxy-backend-0.4.6-next.1.tgz#a311ef429f80cb2c26d21564ff3330e37c8e6237"
-  integrity sha512-2fAQ/H8rj2NHqB1Wyj2OhJW1q7G91Lt2J8BtJzbIaqoz9avqLmZM+MYbl2Jxx++UE4pfnUmS8uKRMxRTUazj2Q==
+  version "0.4.6-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-proxy-backend/-/plugin-proxy-backend-0.4.6-next.2.tgz#d542e36809d6e6ae043477de59ac6f031b0df99e"
+  integrity sha512-YGQuKPYBVb4tOdGiSC1BZF6HHgYy4Yis9G1tvU3RvqmBSyDw8Qm59AQ2bhTgbz9/k+YUlQNHtijLeft1ZFqBxw==
   dependencies:
-    "@backstage/backend-common" "^0.20.0-next.1"
-    "@backstage/backend-plugin-api" "^0.6.8-next.1"
+    "@backstage/backend-common" "^0.20.0-next.2"
+    "@backstage/backend-plugin-api" "^0.6.8-next.2"
     "@backstage/config" "^1.1.1"
     "@types/express" "^4.17.6"
     express "^4.17.1"
