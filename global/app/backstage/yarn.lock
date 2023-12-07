@@ -2588,17 +2588,17 @@
     luxon "^3.0.0"
 
 "@backstage/plugin-api-docs@^0.10.2-next.2":
-  version "0.10.2-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-api-docs/-/plugin-api-docs-0.10.2-next.2.tgz#917903a6f89a3bcb8e1c92f28d8bb1660822a9bd"
-  integrity sha512-XKFYPObmhlJz5QI7KRAzz8ThBE6b8HswXolgB/VmNMkAot0dPvGO/ATe8/rmm+Ns/Pf9ItSWIrVYVhbLRCEvVA==
+  version "0.10.2-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-api-docs/-/plugin-api-docs-0.10.2-next.3.tgz#a7b40da4495fb5c19bd497e4c56d8558c2033f78"
+  integrity sha512-qZ5nMTkboWVw85C+rNO7QkIBmZva54kn2b61G0/xpdChcJh5e9XLNUvJUhLG3aW7ex0IEdlaJY404jmBCSZ4tg==
   dependencies:
     "@asyncapi/react-component" "1.2.2"
     "@backstage/catalog-model" "^1.4.3"
-    "@backstage/core-components" "^0.13.9-next.1"
+    "@backstage/core-components" "^0.13.9-next.2"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
-    "@backstage/plugin-catalog" "^1.16.0-next.2"
-    "@backstage/plugin-catalog-react" "^1.9.2-next.1"
-    "@backstage/theme" "^0.5.0-next.0"
+    "@backstage/plugin-catalog" "^1.16.0-next.3"
+    "@backstage/plugin-catalog-react" "^1.9.2-next.2"
+    "@backstage/theme" "^0.5.0-next.1"
     "@graphiql/react" "^0.20.0"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
@@ -2974,25 +2974,25 @@
     yaml "^2.0.0"
     zen-observable "^0.10.0"
 
-"@backstage/plugin-catalog@^1.16.0-next.2":
-  version "1.16.0-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog/-/plugin-catalog-1.16.0-next.2.tgz#21109d221ce9b35ddf1f7eed4f273f4213239e6e"
-  integrity sha512-maXbZVzuJIdRhV2KUq9rKdFlpLUi15SMSHTZcwGgusH86dy3RpOGOn211xBRfaNoKUq4NE45OTE12rmmprIlpA==
+"@backstage/plugin-catalog@^1.16.0-next.2", "@backstage/plugin-catalog@^1.16.0-next.3":
+  version "1.16.0-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog/-/plugin-catalog-1.16.0-next.3.tgz#5ff5671488d657568243a579ec437a9d531b1e35"
+  integrity sha512-RiECXTFRSiEFlYqwMEhuAqJ9fppjzwwgRWuTO7QzI6MvTbW1kXZOayi97OYbatrosIs8zefvfSV00wU8R5H8Ag==
   dependencies:
-    "@backstage/catalog-client" "^1.5.0-next.0"
+    "@backstage/catalog-client" "^1.5.0-next.1"
     "@backstage/catalog-model" "^1.4.3"
-    "@backstage/core-compat-api" "^0.0.1-next.1"
-    "@backstage/core-components" "^0.13.9-next.1"
+    "@backstage/core-compat-api" "^0.1.0-next.2"
+    "@backstage/core-components" "^0.13.9-next.2"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
     "@backstage/errors" "^1.2.3"
-    "@backstage/frontend-plugin-api" "^0.4.0-next.1"
+    "@backstage/frontend-plugin-api" "^0.4.0-next.2"
     "@backstage/integration-react" "^1.1.22-next.1"
     "@backstage/plugin-catalog-common" "^1.0.18"
-    "@backstage/plugin-catalog-react" "^1.9.2-next.1"
+    "@backstage/plugin-catalog-react" "^1.9.2-next.2"
     "@backstage/plugin-scaffolder-common" "^1.4.3"
     "@backstage/plugin-search-common" "^1.2.8"
-    "@backstage/plugin-search-react" "^1.7.4-next.1"
-    "@backstage/theme" "^0.5.0-next.0"
+    "@backstage/plugin-search-react" "^1.7.4-next.2"
+    "@backstage/theme" "^0.5.0-next.1"
     "@backstage/types" "^1.1.1"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
@@ -3409,6 +3409,26 @@
     "@backstage/frontend-plugin-api" "^0.4.0-next.1"
     "@backstage/plugin-search-common" "^1.2.8"
     "@backstage/theme" "^0.5.0-next.0"
+    "@backstage/types" "^1.1.1"
+    "@backstage/version-bridge" "^1.0.7"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "4.0.0-alpha.61"
+    "@types/react" "^16.13.1 || ^17.0.0"
+    lodash "^4.17.21"
+    qs "^6.9.4"
+    react-use "^17.3.2"
+
+"@backstage/plugin-search-react@^1.7.4-next.2":
+  version "1.7.4-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-search-react/-/plugin-search-react-1.7.4-next.2.tgz#a5bbe4184d2f57587dd1c16df469d8aee66b41d3"
+  integrity sha512-uKdswcpb443jCBGMu+eDUceHfm3PvQY/DOYzXPvZrSNISNdhNidudma7Hch3x9iJeGK3tsaP7JB+7c1oxbpR9Q==
+  dependencies:
+    "@backstage/core-components" "^0.13.9-next.2"
+    "@backstage/core-plugin-api" "^1.8.1-next.1"
+    "@backstage/frontend-plugin-api" "^0.4.0-next.2"
+    "@backstage/plugin-search-common" "^1.2.8"
+    "@backstage/theme" "^0.5.0-next.1"
     "@backstage/types" "^1.1.1"
     "@backstage/version-bridge" "^1.0.7"
     "@material-ui/core" "^4.12.2"
