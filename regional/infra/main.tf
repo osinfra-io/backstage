@@ -37,6 +37,7 @@ module "cloud_sql_instance" {
 
 
   availability_type = "REGIONAL"
+  cost_center       = "x001"
 
   # These flags are required for CIS GCP v1.3.0 compliance
 
@@ -79,9 +80,17 @@ module "cloud_sql_instance" {
     }
   ]
 
-  deletion_protection            = var.deletion_protection
-  host_project_id                = var.host_project_id
-  instance_name                  = "backstage"
+  deletion_protection = var.deletion_protection
+  host_project_id     = var.host_project_id
+  instance_name       = "backstage"
+
+  labels = {
+    env        = var.environment
+    repository = "backstage"
+    platform   = "backstage"
+    team       = "platform-backstage"
+  }
+
   machine_tier                   = var.machine_tier
   network                        = "standard-shared"
   point_in_time_recovery_enabled = true
