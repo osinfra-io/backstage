@@ -51,7 +51,7 @@
   "devDependencies": {
     "@backstage/test-utils": "^1.4.6-next.2",
     "@playwright/test": "^1.32.3",
-    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.0.0",
     "@testing-library/dom": "^9.3.3",
