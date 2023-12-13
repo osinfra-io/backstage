@@ -2205,6 +2205,25 @@
     winston "^3.2.1"
     zod "^3.21.4"
 
+"@backstage/backend-tasks@^0.5.13-next.3":
+  version "0.5.13-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/backend-tasks/-/backend-tasks-0.5.13-next.3.tgz#3a6054af2b0e39fb78b3754cbda6dc33f02a69fc"
+  integrity sha512-vnUM56zm3ikxFQ0qUn07VHItzH2r3iRxTYksQkxhDEXr6UNKZp4zkAlT4ARrZW9CONZxU4kPZW/Y5cI22wbzIg==
+  dependencies:
+    "@backstage/backend-common" "^0.20.0-next.3"
+    "@backstage/config" "^1.1.1"
+    "@backstage/errors" "^1.2.3"
+    "@backstage/types" "^1.1.1"
+    "@opentelemetry/api" "^1.3.0"
+    "@types/luxon" "^3.0.0"
+    cron "^2.0.0"
+    knex "^3.0.0"
+    lodash "^4.17.21"
+    luxon "^3.0.0"
+    uuid "^8.0.0"
+    winston "^3.2.1"
+    zod "^3.21.4"
+
 "@backstage/catalog-client@^1.5.0-next.1":
   version "1.5.0-next.1"
   resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
@@ -3057,6 +3076,23 @@
     zod "^3.21.4"
 
 "@backstage/plugin-permission-node@^0.7.19-next.2", "@backstage/plugin-permission-node@^0.7.19-next.3":
+  version "0.7.19-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-permission-node/-/plugin-permission-node-0.7.19-next.3.tgz#2438708085c55e0389386992ed7aaf0f1a395f67"
+  integrity sha512-J//n2kcDe41I3bzHYBKZfHw7fIRxZuiAM8moEhwdHLQjIsnaxm+h0ceHpGq19jflWHIzBjJbrT2zzn4jFbR3kQ==
+  dependencies:
+    "@backstage/backend-common" "^0.20.0-next.3"
+    "@backstage/backend-plugin-api" "^0.6.8-next.3"
+    "@backstage/config" "^1.1.1"
+    "@backstage/errors" "^1.2.3"
+    "@backstage/plugin-auth-node" "^0.4.2-next.3"
+    "@backstage/plugin-permission-common" "^0.7.10"
+    "@types/express" "^4.17.6"
+    express "^4.17.1"
+    express-promise-router "^4.1.0"
+    zod "^3.21.4"
+    zod-to-json-schema "^3.20.4"
+
+"@backstage/plugin-permission-node@^0.7.19-next.3":
   version "0.7.19-next.3"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-permission-node/-/plugin-permission-node-0.7.19-next.3.tgz#2438708085c55e0389386992ed7aaf0f1a395f67"
   integrity sha512-J//n2kcDe41I3bzHYBKZfHw7fIRxZuiAM8moEhwdHLQjIsnaxm+h0ceHpGq19jflWHIzBjJbrT2zzn4jFbR3kQ==
