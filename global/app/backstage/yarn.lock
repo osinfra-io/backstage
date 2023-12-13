@@ -2420,10 +2420,10 @@
     "@backstage/version-bridge" "^1.0.7"
     "@types/react" "^16.13.1 || ^17.0.0"
 
-"@backstage/core-components@^0.13.9-next.2":
-  version "0.13.9-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.9-next.2.tgz#1e7eac724f3bf06b700681947f90e75880efa3ad"
-  integrity sha512-QqwjMy3nmPlMJv5VLvyRefA+l5ml+nXm5FyXM/F7Hn1c8QskULnq205y0Z7LK7Q/TEMIKQMuRrecqztB2zPuWg==
+"@backstage/core-components@^0.13.9-next.2", "@backstage/core-components@^0.13.9-next.3":
+  version "0.13.9-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.9-next.3.tgz#9c83fb03d8cc28a01cc3515aad7755a312b3940e"
+  integrity sha512-kflN/aVxW/aujPJhddGC/8+iqRGemQilFTiDgd24SjuurcSgzF6coep3RX2OVDn0g5T8KLFIZxERV2ILFQT+CA==
   dependencies:
     "@backstage/config" "^1.1.1"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
@@ -3517,13 +3517,13 @@
     winston "^3.2.1"
 
 "@backstage/plugin-techdocs-react@^1.1.14-next.2":
-  version "1.1.14-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-react/-/plugin-techdocs-react-1.1.14-next.2.tgz#b84082c345e1b8dcd6fd5a78cf93f6606d3c4c7e"
-  integrity sha512-sVPwL8008BWntg6sWEOOILP8ZTz73NdlDrYQaWTAjreUq9BT1eC24gXbp1BgtsbrUTXPoUyfaHFWYE0bpZejtg==
+  version "1.1.14-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-react/-/plugin-techdocs-react-1.1.14-next.3.tgz#b24bb99c4ee179c64e620ff884ab772dbbcc276f"
+  integrity sha512-vhi59JeBVo7tOJ1TmrgBVIEcQoOa/iMUtChCvT3PPhBg1rpHNxYI9cij0a0OiBuGOuJfGkGTlpJV6cMZyk9lmg==
   dependencies:
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/config" "^1.1.1"
-    "@backstage/core-components" "^0.13.9-next.2"
+    "@backstage/core-components" "^0.13.9-next.3"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
     "@backstage/version-bridge" "^1.0.7"
     "@material-ui/core" "^4.12.2"
