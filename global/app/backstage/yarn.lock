@@ -2040,12 +2040,12 @@
     to-fast-properties "^2.0.0"
 
 "@backstage/app-defaults@^1.4.6-next.2":
-  version "1.4.6-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/app-defaults/-/app-defaults-1.4.6-next.2.tgz#e0dde00033b1d9c9d6cc75b70c604e22bd6c07fe"
-  integrity sha512-HhXxp/0SBEpb9rk9Xi8ggbTr6w/8TTsn83LxSQiysSgeWioooDr3YXU87Rm7RmfxLj8R7opEEYWafezXhrXU1Q==
+  version "1.4.6-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/app-defaults/-/app-defaults-1.4.6-next.3.tgz#6a7a5c5d6a9ef2e4bc8e8e0ac167ee6810f00a64"
+  integrity sha512-AUsK2L8wfh70chsVt9z83gsyWtfxKZy3XN3lli0TgR3kZukAv1M3lJFe20+5FJOBaRp0YJNihBu9WnlQlPXjNQ==
   dependencies:
     "@backstage/core-app-api" "^1.11.2-next.1"
-    "@backstage/core-components" "^0.13.9-next.2"
+    "@backstage/core-components" "^0.13.9-next.3"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
     "@backstage/plugin-permission-react" "^0.4.18-next.1"
     "@backstage/theme" "^0.5.0-next.1"
