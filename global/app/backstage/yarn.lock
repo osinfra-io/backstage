@@ -2421,9 +2421,9 @@
     "@types/react" "^16.13.1 || ^17.0.0"
 
 "@backstage/core-components@^0.13.9-next.2":
-  version "0.13.9-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.9-next.2.tgz#1e7eac724f3bf06b700681947f90e75880efa3ad"
-  integrity sha512-QqwjMy3nmPlMJv5VLvyRefA+l5ml+nXm5FyXM/F7Hn1c8QskULnq205y0Z7LK7Q/TEMIKQMuRrecqztB2zPuWg==
+  version "0.13.9-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.9-next.3.tgz#9c83fb03d8cc28a01cc3515aad7755a312b3940e"
+  integrity sha512-kflN/aVxW/aujPJhddGC/8+iqRGemQilFTiDgd24SjuurcSgzF6coep3RX2OVDn0g5T8KLFIZxERV2ILFQT+CA==
   dependencies:
     "@backstage/config" "^1.1.1"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
