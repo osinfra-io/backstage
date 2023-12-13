@@ -3577,15 +3577,15 @@
     winston "^3.2.1"
 
 "@backstage/plugin-techdocs-module-addons-contrib@^1.1.3-next.2":
-  version "1.1.3-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-module-addons-contrib/-/plugin-techdocs-module-addons-contrib-1.1.3-next.2.tgz#635efed203da3138cdfc449e82a8a5a2922c75be"
-  integrity sha512-I6Q5ekM5zeFxACrTq9aaxnJNDboY0K0rDYTgnuUqpYOXKmFUCT9EOURhksLu92tUxQSxZhAGYP3G32WhQ/DoKw==
+  version "1.1.3-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-module-addons-contrib/-/plugin-techdocs-module-addons-contrib-1.1.3-next.3.tgz#406677d0eafa875dd3e7b4518fee163f34907ae7"
+  integrity sha512-G8b1YzNVsqEafWR20FK+XJ7ENhh2LiPramgHKyFywz1ribxfluXzYpV1xpfvc63QAGwYxhjitjNEp8F4ED9nTw==
   dependencies:
-    "@backstage/core-components" "^0.13.9-next.2"
+    "@backstage/core-components" "^0.13.9-next.3"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
     "@backstage/integration" "^1.8.0-next.1"
     "@backstage/integration-react" "^1.1.22-next.1"
-    "@backstage/plugin-techdocs-react" "^1.1.14-next.2"
+    "@backstage/plugin-techdocs-react" "^1.1.14-next.3"
     "@backstage/theme" "^0.5.0-next.1"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
