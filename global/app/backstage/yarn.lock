@@ -2519,6 +2519,22 @@
     zod "^3.21.4"
     zod-to-json-schema "^3.21.4"
 
+"@backstage/frontend-plugin-api@^0.4.0-next.3":
+  version "0.4.0-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/frontend-plugin-api/-/frontend-plugin-api-0.4.0-next.3.tgz#e76cc7849ebbb1643b7b5c11afaed719b0f00ed7"
+  integrity sha512-00PTfznj9sP7PqmgjJ3Y0NG7yEo3pMTTKJBnezOBT+S7+7QUPsZPyHQ90V4p3Dn6A+9VmuVSiM/AesJ2AvjjhQ==
+  dependencies:
+    "@backstage/config" "^1.1.1"
+    "@backstage/core-components" "^0.13.9-next.3"
+    "@backstage/core-plugin-api" "^1.8.1-next.1"
+    "@backstage/types" "^1.1.1"
+    "@backstage/version-bridge" "^1.0.7"
+    "@material-ui/core" "^4.12.4"
+    "@types/react" "^16.13.1 || ^17.0.0"
+    lodash "^4.17.21"
+    zod "^3.21.4"
+    zod-to-json-schema "^3.21.4"
+
 "@backstage/integration-aws-node@^0.1.8":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@backstage/integration-aws-node/-/integration-aws-node-0.1.8.tgz#c0582a63e2348a42bbe172bdcd4609f024cc0051"
@@ -2988,16 +3004,16 @@
     "@backstage/backend-plugin-api" "^0.6.8-next.3"
 
 "@backstage/plugin-github-actions@^0.6.9-next.2":
-  version "0.6.9-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-github-actions/-/plugin-github-actions-0.6.9-next.2.tgz#8b8b4be494466e8f34c72f56be8c4d6a8f5a1796"
-  integrity sha512-TLBUtiHWcXErZWe8nylH/YeMJO0cI3wqCqRhV4NGKLHWkF9dZE5NBAEQ0FnnlME83ZaV/uRgcM9vpqvJyzG64w==
+  version "0.6.9-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-github-actions/-/plugin-github-actions-0.6.9-next.3.tgz#fa83659b3dcfb4870cdec80f91c6828c12a82c25"
+  integrity sha512-ZCVjxnqr+8ka+MwrR74GrbYkZUt1xSq8nTa/Td+5G2vp/nqYLbJa+QlK1h+jQQBrZbD/OgwBKfL1sGDR6gcS9g==
   dependencies:
     "@backstage/catalog-model" "^1.4.3"
-    "@backstage/core-components" "^0.13.9-next.2"
+    "@backstage/core-components" "^0.13.9-next.3"
     "@backstage/core-plugin-api" "^1.8.1-next.1"
     "@backstage/integration" "^1.8.0-next.1"
     "@backstage/integration-react" "^1.1.22-next.1"
-    "@backstage/plugin-catalog-react" "^1.9.2-next.2"
+    "@backstage/plugin-catalog-react" "^1.9.2-next.3"
     "@backstage/theme" "^0.5.0-next.1"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
