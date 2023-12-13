@@ -2205,6 +2205,25 @@
     winston "^3.2.1"
     zod "^3.21.4"
 
+"@backstage/backend-tasks@^0.5.13-next.3":
+  version "0.5.13-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/backend-tasks/-/backend-tasks-0.5.13-next.3.tgz#3a6054af2b0e39fb78b3754cbda6dc33f02a69fc"
+  integrity sha512-vnUM56zm3ikxFQ0qUn07VHItzH2r3iRxTYksQkxhDEXr6UNKZp4zkAlT4ARrZW9CONZxU4kPZW/Y5cI22wbzIg==
+  dependencies:
+    "@backstage/backend-common" "^0.20.0-next.3"
+    "@backstage/config" "^1.1.1"
+    "@backstage/errors" "^1.2.3"
+    "@backstage/types" "^1.1.1"
+    "@opentelemetry/api" "^1.3.0"
+    "@types/luxon" "^3.0.0"
+    cron "^2.0.0"
+    knex "^3.0.0"
+    lodash "^4.17.21"
+    luxon "^3.0.0"
+    uuid "^8.0.0"
+    winston "^3.2.1"
+    zod "^3.21.4"
+
 "@backstage/catalog-client@^1.5.0-next.1":
   version "1.5.0-next.1"
   resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
@@ -3319,14 +3338,14 @@
     p-limit "^3.1.0"
     winston "^3.2.1"
 
-"@backstage/plugin-search-backend-node@^1.2.12-next.2":
-  version "1.2.12-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-search-backend-node/-/plugin-search-backend-node-1.2.12-next.2.tgz#aa496f566b64494f6e96085dd2c2ccb40017a472"
-  integrity sha512-pDsFlGDf3Fe3oFxwtOF24kxJwCrYMlIZboYBcunPqfZtL3rNZL238cibhBWG6xGQubapIFa7Ho6CWSbWafkdcQ==
+"@backstage/plugin-search-backend-node@^1.2.12-next.2", "@backstage/plugin-search-backend-node@^1.2.12-next.3":
+  version "1.2.12-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-search-backend-node/-/plugin-search-backend-node-1.2.12-next.3.tgz#06674b7ec675d30a797df67f7f3957c813f51262"
+  integrity sha512-gnHrFtxqhExEolFioFolEjJWEOXYOImj73S+a+ZCSzb9nKEgfd1rp5M3ZcUT34LiXeWbJKQbxeygvExLL9qing==
   dependencies:
-    "@backstage/backend-common" "^0.20.0-next.2"
-    "@backstage/backend-plugin-api" "^0.6.8-next.2"
-    "@backstage/backend-tasks" "^0.5.13-next.2"
+    "@backstage/backend-common" "^0.20.0-next.3"
+    "@backstage/backend-plugin-api" "^0.6.8-next.3"
+    "@backstage/backend-tasks" "^0.5.13-next.3"
     "@backstage/config" "^1.1.1"
     "@backstage/errors" "^1.2.3"
     "@backstage/plugin-permission-common" "^0.7.10"
@@ -3358,19 +3377,19 @@
     winston "^3.2.1"
 
 "@backstage/plugin-search-backend@^1.4.8-next.2":
-  version "1.4.8-next.2"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-search-backend/-/plugin-search-backend-1.4.8-next.2.tgz#1286e962997551e45c3d46b9f89813377cf848b8"
-  integrity sha512-SzvL5ta81tY/nqXJJ/h/S7dOyhKsa095L+A+sc8+HVXTTUnx1E+5OyHHpoNG/XncovpmWAScM7MD1HegInqXyQ==
+  version "1.4.8-next.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-search-backend/-/plugin-search-backend-1.4.8-next.3.tgz#be02b2caa2e4610dc7e40fdea93fb85772b37827"
+  integrity sha512-dOVT1tTR8Ordke/G5Zfa+FkhpwJgkQb6btJPTPYrY5JcTRDSzDrXgqef1fm9lrjpn3+vKxX9NOxJ5zbC7531HA==
   dependencies:
-    "@backstage/backend-common" "^0.20.0-next.2"
-    "@backstage/backend-openapi-utils" "^0.1.1-next.2"
-    "@backstage/backend-plugin-api" "^0.6.8-next.2"
+    "@backstage/backend-common" "^0.20.0-next.3"
+    "@backstage/backend-openapi-utils" "^0.1.1-next.3"
+    "@backstage/backend-plugin-api" "^0.6.8-next.3"
     "@backstage/config" "^1.1.1"
     "@backstage/errors" "^1.2.3"
-    "@backstage/plugin-auth-node" "^0.4.2-next.2"
+    "@backstage/plugin-auth-node" "^0.4.2-next.3"
     "@backstage/plugin-permission-common" "^0.7.10"
-    "@backstage/plugin-permission-node" "^0.7.19-next.2"
-    "@backstage/plugin-search-backend-node" "^1.2.12-next.2"
+    "@backstage/plugin-permission-node" "^0.7.19-next.3"
+    "@backstage/plugin-search-backend-node" "^1.2.12-next.3"
     "@backstage/plugin-search-common" "^1.2.8"
     "@backstage/types" "^1.1.1"
     "@types/express" "^4.17.6"
