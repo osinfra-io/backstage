@@ -4,15 +4,8 @@
 name: Docker Build and Push
 
 on:
-  workflow_dispatch:
-  push:
-    paths:
-      - global/app/backstage/**
-    branches:
-      - main
-  pull_request:
-    paths:
-      - global/app/backstage/**
+  release:
+    types: [published]
 
 permissions:
   contents: read
