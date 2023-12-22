@@ -71,4 +71,4 @@ jobs:
 
       - name: Test Docker Image
         run: |
-          docker run --rm ghcr.io/osinfra-io/ubuntu:test
+          docker run --rm ghcr.io/osinfra-io/backstage:test
