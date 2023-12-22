@@ -1,29 +1,26 @@
-# This is based on the Backstage deployment guide:
-# https://backstage.io/docs/deployment/docker
-
-name: Docker Build and Push
+name: Docker Build and Test
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - global/app/backstage/**
 
 permissions:
   contents: read
   packages: write
 
 jobs:
-  build-and-push-docker-image:
-    name: Build and push to GitHub Container Registry
-    if: github.actor != 'dependabot[bot]' && github.actor != 'osinfra-sa'
+  build-and-test-docker-image:
+    name: Build and Test Docker Image
+    if: ${{ github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
-    env:
-      VERSION: ${{ github.event.release.tag_name }}
 
     steps:
       # Checkout
       # https://github.com/marketplace/actions/checkout
 
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4.1.1
 
       # Setup Node
@@ -51,24 +48,27 @@ jobs:
       # Docker Login
       # https://github.com/marketplace/actions/docker-login
 
-      - name: Login to Github Container Registry
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v3.0.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Build and push Docker images
+      # Build and Test Docker images
       # https://github.com/marketplace/actions/build-and-push-docker-images
 
-      - name: Build and push
+      - name: Build Docker Image
         uses: docker/build-push-action@v5.1.0
         with:
           context: './global/app/backstage'
-          file: ./global/app/backstage/packages/backend/Dockerfile
-          cache-from: type=registry,ref=ghcr.io/osinfra-io/backstage:latest
-          cache-to: type=inline
-          push: true
+          file: './global/app/backstage/packages/backend/Dockerfile'
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          load: true
           tags: |
-            ghcr.io/osinfra-io/backstage:${{ env.VERSION }}
-            ghcr.io/osinfra-io/backstage:latest
+            ghcr.io/osinfra-io/backstage:test
+
+      - name: Test Docker Image
+        run: |
+          docker run --rm ghcr.io/osinfra-io/ubuntu:test
