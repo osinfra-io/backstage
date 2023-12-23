@@ -74,8 +74,8 @@ jobs:
         with:
           context: './global/app/backstage'
           file: ./global/app/backstage/packages/backend/Dockerfile
-          cache-from: type=registry,ref=ghcr.io/osinfra-io/backstage:latest
-          cache-to: type=inline
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           push: true
           tags: |
             ${{ github.event_name == 'pull_request' && format('ghcr.io/osinfra-io/backstage:{0}', github.sha) || '' }}
