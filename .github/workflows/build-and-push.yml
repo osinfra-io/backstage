@@ -4,8 +4,15 @@
 name: Docker Build and Push
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+  push:
+    paths:
+      - global/app/backstage/**
+    branches:
+      - main
+  pull_request:
+    paths:
+      - global/app/backstage/**
 
 permissions:
   contents: read
@@ -17,7 +24,8 @@ jobs:
     if: github.actor != 'dependabot[bot]' && github.actor != 'osinfra-sa'
     runs-on: ubuntu-latest
     env:
-      VERSION: ${{ github.event.release.tag_name }}
+      # The release version of Backstage plus our own versioning
+      VERSION: v1.21.1-01
 
     steps:
       # Checkout
@@ -70,5 +78,5 @@ jobs:
           cache-to: type=inline
           push: true
           tags: |
-            ghcr.io/osinfra-io/backstage:${{ env.VERSION }}
-            ghcr.io/osinfra-io/backstage:latest
+            ${{ github.event_name == 'pull_request' && format('ghcr.io/osinfra-io/backstage:{0}', github.sha) || '' }}
+            ${{ github.event_name == 'push' && format('ghcr.io/osinfra-io/backstage:{0}', env.VERSION) || '' }}

@@ -1,5 +1,5 @@
 app:
-  title: Open Source Infrastructure (as Code) Backstage Application
+  title: Open Source Infrastructure (as Code) Backstage App
   baseUrl: http://localhost:3000
 
 organization:
