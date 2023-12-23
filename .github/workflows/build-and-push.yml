@@ -74,9 +74,14 @@ jobs:
         with:
           context: './global/app/backstage'
           file: ./global/app/backstage/packages/backend/Dockerfile
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: |
+            ${{ github.event_name == 'pull_request' && 'type=gha' || '' }}
+            ${{ github.event_name == 'push' && 'type=registry,ref=ghcr.io/osinfra-io/backstage:latest' || '' }}
+          cache-to: |
+            ${{ github.event_name == 'pull_request' && 'type=gha,mode=max' || '' }}
+            ${{ github.event_name == 'push' && 'type=inline' || '' }}
           push: true
           tags: |
             ${{ github.event_name == 'pull_request' && format('ghcr.io/osinfra-io/backstage:{0}', github.sha) || '' }}
             ${{ github.event_name == 'push' && format('ghcr.io/osinfra-io/backstage:{0}', env.VERSION) || '' }}
+            ${{ github.event_name == 'push' && 'ghcr.io/osinfra-io/backstage:latest' || '' }}
