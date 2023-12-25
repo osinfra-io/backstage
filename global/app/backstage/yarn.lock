@@ -2173,20 +2173,10 @@
     winston "^3.2.1"
     zod "^3.21.4"
 
-"@backstage/catalog-client@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0.tgz#ae6454bc068709aa3928da5321246e853b209074"
-  integrity sha512-hocxKg7nK8EGUeec+VbM/BglCAj8PDTAhfu/zcIyEatiCsAng1yF6qCo9p/jhoxN8slngM9oLnWRjCHfvXOV+w==
-  dependencies:
-    "@backstage/catalog-model" "^1.4.3"
-    "@backstage/errors" "^1.2.3"
-    cross-fetch "^4.0.0"
-    uri-template "^2.0.0"
-
-"@backstage/catalog-client@^1.5.0-next.1":
-  version "1.5.0-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.0-next.1.tgz#7442450733ef7f67f9f23e36e2e4816e2ea8b559"
-  integrity sha512-IzrHKKlL53xInGHM3um/s7rpj7WLpzg+AngdIu3b6E1oK5AJtVF39Ooq4nK7+89BqH7AeB/pGOP3glvsK9QS4Q==
+"@backstage/catalog-client@^1.5.0", "@backstage/catalog-client@^1.5.0-next.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@backstage/catalog-client/-/catalog-client-1.5.1.tgz#159c2442cbd3aefecb36ca6c61aec8a3355359a8"
+  integrity sha512-GWTwRaJd1i9f5OHSkt4yf3jxohJv5xvqZei1anFxjZvXfxFTa0zG6kWW43qomRiaKsbegohnM7HWVOOgpJ6Azw==
   dependencies:
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/errors" "^1.2.3"
