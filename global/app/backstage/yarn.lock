@@ -3029,7 +3029,7 @@
     zod "^3.22.4"
     zod-to-json-schema "^3.20.4"
 
-"@backstage/plugin-permission-react@^0.4.18":
+"@backstage/plugin-permission-react@^0.4.18", "@backstage/plugin-permission-react@^0.4.18-next.1":
   version "0.4.18"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-permission-react/-/plugin-permission-react-0.4.18.tgz#4339f4738e7991858d7d599e7c9802f9bb38e408"
   integrity sha512-KU8kFiPM/lODGlGLVzite9hIf9nh8MAToqZamtgsyEQF/omkPWJ24rVqo4XW01dmjm4jUJi3nGIzXZoo5l5ysQ==
