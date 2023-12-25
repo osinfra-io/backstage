@@ -2846,16 +2846,7 @@
     yn "^4.0.0"
     zod "^3.21.4"
 
-"@backstage/plugin-catalog-common@^1.0.18":
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-common/-/plugin-catalog-common-1.0.18.tgz#c60bc17ac6cf7c112713c9adc2a9eca6c08e0a09"
-  integrity sha512-k8EQHv7x6ZmJlkyrC3cQByyiUh/mBxM83LbZcGDVR0WZw2+yP23rV3+NGMYuFW6P9c8jL47YuRFoqQ8FkmDs0Q==
-  dependencies:
-    "@backstage/catalog-model" "^1.4.3"
-    "@backstage/plugin-permission-common" "^0.7.10"
-    "@backstage/plugin-search-common" "^1.2.8"
-
-"@backstage/plugin-catalog-common@^1.0.19":
+"@backstage/plugin-catalog-common@^1.0.18", "@backstage/plugin-catalog-common@^1.0.19":
   version "1.0.19"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-common/-/plugin-catalog-common-1.0.19.tgz#ebbc6c46a1234db8f4d8a43bdf13559d462a8b51"
   integrity sha512-Q8Wrber/sUg8Y62KovKH99TfdQT2ss67Z49jSxegXFZr8hquaAv58HUPfuZHuKKj8LZ+f6n7LfKJCXUS6rAShA==
@@ -3022,15 +3013,16 @@
     react-use "^17.2.4"
 
 "@backstage/plugin-org@^0.6.18-next.2":
-  version "0.6.18-next.3"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-org/-/plugin-org-0.6.18-next.3.tgz#081d38bdd0c38d35fbc46b707309de83ac488bdc"
-  integrity sha512-JzO6v7iI/ZwWpIVSEfbD7eDI9VMVtaVOQWGKmg9IC47+1fHZjTxyDaz1huW7ZKcZ2HLQYHhcM3RQ7nfPB4O9UQ==
+  version "0.6.18"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-org/-/plugin-org-0.6.18.tgz#dfd752d439d60e861f0e04e1b4fad071e6f29d0b"
+  integrity sha512-HV1MQN8vldDicnhhGdicizMBQFSs1fNaqSDgtyvDVVo1wlHUr+LmoblzsVIN6Dapn8mXWaUbCbxaMJLPU0EGHA==
   dependencies:
     "@backstage/catalog-model" "^1.4.3"
-    "@backstage/core-components" "^0.13.9-next.3"
-    "@backstage/core-plugin-api" "^1.8.1-next.1"
-    "@backstage/plugin-catalog-react" "^1.9.2-next.3"
-    "@backstage/theme" "^0.5.0-next.1"
+    "@backstage/core-components" "^0.13.9"
+    "@backstage/core-plugin-api" "^1.8.1"
+    "@backstage/plugin-catalog-common" "^1.0.19"
+    "@backstage/plugin-catalog-react" "^1.9.2"
+    "@backstage/theme" "^0.5.0"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
     "@material-ui/lab" "4.0.0-alpha.61"
