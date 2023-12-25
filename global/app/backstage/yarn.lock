@@ -2008,15 +2008,15 @@
     to-fast-properties "^2.0.0"
 
 "@backstage/app-defaults@^1.4.6-next.2":
-  version "1.4.6-next.3"
-  resolved "https://registry.yarnpkg.com/@backstage/app-defaults/-/app-defaults-1.4.6-next.3.tgz#6a7a5c5d6a9ef2e4bc8e8e0ac167ee6810f00a64"
-  integrity sha512-AUsK2L8wfh70chsVt9z83gsyWtfxKZy3XN3lli0TgR3kZukAv1M3lJFe20+5FJOBaRp0YJNihBu9WnlQlPXjNQ==
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@backstage/app-defaults/-/app-defaults-1.4.6.tgz#84a7954b41978862ecc53e61e4f8be4cf91dd72c"
+  integrity sha512-dKyQHxe03Lntf1OuFgA0lcyL2GLoGIUMMozEhRBgKnvk5Q6ZlKK/gY8cr5JPsBTi4m0A+ZHUajBWRKqWwy929w==
   dependencies:
-    "@backstage/core-app-api" "^1.11.2-next.1"
-    "@backstage/core-components" "^0.13.9-next.3"
-    "@backstage/core-plugin-api" "^1.8.1-next.1"
-    "@backstage/plugin-permission-react" "^0.4.18-next.1"
-    "@backstage/theme" "^0.5.0-next.1"
+    "@backstage/core-app-api" "^1.11.2"
+    "@backstage/core-components" "^0.13.9"
+    "@backstage/core-plugin-api" "^1.8.1"
+    "@backstage/plugin-permission-react" "^0.4.18"
+    "@backstage/theme" "^0.5.0"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
 
