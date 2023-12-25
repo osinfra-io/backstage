@@ -3640,14 +3640,14 @@
     winston "^3.2.1"
 
 "@backstage/plugin-techdocs-react@^1.1.14-next.2", "@backstage/plugin-techdocs-react@^1.1.14-next.3":
-  version "1.1.14-next.3"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-react/-/plugin-techdocs-react-1.1.14-next.3.tgz#b24bb99c4ee179c64e620ff884ab772dbbcc276f"
-  integrity sha512-vhi59JeBVo7tOJ1TmrgBVIEcQoOa/iMUtChCvT3PPhBg1rpHNxYI9cij0a0OiBuGOuJfGkGTlpJV6cMZyk9lmg==
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-react/-/plugin-techdocs-react-1.1.14.tgz#5d39630869d28729d6e6422acfa9a4f6d47ecf99"
+  integrity sha512-nb5E/oPCVw14Uj8VtUEi5p3HI5Xk8WLJj4NnW2YxsJ2Nj+baWn5eh2jf+GBZ7qYyiVDoxFFgc1czx9xYaAMn3w==
   dependencies:
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/config" "^1.1.1"
-    "@backstage/core-components" "^0.13.9-next.3"
-    "@backstage/core-plugin-api" "^1.8.1-next.1"
+    "@backstage/core-components" "^0.13.9"
+    "@backstage/core-plugin-api" "^1.8.1"
     "@backstage/version-bridge" "^1.0.7"
     "@material-ui/core" "^4.12.2"
     "@material-ui/lab" "4.0.0-alpha.61"
