@@ -2008,15 +2008,15 @@
     to-fast-properties "^2.0.0"
 
 "@backstage/app-defaults@^1.4.6-next.2":
-  version "1.4.6-next.3"
-  resolved "https://registry.yarnpkg.com/@backstage/app-defaults/-/app-defaults-1.4.6-next.3.tgz#6a7a5c5d6a9ef2e4bc8e8e0ac167ee6810f00a64"
-  integrity sha512-AUsK2L8wfh70chsVt9z83gsyWtfxKZy3XN3lli0TgR3kZukAv1M3lJFe20+5FJOBaRp0YJNihBu9WnlQlPXjNQ==
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@backstage/app-defaults/-/app-defaults-1.4.6.tgz#84a7954b41978862ecc53e61e4f8be4cf91dd72c"
+  integrity sha512-dKyQHxe03Lntf1OuFgA0lcyL2GLoGIUMMozEhRBgKnvk5Q6ZlKK/gY8cr5JPsBTi4m0A+ZHUajBWRKqWwy929w==
   dependencies:
-    "@backstage/core-app-api" "^1.11.2-next.1"
-    "@backstage/core-components" "^0.13.9-next.3"
-    "@backstage/core-plugin-api" "^1.8.1-next.1"
-    "@backstage/plugin-permission-react" "^0.4.18-next.1"
-    "@backstage/theme" "^0.5.0-next.1"
+    "@backstage/core-app-api" "^1.11.2"
+    "@backstage/core-components" "^0.13.9"
+    "@backstage/core-plugin-api" "^1.8.1"
+    "@backstage/plugin-permission-react" "^0.4.18"
+    "@backstage/theme" "^0.5.0"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
 
@@ -3082,7 +3082,7 @@
     zod "^3.21.4"
     zod-to-json-schema "^3.20.4"
 
-"@backstage/plugin-permission-react@^0.4.18":
+"@backstage/plugin-permission-react@^0.4.18", "@backstage/plugin-permission-react@^0.4.18-next.1":
   version "0.4.18"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-permission-react/-/plugin-permission-react-0.4.18.tgz#4339f4738e7991858d7d599e7c9802f9bb38e408"
   integrity sha512-KU8kFiPM/lODGlGLVzite9hIf9nh8MAToqZamtgsyEQF/omkPWJ24rVqo4XW01dmjm4jUJi3nGIzXZoo5l5ysQ==
@@ -3090,19 +3090,6 @@
     "@backstage/config" "^1.1.1"
     "@backstage/core-plugin-api" "^1.8.1"
     "@backstage/plugin-permission-common" "^0.7.11"
-    "@types/react" "^16.13.1 || ^17.0.0"
-    cross-fetch "^4.0.0"
-    react-use "^17.2.4"
-    swr "^2.0.0"
-
-"@backstage/plugin-permission-react@^0.4.18-next.1":
-  version "0.4.18-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-permission-react/-/plugin-permission-react-0.4.18-next.1.tgz#474b584ec2a2552489fc4dddd583431e1b719e49"
-  integrity sha512-NIbK/I2nSYltG8oofSNOeTeMoXAujIrlYn9No/ubw0VFUOSFFe379Cwlxt73q/JqTyj538eMTLssGasbybxczg==
-  dependencies:
-    "@backstage/config" "^1.1.1"
-    "@backstage/core-plugin-api" "^1.8.1-next.1"
-    "@backstage/plugin-permission-common" "^0.7.10"
     "@types/react" "^16.13.1 || ^17.0.0"
     cross-fetch "^4.0.0"
     react-use "^17.2.4"
