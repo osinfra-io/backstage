@@ -6,6 +6,7 @@ variable "cluster_ca_certificate" {
   description = "The cluster CA certificate"
   sensitive   = true
   type        = string
+  default     = null
 }
 
 variable "cluster_endpoint" {
