@@ -30,23 +30,14 @@ terraform {
 # Kubernetes Provider
 # https://registry.terraform.io/providers/hashicorp/kubernetes/latest
 
-# provider "kubernetes" {
-#   cluster_ca_certificate = base64decode(
-#     local.regional.cluster_ca_certificate
-#   )
-#   host  = "https://${local.regional.cluster_endpoint}"
-#   token = data.google_client_config.current.access_token
-# }
-
 provider "kubernetes" {
-  #host                   = var.cluster_endpoint
-  #cluster_ca_certificate = base64decode(var.cluster_ca_cert)
-  exec {
-    command     = "gcloud"
-    api_version = "client.authentication.k8s.io/v1beta1"
-    args        = ["container", "clusters", "get-credentials", "services-us-east1", "--region us-east1", "--project plt-k8s-tfb4-sb"]
-  }
+  # cluster_ca_certificate = base64decode(
+  #   var.cluster_ca_certificate
+  # )
+  host  = "https://${var.cluster_endpoint}"
+  token = data.google_client_config.current.access_token
 }
+
 
 # Google Client Config Data Source
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/client_config
