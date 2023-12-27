@@ -155,7 +155,7 @@ resource "kubernetes_deployment_v1" "backstage" {
 
         container {
           name  = "cloud-sql-proxy"
-          image = "gcr.io/cloudsql-docker/gce-proxy:2.8.1"
+          image = "gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.8.1"
 
           args = [
             "--private-ip",
