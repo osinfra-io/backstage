@@ -31,9 +31,9 @@ terraform {
 # https://registry.terraform.io/providers/hashicorp/kubernetes/latest
 
 provider "kubernetes" {
-  # cluster_ca_certificate = base64decode(
-  #   var.cluster_ca_certificate
-  # )
+  cluster_ca_certificate = base64decode(
+    var.cluster_ca_certificate
+  )
   host  = "https://${var.cluster_endpoint}"
   token = data.google_client_config.current.access_token
 }
