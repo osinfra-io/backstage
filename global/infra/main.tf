@@ -67,7 +67,8 @@ module "project" {
     "container.googleapis.com",
     "iam.googleapis.com",
     "iap.googleapis.com",
-    "monitoring.googleapis.com"
+    "monitoring.googleapis.com",
+    "servicenetworking.googleapis.com"
   ]
 }
 
