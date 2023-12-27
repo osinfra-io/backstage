@@ -34,28 +34,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.1
 
-      # Cache
-      # https://github.com/marketplace/actions/cache
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_ENV
-
-      - name: Setup cache
-        uses: actions/cache@v3.3.2
-        with:
-          path: ${{ env.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-
       # Setup Node
       # https://github.com/marketplace/actions/setup-node-js-environment
 
       - name: Setup Node
         uses: actions/setup-node@v4.0.1
         with:
+          cache: yarn
           node-version: 20.x
           registry-url: https://registry.npmjs.org/
 
