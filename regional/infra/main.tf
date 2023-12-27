@@ -30,7 +30,7 @@ data "terraform_remote_state" "global" {
 # Google Cloud SQL Module (osinfra.io)
 # https://github.com/osinfra-io/terraform-google-cloud-sql
 
-module "cloud_sql_instance" {
+module "cloud_sql" {
   source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=v0.1.2"
 
   count = var.enable_sql_instance ? 1 : 0
@@ -106,7 +106,7 @@ resource "google_sql_database" "this" {
 
   count = var.enable_sql_instance ? 1 : 0
 
-  instance = module.cloud_sql_instance[0].sql_instance
+  instance = module.cloud_sql[0].sql_instance
   name     = "backstage"
   project  = local.global.project_id
 }

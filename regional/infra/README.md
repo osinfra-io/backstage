@@ -16,7 +16,7 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloud_sql_instance"></a> [cloud\_sql\_instance](#module\_cloud\_sql\_instance) | github.com/osinfra-io/terraform-google-cloud-sql//regional | v0.1.2 |
+| <a name="module_cloud_sql"></a> [cloud\_sql](#module\_cloud\_sql) | github.com/osinfra-io/terraform-google-cloud-sql//regional | v0.1.2 |
 
 ## Resources
 
@@ -44,4 +44,5 @@ No requirements.
 | <a name="output_backstage_iap_client_id"></a> [backstage\_iap\_client\_id](#output\_backstage\_iap\_client\_id) | The IAP client ID for Backstage |
 | <a name="output_backstage_iap_client_secret"></a> [backstage\_iap\_client\_secret](#output\_backstage\_iap\_client\_secret) | The IAP client secret for Backstage |
 | <a name="output_project_id"></a> [project\_id](#output\_project\_id) | The project ID |
+| <a name="output_sql_instance"></a> [sql\_instance](#output\_sql\_instance) | SQL instance name |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

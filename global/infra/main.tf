@@ -113,3 +113,12 @@ resource "google_iap_web_iam_binding" "backstage" {
 
   role = "roles/iap.httpsResourceAccessor"
 }
+
+# Service Account Resource
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_service_account
+
+resource "google_service_account" "workload_identity" {
+  account_id   = "backstage"
+  display_name = "Kubernetes Backstage Workload Identity Service Account"
+  project      = module.project.project_id
+}
