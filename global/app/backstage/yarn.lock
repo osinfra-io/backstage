@@ -2925,6 +2925,20 @@
     react-use "^17.2.4"
     yaml "^2.0.0"
 
+"@backstage/plugin-catalog-node@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-node/-/plugin-catalog-node-1.6.0.tgz#88dd8cd729d42b3d54dde4d5eebfda24893b572c"
+  integrity sha512-wcyyAD6gnKqTvDH5PMT6GzTcSj3N7vXHZTKIHWgzAZxkw8IDX9QVEs/QFr+PI1M+M/dlXFfJOG/P1g28lh3KWw==
+  dependencies:
+    "@backstage/backend-plugin-api" "^0.6.8"
+    "@backstage/catalog-client" "^1.5.0"
+    "@backstage/catalog-model" "^1.4.3"
+    "@backstage/errors" "^1.2.3"
+    "@backstage/plugin-catalog-common" "^1.0.19"
+    "@backstage/plugin-permission-common" "^0.7.11"
+    "@backstage/plugin-permission-node" "^0.7.19"
+    "@backstage/types" "^1.1.1"
+
 "@backstage/plugin-catalog-node@^1.6.0-next.3":
   version "1.6.0-next.3"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-node/-/plugin-catalog-node-1.6.0-next.3.tgz#0853273f8b6273f4da785166896733ca3264587f"
@@ -3392,23 +3406,23 @@
     uuid "^8.3.2"
     winston "^3.2.1"
 
-"@backstage/plugin-search-backend-module-techdocs@^0.1.12-next.2", "@backstage/plugin-search-backend-module-techdocs@^0.1.12-next.3":
-  version "0.1.12-next.3"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-search-backend-module-techdocs/-/plugin-search-backend-module-techdocs-0.1.12-next.3.tgz#8c8c4f998edb406d3243e94e478ac0772b52ef35"
-  integrity sha512-mDvGXRUuIAEjxvHproN6xjH2lhPTZG1F2gwEfoRvUrU6ytzYYXAVoucFzwt6SHdMJMv5ObTeZanGgqB6jZayNw==
+"@backstage/plugin-search-backend-module-techdocs@^0.1.12", "@backstage/plugin-search-backend-module-techdocs@^0.1.12-next.2":
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-search-backend-module-techdocs/-/plugin-search-backend-module-techdocs-0.1.12.tgz#e69dcc2c1aece63e5efa9dcfdcf48c73aae1e437"
+  integrity sha512-YbokuK5aOR7jG1RRQRmeWI4ArFsc8Ja8sO48LIAn88Oo/X4ElXV9aNprUe+eoPyoLQVs0XS7wnaA+AqPvtunXw==
   dependencies:
-    "@backstage/backend-common" "^0.20.0-next.3"
-    "@backstage/backend-plugin-api" "^0.6.8-next.3"
-    "@backstage/backend-tasks" "^0.5.13-next.3"
-    "@backstage/catalog-client" "^1.5.0-next.1"
+    "@backstage/backend-common" "^0.20.0"
+    "@backstage/backend-plugin-api" "^0.6.8"
+    "@backstage/backend-tasks" "^0.5.13"
+    "@backstage/catalog-client" "^1.5.0"
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/config" "^1.1.1"
-    "@backstage/plugin-catalog-common" "^1.0.18"
-    "@backstage/plugin-catalog-node" "^1.6.0-next.3"
-    "@backstage/plugin-permission-common" "^0.7.10"
-    "@backstage/plugin-search-backend-node" "^1.2.12-next.3"
-    "@backstage/plugin-search-common" "^1.2.8"
-    "@backstage/plugin-techdocs-node" "^1.11.0-next.3"
+    "@backstage/plugin-catalog-common" "^1.0.19"
+    "@backstage/plugin-catalog-node" "^1.6.0"
+    "@backstage/plugin-permission-common" "^0.7.11"
+    "@backstage/plugin-search-backend-node" "^1.2.12"
+    "@backstage/plugin-search-common" "^1.2.9"
+    "@backstage/plugin-techdocs-node" "^1.11.0"
     lodash "^4.17.21"
     node-fetch "^2.6.7"
     p-limit "^3.1.0"
@@ -3551,22 +3565,22 @@
     react-use "^17.2.4"
 
 "@backstage/plugin-techdocs-backend@^1.9.1-next.2":
-  version "1.9.1-next.3"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-backend/-/plugin-techdocs-backend-1.9.1-next.3.tgz#e773a7e56cacd8a13cf0b98ada55cbf6819ec02f"
-  integrity sha512-9GP71gKBvkz+tzYM+0HPW3l4e5B/Q75exe1D4yDQhasJGRFxBJPKDHNYma5QmXgqfspWVJu3qIIQ/4R7JWlNMw==
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-backend/-/plugin-techdocs-backend-1.9.1.tgz#e36cd743ac4ab9caa33f91097952f8c98b09808b"
+  integrity sha512-5jJnEaANjWz936UkVak3Jki5lS6tYVmlHB4OXonvgs7cEQAr37zg4JJLHZrf3CtMuz2vjXmAAxwBEV7AddAKMA==
   dependencies:
-    "@backstage/backend-common" "^0.20.0-next.3"
-    "@backstage/backend-plugin-api" "^0.6.8-next.3"
-    "@backstage/catalog-client" "^1.5.0-next.1"
+    "@backstage/backend-common" "^0.20.0"
+    "@backstage/backend-plugin-api" "^0.6.8"
+    "@backstage/catalog-client" "^1.5.0"
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/config" "^1.1.1"
     "@backstage/errors" "^1.2.3"
-    "@backstage/integration" "^1.8.0-next.1"
-    "@backstage/plugin-catalog-common" "^1.0.18"
-    "@backstage/plugin-permission-common" "^0.7.10"
-    "@backstage/plugin-search-backend-module-techdocs" "^0.1.12-next.3"
-    "@backstage/plugin-search-common" "^1.2.8"
-    "@backstage/plugin-techdocs-node" "^1.11.0-next.3"
+    "@backstage/integration" "^1.8.0"
+    "@backstage/plugin-catalog-common" "^1.0.19"
+    "@backstage/plugin-permission-common" "^0.7.11"
+    "@backstage/plugin-search-backend-module-techdocs" "^0.1.12"
+    "@backstage/plugin-search-common" "^1.2.9"
+    "@backstage/plugin-techdocs-node" "^1.11.0"
     "@types/express" "^4.17.6"
     dockerode "^3.3.1"
     express "^4.17.1"
@@ -3597,10 +3611,10 @@
     photoswipe "^5.3.7"
     react-use "^17.2.4"
 
-"@backstage/plugin-techdocs-node@^1.11.0-next.3":
-  version "1.11.0-next.3"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-node/-/plugin-techdocs-node-1.11.0-next.3.tgz#1f65caab5a67af69525c36d7dc4aa81d1a5e37ae"
-  integrity sha512-aHEyCAUT+kh2Lcb/QrRWxyzjaT6v7vxSWE3Md+oDl1VBupvcXDUABSdBWmOfXSB6HpMFaUfve0olkBSngdVU0Q==
+"@backstage/plugin-techdocs-node@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-node/-/plugin-techdocs-node-1.11.0.tgz#9dd3f4eb0b7e4d56a08cb01cab3baec3ccef135a"
+  integrity sha512-RtOS5wJ4mFrbyJaiaU4UghXi84XT7tk3ZXI0PHrKp8Wqqj77owEhoej3NijhRxHyqL11l73l2XG/HaUsApYXtw==
   dependencies:
     "@aws-sdk/client-s3" "^3.350.0"
     "@aws-sdk/credential-providers" "^3.350.0"
@@ -3608,14 +3622,14 @@
     "@aws-sdk/types" "^3.347.0"
     "@azure/identity" "^4.0.0"
     "@azure/storage-blob" "^12.5.0"
-    "@backstage/backend-common" "^0.20.0-next.3"
-    "@backstage/backend-plugin-api" "^0.6.8-next.3"
+    "@backstage/backend-common" "^0.20.0"
+    "@backstage/backend-plugin-api" "^0.6.8"
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/config" "^1.1.1"
     "@backstage/errors" "^1.2.3"
-    "@backstage/integration" "^1.8.0-next.1"
+    "@backstage/integration" "^1.8.0"
     "@backstage/integration-aws-node" "^0.1.8"
-    "@backstage/plugin-search-common" "^1.2.8"
+    "@backstage/plugin-search-common" "^1.2.9"
     "@google-cloud/storage" "^7.0.0"
     "@smithy/node-http-handler" "^2.1.7"
     "@trendyol-js/openstack-swift-sdk" "^0.0.6"
