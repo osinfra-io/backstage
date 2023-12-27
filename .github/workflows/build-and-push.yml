@@ -23,6 +23,9 @@ jobs:
     name: Build and push to GitHub Container Registry
     if: github.actor != 'dependabot[bot]' && github.actor != 'osinfra-sa'
     runs-on: ubuntu-latest
+    env:
+      # The release version of Backstage plus our own versioning
+      VERSION: v1.21.1-01
 
     steps:
       # Checkout
@@ -37,16 +40,23 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4.0.1
         with:
+          cache: yarn
+          cache-dependency-path: global/app/backstage/yarn.lock
           node-version: 20.x
           registry-url: https://registry.npmjs.org/
 
       - name: Yarn install
         working-directory: global/app/backstage
         run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --prefer-offline
           yarn tsc
           yarn build:backend --config ../../app-config.yaml
 
+      # Docker Buildx
+      # https://github.com/marketplace/actions/docker-setup-buildx
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3.0.0
 
       # Docker Login
       # https://github.com/marketplace/actions/docker-login
@@ -58,12 +68,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # BuildX configuration for caching
-      # https://github.com/marketplace/actions/docker-setup-buildx
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3.0.0
-
       # Build and push Docker images
       # https://github.com/marketplace/actions/build-and-push-docker-images
 
@@ -72,8 +76,14 @@ jobs:
         with:
           context: './global/app/backstage'
           file: ./global/app/backstage/packages/backend/Dockerfile
+          cache-from: |
+            ${{ github.event_name == 'pull_request' && 'type=gha' || '' }}
+            ${{ github.event_name == 'push' && 'type=registry,ref=ghcr.io/osinfra-io/backstage:latest' || '' }}
+          cache-to: |
+            ${{ github.event_name == 'pull_request' && 'type=gha,mode=max' || '' }}
+            ${{ github.event_name == 'push' && 'type=inline' || '' }}
           push: true
-          cache-from: type=registry,ref=ghcr.io/osinfra-io/backstage:buildcache
-          cache-to: type=registry,ref=ghcr.io/osinfra-io/backstage:buildcache,mode=max
           tags: |
-            ghcr.io/osinfra-io/backstage:latest
+            ${{ github.event_name == 'pull_request' && 'ghcr.io/osinfra-io/backstage:test' || '' }}
+            ${{ github.event_name == 'push' && format('ghcr.io/osinfra-io/backstage:{0}', env.VERSION) || '' }}
+            ${{ github.event_name == 'push' && 'ghcr.io/osinfra-io/backstage:latest' || '' }}

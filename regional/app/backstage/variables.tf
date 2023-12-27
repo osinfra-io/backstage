@@ -1,6 +1,18 @@
 # Input Variables
 # https://www.terraform.io/language/values/variables
 
+
+variable "cluster_ca_certificate" {
+  description = "The cluster CA certificate"
+  sensitive   = true
+  type        = string
+}
+
+variable "cluster_endpoint" {
+  description = "The cluster endpoint"
+  type        = string
+}
+
 variable "environment" {
   description = "The environment suffix for example: `sb` (Sandbox), `nonprod` (Non-Production), `prod` (Production)"
   type        = string

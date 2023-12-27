@@ -16,3 +16,8 @@ output "project_id" {
   description = "The project ID"
   value       = local.global.project_id
 }
+
+output "sql_instance" {
+  description = "SQL instance name"
+  value       = length(module.cloud_sql) > 0 ? module.cloud_sql[0].sql_instance : null
+}
