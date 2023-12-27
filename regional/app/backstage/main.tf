@@ -97,7 +97,7 @@ resource "kubernetes_deployment_v1" "backstage" {
         }
       }
       spec {
-        service_account_name = "backstage"
+        # service_account_name = "backstage"
 
         image_pull_secrets {
           name = kubernetes_secret_v1.github_container_registry_key.metadata.0.name
