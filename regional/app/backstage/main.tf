@@ -167,7 +167,7 @@ resource "kubernetes_deployment_v1" "backstage" {
 
           command = [
             "/cloud_sql_proxy",
-            "-instances=${local.regional.project_id}:${var.region}:${local.regional.sql_instances["backstage"]}=tcp:5432",
+            "-instances=${local.regional.project_id}:${var.region}:${local.regional.sql_instance}=tcp:5432",
             # "-ip_address_types=PRIVATE",
             "-log_debug_stdout=true"
           ]
