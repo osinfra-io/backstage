@@ -58,13 +58,14 @@ data "google_client_config" "current" {
 # https://www.terraform.io/language/state/remote-state-data
 
 data "terraform_remote_state" "regional" {
-  backend   = "gcs"
-  workspace = "${var.region}-infra-${var.environment}"
+  backend = "gcs"
 
   config = {
     bucket = var.remote_bucket
     prefix = "backstage"
   }
+
+  workspace = "${var.region}-${local.workspace_environment}"
 }
 
 # Google SQL User Resource
