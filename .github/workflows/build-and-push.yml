@@ -62,7 +62,7 @@ jobs:
       - name: Yarn install
         working-directory: global/app/backstage
         run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --prefer-offline
           yarn tsc
           yarn build:backend --config ../../app-config.yaml
 
