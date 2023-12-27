@@ -155,13 +155,13 @@ resource "kubernetes_deployment_v1" "backstage" {
 
         container {
           name  = "cloud-sql-proxy"
-          image = "gcr.io/cloudsql-docker/gce-proxy:1.32.0"
+          image = "gcr.io/cloudsql-docker/gce-proxy:2.8.1"
 
-          command = [
-            "/cloud_sql_proxy",
-            "-instances=${local.regional.project_id}:${var.region}:${local.regional.sql_instance}=tcp:5432",
-            # "-ip_address_types=PRIVATE",
-            "-log_debug_stdout=true"
+          args = [
+            "--private-ip",
+            "--structured-logs",
+            "--port=5432",
+            "${local.regional.project_id}:${var.region}:${local.regional.sql_instance}"
           ]
         }
       }
