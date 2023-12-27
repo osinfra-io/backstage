@@ -19,5 +19,5 @@ output "project_id" {
 
 output "sql_instance" {
   description = "SQL instance name"
-  value       = module.cloud_sql[0].sql_instance
+  value       = length(module.cloud_sql) > 0 ? module.cloud_sql[0].sql_instance : null
 }
