@@ -3177,7 +3177,7 @@
     zen-observable "^0.10.0"
     zod "^3.22.4"
 
-"@backstage/plugin-scaffolder-common@^1.4.3", "@backstage/plugin-scaffolder-common@^1.4.4":
+"@backstage/plugin-scaffolder-common@^1.4.4":
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-scaffolder-common/-/plugin-scaffolder-common-1.4.4.tgz#f5f94dce9b1488e3a6c105b724705dbf57330e9e"
   integrity sha512-VgIsvXHJiYVF8j1krK3zm8b6Ba79ReZlylZPMaA0P7pt7BKZTydnsf4BGm8RMfe+lZa6bWme768fzgdXSLvAaA==
@@ -3329,22 +3329,22 @@
     winston "^3.2.1"
 
 "@backstage/plugin-search-backend-module-techdocs@^0.1.12-next.2", "@backstage/plugin-search-backend-module-techdocs@^0.1.12-next.3":
-  version "0.1.12-next.3"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-search-backend-module-techdocs/-/plugin-search-backend-module-techdocs-0.1.12-next.3.tgz#8c8c4f998edb406d3243e94e478ac0772b52ef35"
-  integrity sha512-mDvGXRUuIAEjxvHproN6xjH2lhPTZG1F2gwEfoRvUrU6ytzYYXAVoucFzwt6SHdMJMv5ObTeZanGgqB6jZayNw==
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-search-backend-module-techdocs/-/plugin-search-backend-module-techdocs-0.1.12.tgz#e69dcc2c1aece63e5efa9dcfdcf48c73aae1e437"
+  integrity sha512-YbokuK5aOR7jG1RRQRmeWI4ArFsc8Ja8sO48LIAn88Oo/X4ElXV9aNprUe+eoPyoLQVs0XS7wnaA+AqPvtunXw==
   dependencies:
-    "@backstage/backend-common" "^0.20.0-next.3"
-    "@backstage/backend-plugin-api" "^0.6.8-next.3"
-    "@backstage/backend-tasks" "^0.5.13-next.3"
-    "@backstage/catalog-client" "^1.5.0-next.1"
+    "@backstage/backend-common" "^0.20.0"
+    "@backstage/backend-plugin-api" "^0.6.8"
+    "@backstage/backend-tasks" "^0.5.13"
+    "@backstage/catalog-client" "^1.5.0"
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/config" "^1.1.1"
-    "@backstage/plugin-catalog-common" "^1.0.18"
-    "@backstage/plugin-catalog-node" "^1.6.0-next.3"
-    "@backstage/plugin-permission-common" "^0.7.10"
-    "@backstage/plugin-search-backend-node" "^1.2.12-next.3"
-    "@backstage/plugin-search-common" "^1.2.8"
-    "@backstage/plugin-techdocs-node" "^1.11.0-next.3"
+    "@backstage/plugin-catalog-common" "^1.0.19"
+    "@backstage/plugin-catalog-node" "^1.6.0"
+    "@backstage/plugin-permission-common" "^0.7.11"
+    "@backstage/plugin-search-backend-node" "^1.2.12"
+    "@backstage/plugin-search-common" "^1.2.9"
+    "@backstage/plugin-techdocs-node" "^1.11.0"
     lodash "^4.17.21"
     node-fetch "^2.6.7"
     p-limit "^3.1.0"
@@ -3513,10 +3513,10 @@
     photoswipe "^5.3.7"
     react-use "^17.2.4"
 
-"@backstage/plugin-techdocs-node@^1.11.0-next.3":
-  version "1.11.0-next.3"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-node/-/plugin-techdocs-node-1.11.0-next.3.tgz#1f65caab5a67af69525c36d7dc4aa81d1a5e37ae"
-  integrity sha512-aHEyCAUT+kh2Lcb/QrRWxyzjaT6v7vxSWE3Md+oDl1VBupvcXDUABSdBWmOfXSB6HpMFaUfve0olkBSngdVU0Q==
+"@backstage/plugin-techdocs-node@^1.11.0", "@backstage/plugin-techdocs-node@^1.11.0-next.3":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-techdocs-node/-/plugin-techdocs-node-1.11.0.tgz#9dd3f4eb0b7e4d56a08cb01cab3baec3ccef135a"
+  integrity sha512-RtOS5wJ4mFrbyJaiaU4UghXi84XT7tk3ZXI0PHrKp8Wqqj77owEhoej3NijhRxHyqL11l73l2XG/HaUsApYXtw==
   dependencies:
     "@aws-sdk/client-s3" "^3.350.0"
     "@aws-sdk/credential-providers" "^3.350.0"
@@ -3524,14 +3524,14 @@
     "@aws-sdk/types" "^3.347.0"
     "@azure/identity" "^4.0.0"
     "@azure/storage-blob" "^12.5.0"
-    "@backstage/backend-common" "^0.20.0-next.3"
-    "@backstage/backend-plugin-api" "^0.6.8-next.3"
+    "@backstage/backend-common" "^0.20.0"
+    "@backstage/backend-plugin-api" "^0.6.8"
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/config" "^1.1.1"
     "@backstage/errors" "^1.2.3"
-    "@backstage/integration" "^1.8.0-next.1"
+    "@backstage/integration" "^1.8.0"
     "@backstage/integration-aws-node" "^0.1.8"
-    "@backstage/plugin-search-common" "^1.2.8"
+    "@backstage/plugin-search-common" "^1.2.9"
     "@google-cloud/storage" "^7.0.0"
     "@smithy/node-http-handler" "^2.1.7"
     "@trendyol-js/openstack-swift-sdk" "^0.0.6"
