@@ -105,7 +105,7 @@ resource "kubernetes_deployment_v1" "backstage" {
 
         container {
           name  = "backstage"
-          image = "ghcr.io/osinfra-io/backstage:latest"
+          image = "ghcr.io/osinfra-io/backstage:66f9a99bb1ad3265a55ccf309aad8c82e9ef0c67"
 
           port {
             name           = "http"
