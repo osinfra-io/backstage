@@ -34,6 +34,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.1
 
+      # Cache
+      # https://github.com/marketplace/actions/cache
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Setup cache
+        uses: actions/cache@v3.3.2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+
       # Setup Node
       # https://github.com/marketplace/actions/setup-node-js-environment
 
