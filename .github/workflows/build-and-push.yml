@@ -84,6 +84,6 @@ jobs:
             ${{ github.event_name == 'push' && 'type=inline' || '' }}
           push: true
           tags: |
-            ${{ github.event_name == 'pull_request' && format('ghcr.io/osinfra-io/backstage:{0}', github.sha) || '' }}
+            ${{ github.event_name == 'pull_request' && 'ghcr.io/osinfra-io/backstage:test' || '' }}
             ${{ github.event_name == 'push' && format('ghcr.io/osinfra-io/backstage:{0}', env.VERSION) || '' }}
             ${{ github.event_name == 'push' && 'ghcr.io/osinfra-io/backstage:latest' || '' }}
