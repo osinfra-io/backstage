@@ -1,6 +1,11 @@
 # Input Variables
 # https://www.terraform.io/language/values/variables
 
+variable "backstage_image_tag" {
+  description = "The image tag for Backstage"
+  type        = string
+  default     = "test"
+}
 
 variable "cluster_ca_certificate" {
   description = "The cluster CA certificate"
