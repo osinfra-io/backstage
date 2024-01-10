@@ -2417,14 +2417,14 @@
     "@backstage/version-bridge" "^1.0.7"
     "@types/react" "^16.13.1 || ^17.0.0"
 
-"@backstage/core-compat-api@^0.1.1-next.1":
-  version "0.1.1-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/core-compat-api/-/core-compat-api-0.1.1-next.1.tgz#3a51b569912a66a87de64b12448ca2a70c8ca0f0"
-  integrity sha512-XPue7int93fodoaf2E0bZN1EkNS8W6e4/4+3EfbMuiIxOnCRUq5/L+s7Q6yx2qR0TvI8A6IyPL2LhjdeEg/BxQ==
+"@backstage/core-compat-api@^0.1.1-next.2":
+  version "0.1.1-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/core-compat-api/-/core-compat-api-0.1.1-next.2.tgz#5f1f125d562a5173146f1d13a947f1ac7d7feaff"
+  integrity sha512-pD/ppeqecGeiUVCCDZMCor9xtHkTC28rgVQOsK1SPL3AzSeu3t1c9wYLApvQ5ItYGa9it3HFgIM/Z6FOo1tdjg==
   dependencies:
     "@backstage/core-app-api" "^1.11.3-next.0"
     "@backstage/core-plugin-api" "^1.8.2-next.0"
-    "@backstage/frontend-plugin-api" "^0.4.1-next.1"
+    "@backstage/frontend-plugin-api" "^0.4.1-next.2"
     "@backstage/version-bridge" "^1.0.7"
     "@types/react" "^16.13.1 || ^17.0.0"
 
@@ -2583,10 +2583,10 @@
     zod "^3.22.4"
     zod-to-json-schema "^3.21.4"
 
-"@backstage/frontend-plugin-api@^0.4.1-next.1":
-  version "0.4.1-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/frontend-plugin-api/-/frontend-plugin-api-0.4.1-next.1.tgz#1b4af4905226cc29eb7f3cef3bd9f08ffc857f2e"
-  integrity sha512-lVfiy1SZSi1LIcQC2cs1VPDdXhChiOVq430CbDkSxpRSUtero9brnK2LYArX8C7x7Wl82hlWREZIlQmqj13V8Q==
+"@backstage/frontend-plugin-api@^0.4.1-next.2":
+  version "0.4.1-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/frontend-plugin-api/-/frontend-plugin-api-0.4.1-next.2.tgz#46d626dc4517f555f875483b42dd5d414af90d56"
+  integrity sha512-f0ZHq1PooObt4YrzSnpHXykIHRX7NOCoxiZWc5GkYwJCOaBVdEZpwtZzvW/9iA9TIVBF3RzV+FNG2kr9VKiiwg==
   dependencies:
     "@backstage/core-components" "^0.13.10-next.1"
     "@backstage/core-plugin-api" "^1.8.2-next.0"
@@ -3038,17 +3038,17 @@
     yaml "^2.0.0"
     zen-observable "^0.10.0"
 
-"@backstage/plugin-catalog-react@^1.9.3-next.1":
-  version "1.9.3-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-react/-/plugin-catalog-react-1.9.3-next.1.tgz#3da59a14bcadf68829b75cc3e0f3d3d975865395"
-  integrity sha512-7AiE5yVaP03YbrdK32m+0orwNgcDBMhDi/H8fZNGjF+Ku9vqhHKGF4sudjuEWwqucMoidcpPBjAaJlFhgbbwHA==
+"@backstage/plugin-catalog-react@^1.9.3-next.2":
+  version "1.9.3-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-react/-/plugin-catalog-react-1.9.3-next.2.tgz#d385308c6c044bba6f5f4a8c5c9d833f14feeb4b"
+  integrity sha512-8fVprVUW3iaauiFFIFQed2QCZBKtMHT8ExO6x8k8ospuQZvXGAGgyyTjXj78L9UvTt59ZIpCslmytoFBUwcfxw==
   dependencies:
     "@backstage/catalog-client" "^1.5.2-next.0"
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/core-components" "^0.13.10-next.1"
     "@backstage/core-plugin-api" "^1.8.2-next.0"
     "@backstage/errors" "^1.2.3"
-    "@backstage/frontend-plugin-api" "^0.4.1-next.1"
+    "@backstage/frontend-plugin-api" "^0.4.1-next.2"
     "@backstage/integration-react" "^1.1.23-next.0"
     "@backstage/plugin-catalog-common" "^1.0.19"
     "@backstage/plugin-permission-common" "^0.7.11"
@@ -3763,17 +3763,17 @@
     react-use "^17.2.4"
 
 "@backstage/plugin-user-settings@^0.8.0-next.1":
-  version "0.8.0-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/plugin-user-settings/-/plugin-user-settings-0.8.0-next.1.tgz#2c8fc125fc0d77a0374a963b075ce09e86c44357"
-  integrity sha512-uRUw3sQTc8bo36E8jA8AFXC5qe7WprB6Fj0Htu+p9n48acKnaMx8OgO5Z/sQvoz7agRZvO86p2hRBwhRw5WHVg==
+  version "0.8.0-next.2"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-user-settings/-/plugin-user-settings-0.8.0-next.2.tgz#86e98601eb46edf1b6f7be4614b8986e7d7283d6"
+  integrity sha512-RMA+Cng4tUlsua5NFvx0ZSATMvIf1llQqjHIAiVqc2J8vDD6Ru3KNlTfFdHF6ZBwXbbr2WjJ4iD3jpVQ1b/TdA==
   dependencies:
     "@backstage/core-app-api" "^1.11.3-next.0"
-    "@backstage/core-compat-api" "^0.1.1-next.1"
+    "@backstage/core-compat-api" "^0.1.1-next.2"
     "@backstage/core-components" "^0.13.10-next.1"
     "@backstage/core-plugin-api" "^1.8.2-next.0"
     "@backstage/errors" "^1.2.3"
-    "@backstage/frontend-plugin-api" "^0.4.1-next.1"
-    "@backstage/plugin-catalog-react" "^1.9.3-next.1"
+    "@backstage/frontend-plugin-api" "^0.4.1-next.2"
+    "@backstage/plugin-catalog-react" "^1.9.3-next.2"
     "@backstage/theme" "^0.5.0"
     "@backstage/types" "^1.1.1"
     "@material-ui/core" "^4.12.2"
