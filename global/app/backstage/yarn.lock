@@ -2428,13 +2428,13 @@
     "@backstage/version-bridge" "^1.0.7"
     "@types/react" "^16.13.1 || ^17.0.0"
 
-"@backstage/core-components@^0.13.10-next.1":
-  version "0.13.10-next.1"
-  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.10-next.1.tgz#e56ae67b293e54ad8d2b4094231da02bdfb765f7"
-  integrity sha512-qvQuj4LA/WI3QqPzaDmynfnMl4YP8DgyahG5+HgLXZ6AEHb2cUTht+S+h7YrMdKPu5z17xnQ9ojYBofDqX24wg==
+"@backstage/core-components@^0.13.10-next.1", "@backstage/core-components@^0.13.9", "@backstage/core-components@^0.13.9-next.2", "@backstage/core-components@^0.13.9-next.3":
+  version "0.13.10"
+  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.10.tgz#f423b56c81cade3df20ec5eccb209f0315320290"
+  integrity sha512-njqtxt0J4eHBcU+tuZgL0yba8Fhie/OtefVwCx5K6+vPWLGQNMnXzJCX7Q/4iLtwBXoMyP+pk3r90sDja3ZV9Q==
   dependencies:
     "@backstage/config" "^1.1.1"
-    "@backstage/core-plugin-api" "^1.8.2-next.0"
+    "@backstage/core-plugin-api" "^1.8.2"
     "@backstage/errors" "^1.2.3"
     "@backstage/theme" "^0.5.0"
     "@backstage/version-bridge" "^1.0.7"
@@ -2473,69 +2473,10 @@
     zen-observable "^0.10.0"
     zod "^3.22.4"
 
-"@backstage/core-components@^0.13.9", "@backstage/core-components@^0.13.9-next.2", "@backstage/core-components@^0.13.9-next.3":
-  version "0.13.9"
-  resolved "https://registry.yarnpkg.com/@backstage/core-components/-/core-components-0.13.9.tgz#0b1a499412bd63ce0c24c8f6c8949ede17a7fee7"
-  integrity sha512-BgiXiYoMf1K41uVqZhQ/wWcHfrlvbQC/VmDX6a4xJbKJHlcd5L0LSwXGg3i1FxEN05IyWpKXq2VicAXSaGeeEA==
-  dependencies:
-    "@backstage/config" "^1.1.1"
-    "@backstage/core-plugin-api" "^1.8.1"
-    "@backstage/errors" "^1.2.3"
-    "@backstage/theme" "^0.5.0"
-    "@backstage/version-bridge" "^1.0.7"
-    "@date-io/core" "^1.3.13"
-    "@material-table/core" "^3.1.0"
-    "@material-ui/core" "^4.12.2"
-    "@material-ui/icons" "^4.9.1"
-    "@material-ui/lab" "4.0.0-alpha.61"
-    "@react-hookz/web" "^23.0.0"
-    "@types/react" "^16.13.1 || ^17.0.0"
-    "@types/react-sparklines" "^1.7.0"
-    "@types/react-text-truncate" "^0.14.0"
-    ansi-regex "^6.0.1"
-    classnames "^2.2.6"
-    d3-selection "^3.0.0"
-    d3-shape "^3.0.0"
-    d3-zoom "^3.0.0"
-    dagre "^0.8.5"
-    history "^5.0.0"
-    immer "^9.0.1"
-    linkify-react "4.1.3"
-    linkifyjs "4.1.3"
-    lodash "^4.17.21"
-    pluralize "^8.0.0"
-    qs "^6.9.4"
-    rc-progress "3.5.1"
-    react-helmet "6.1.0"
-    react-hook-form "^7.12.2"
-    react-idle-timer "5.6.2"
-    react-markdown "^8.0.0"
-    react-sparklines "^1.7.0"
-    react-syntax-highlighter "^15.4.5"
-    react-text-truncate "^0.19.0"
-    react-use "^17.3.2"
-    react-virtualized-auto-sizer "^1.0.11"
-    react-window "^1.8.6"
-    remark-gfm "^3.0.1"
-    zen-observable "^0.10.0"
-    zod "^3.22.4"
-
-"@backstage/core-plugin-api@^1.8.1", "@backstage/core-plugin-api@^1.8.1-next.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@backstage/core-plugin-api/-/core-plugin-api-1.8.1.tgz#8059389029d81b858a3774ff84707c71a5294157"
-  integrity sha512-koAOCkjP9mKHs3bsk2LQPDDjvFRKlW6PMlcc1APN1mD7eIo3RaszL7fi/a/MJBtuEpIjs2rhuE+rF/rcffXSyA==
-  dependencies:
-    "@backstage/config" "^1.1.1"
-    "@backstage/types" "^1.1.1"
-    "@backstage/version-bridge" "^1.0.7"
-    "@types/react" "^16.13.1 || ^17.0.0"
-    history "^5.0.0"
-    i18next "^22.4.15"
-
-"@backstage/core-plugin-api@^1.8.2-next.0":
-  version "1.8.2-next.0"
-  resolved "https://registry.yarnpkg.com/@backstage/core-plugin-api/-/core-plugin-api-1.8.2-next.0.tgz#bbdeb68935117c53b0085bad98abdb76239143cc"
-  integrity sha512-6AiPzMsUx9RE6gFNt6yxU3lfWH2kxx7FHkgNvOk8eoolK+udyezTXTdplLV9p/RgKP4n0qssJooL3YjygmxXug==
+"@backstage/core-plugin-api@^1.8.1", "@backstage/core-plugin-api@^1.8.1-next.1", "@backstage/core-plugin-api@^1.8.2", "@backstage/core-plugin-api@^1.8.2-next.0":
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@backstage/core-plugin-api/-/core-plugin-api-1.8.2.tgz#1e6f54f0ef1669ffeff56490fbde92c766312230"
+  integrity sha512-+KvbbMp4L5fz14zhiucG4TevrKcyyS59LjBL7yeoHQO+PdGQFbFaGhispNb/Y+Yjyo/tEuk0+JktRyTBUa1dEg==
   dependencies:
     "@backstage/config" "^1.1.1"
     "@backstage/types" "^1.1.1"
