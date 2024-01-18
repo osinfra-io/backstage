@@ -9,14 +9,14 @@
 
 version: 0.1
 projects:
-{{- range $match := matchPaths ":location(global|regional)/:type(app|infra)/:app?/tfvars/:env.tfvars" }}
-  {{- $appDir := ""}}
-  {{- if $match.app }}
-    {{- $appDir = print "/" $match.app }}
+{{- range $match := matchPaths ":location(global|regional)/:workflow/tfvars/:env.tfvars" }}
+  {{- $workflowDir := ""}}
+  {{- if $match.workflow }}
+    {{- $workflowDir = print "/" $match.workflow }}
   {{- end }}
-  - path: {{ $match.location }}/{{ $match.type }}{{ $appDir }}
-    name: "{{ $match.location }}/{{ $match.type }}{{ $appDir }}: {{ $match.env }}"
-    usage_file: {{ $match.location }}/{{ $match.type }}{{ $appDir }}/infracost/{{ $match.env }}.yml
+  - path: {{ $match.location }}{{ $workflowDir }}
+    name: "{{ $match.location }}{{ $workflowDir }}: {{ $match.env }}"
+    usage_file: {{ $match.location }}{{ $workflowDir }}/infracost/{{ $match.env }}.yml
     terraform_var_files:
       - tfvars/{{ $match.env }}.tfvars
 {{- end }}
