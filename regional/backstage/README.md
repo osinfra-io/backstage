@@ -9,10 +9,10 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 5.12.0 |
-| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.12.1 |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.25.2 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.6.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 5.29.1 |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.13.2 |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.30.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.6.1 |
 | <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
 
 ## Modules
