@@ -17,7 +17,7 @@ permissions:
 jobs:
   global:
     name: "Global"
-    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.1.8
+    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.4
     if: github.actor != 'osinfra-sa'
     with:
       checkout_ref: ${{ github.ref }}
@@ -39,7 +39,7 @@ jobs:
 
   us_east1_b:
     name: "Regional: us-east1-b"
-    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/plan-and-apply.yml@v0.1.8
+    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.4
     if: github.actor != 'dependabot[bot]'
     needs: global
     with:
