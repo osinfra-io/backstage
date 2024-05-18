@@ -41,20 +41,19 @@ provider "datadog" {
 # https://github.com/osinfra-io/terraform-google-project
 
 module "project" {
-  source = "github.com/osinfra-io/terraform-google-project//global?ref=v0.1.8"
+  source = "github.com/osinfra-io/terraform-google-project//global?ref=v0.2.1"
 
-  billing_account                 = var.billing_account
   cis_2_2_logging_sink_project_id = var.cis_2_2_logging_sink_project_id
-  cost_center                     = "x001"
   description                     = "backstage"
   environment                     = var.environment
   folder_id                       = var.folder_id
 
   labels = {
-    env        = var.environment
-    repository = "backstage"
-    platform   = "backstage"
-    team       = "platform-backstage"
+    cost-center = "x001"
+    env         = var.environment
+    repository  = "backstage"
+    platform    = "backstage"
+    team        = "platform-backstage"
   }
 
   prefix = "plt"
@@ -113,13 +112,4 @@ resource "google_iap_web_iam_binding" "backstage" {
   # Authoritative for a given role.
 
   role = "roles/iap.httpsResourceAccessor"
-}
-
-# Service Account Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_service_account
-
-resource "google_service_account" "workload_identity" {
-  account_id   = "backstage"
-  display_name = "Kubernetes Backstage Workload Identity Service Account"
-  project      = module.project.project_id
 }

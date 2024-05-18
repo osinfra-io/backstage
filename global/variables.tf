@@ -1,12 +1,6 @@
 # Input Variables
 # https://www.terraform.io/language/values/variables
 
-variable "billing_account" {
-  description = "The alphanumeric ID of the billing account this project belongs to"
-  type        = string
-  sensitive   = true
-}
-
 variable "cis_2_2_logging_sink_project_id" {
   description = "The CIS 2.2 logging sink project ID"
   type        = string
