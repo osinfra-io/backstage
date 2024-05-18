@@ -33,12 +33,9 @@ terraform {
 
 provider "helm" {
   kubernetes {
-    cluster_ca_certificate = base64decode(
-      var.cluster_ca_certificate
-    )
-
-    host  = "https://${var.cluster_endpoint}"
-    token = data.google_client_config.current.access_token
+    cluster_ca_certificate = var.cluster_ca_certificate
+    host                   = "https://${var.cluster_endpoint}"
+    token                  = data.google_client_config.current.access_token
   }
 }
 
@@ -46,12 +43,9 @@ provider "helm" {
 # https://registry.terraform.io/providers/hashicorp/kubernetes/latest
 
 provider "kubernetes" {
-  cluster_ca_certificate = base64decode(
-    var.cluster_ca_certificate
-  )
-
-  host  = "https://${var.cluster_endpoint}"
-  token = data.google_client_config.current.access_token
+  cluster_ca_certificate = var.cluster_ca_certificate
+  host                   = "https://${var.cluster_endpoint}"
+  token                  = data.google_client_config.current.access_token
 }
 
 
@@ -72,7 +66,7 @@ data "terraform_remote_state" "regional" {
     prefix = "backstage"
   }
 
-  workspace = "${var.region}-${local.workspace_environment}"
+  workspace = "${var.region}-b-${local.workspace_environment}"
 }
 
 # Google SQL User Resource
