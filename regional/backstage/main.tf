@@ -72,12 +72,12 @@ data "terraform_remote_state" "regional" {
 # Google SQL User Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_user
 
-resource "google_sql_user" "backstage" {
-  project  = local.regional.project_id
-  name     = "backstage"
-  instance = local.regional.sql_instance
-  password = random_password.backstage.result
-}
+# resource "google_sql_user" "backstage" {
+#   project  = local.regional.project_id
+#   name     = "backstage"
+#   instance = local.regional.sql_instance
+#   password = random_password.backstage.result
+# }
 
 # Helm Release
 # https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release
@@ -93,16 +93,11 @@ resource "helm_release" "backstage" {
     value = var.backstage_image_tag
   }
 
-  set {
-    name  = "backstage.image.pullSecrets"
-    value = kubernetes_secret_v1.github_container_registry_key.metadata.0.name
-  }
-
   values = [
     file("${path.module}/helm/values.yaml")
   ]
 
-  version = "1.8.1"
+  version = "1.9.3"
 }
 
 # # Kubernetes Deployment Resource
@@ -207,160 +202,34 @@ resource "helm_release" "backstage" {
 
 # }
 
-# Kubernetes Ingress Resource
-# https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/ingress_v1
 
-resource "kubernetes_ingress_v1" "backstage" {
-  metadata {
-    name      = "backstage"
-    namespace = "backstage"
-
-    annotations = {
-      "kubernetes.io/ingress.allow-http"       = "false"
-      "networking.gke.io/managed-certificates" = kubernetes_manifest.backstage_tls.manifest.metadata.name
-    }
-  }
-  spec {
-    rule {
-      host = var.host
-
-      http {
-        path {
-          backend {
-            service {
-              name = "http-backend"
-              port {
-                number = 7007
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  wait_for_load_balancer = true
-}
-
-# Kubernetes Manifest Resource
-# https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest
-
-resource "kubernetes_manifest" "backstage_backend_config" {
-  manifest = {
-    "apiVersion" = "cloud.google.com/v1"
-    "kind"       = "BackendConfig"
-    "metadata" = {
-      "name"      = "backstage-backend-config"
-      "namespace" = "backstage"
-    }
-    "spec" = {
-      "iap" = {
-        "enabled" = true
-        "oauthclientCredentials" = {
-          "secretName" = kubernetes_secret_v1.iap.metadata.0.name
-        }
-      }
-    }
-  }
-}
-
-resource "kubernetes_manifest" "backstage_tls" {
-  manifest = {
-    "apiVersion" = "networking.gke.io/v1"
-    "kind"       = "ManagedCertificate"
-    "metadata" = {
-      "name"      = "backstage-tls"
-      "namespace" = "backstage"
-    }
-    "spec" = {
-      "domains" = [
-        "${var.host}",
-      ]
-    }
-  }
-}
 
 # Kubernetes Secret Resource
-# https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/secret_v1
+# # https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/secret_v1
 
-resource "kubernetes_secret_v1" "iap" {
+# resource "kubernetes_secret_v1" "iap" {
 
-  data = {
-    client_id     = local.regional.backstage_iap_client_id
-    client_secret = local.regional.backstage_iap_client_secret
-  }
-
-  metadata {
-    name      = "iap"
-    namespace = "backstage"
-  }
-
-}
-
-resource "kubernetes_secret_v1" "github_container_registry_key" {
-  metadata {
-    name      = "github-container-registry-key"
-    namespace = "backstage"
-  }
-
-  data = {
-    ".dockerconfigjson" = jsonencode({
-      "auths" = {
-        "ghcr.io" = {
-          "auth" = var.github_container_registry_key
-        }
-      }
-    })
-  }
-
-  type = "kubernetes.io/dockerconfigjson"
-}
-
-resource "kubernetes_secret_v1" "postgres" {
-
-  data = {
-    POSTGRES_USER     = google_sql_user.backstage.name
-    POSTGRES_PASSWORD = google_sql_user.backstage.password
-  }
-
-  metadata {
-    name      = "postgres"
-    namespace = "backstage"
-  }
-
-}
-
-# # Kubernetes Service Resource
-# # https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/service_v1
-
-# resource "kubernetes_service_v1" "backstage" {
-#   metadata {
-#     annotations = {
-#       "cloud.google.com/backend-config" = jsonencode({ "default" : kubernetes_manifest.backstage_backend_config.manifest.metadata.name })
-#     }
-#     name      = "backstage"
-#     namespace = "backstage"
+#   data = {
+#     client_id     = local.regional.backstage_iap_client_id
+#     client_secret = local.regional.backstage_iap_client_secret
 #   }
 
-#   spec {
-#     port {
-#       name        = "http"
-#       protocol    = "TCP"
-#       port        = kubernetes_deployment_v1.backstage.spec.0.template.0.spec.0.container.0.port.0.container_port
-#       target_port = kubernetes_deployment_v1.backstage.spec.0.template.0.spec.0.container.0.port.0.container_port
-#     }
-
-#     selector = {
-#       app = "backstage"
-#     }
-
-#     type = "NodePort"
+#   metadata {
+#     name      = "iap"
+#     namespace = "backstage"
 #   }
 # }
 
-# Random Password Resource
-# https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password
 
-resource "random_password" "backstage" {
-  length  = 16
-  special = true
-}
+# resource "kubernetes_secret_v1" "postgres" {
+
+#   data = {
+#     POSTGRES_USER     = google_sql_user.backstage.name
+#     POSTGRES_PASSWORD = google_sql_user.backstage.password
+#   }
+
+#   metadata {
+#     name      = "postgres"
+#     namespace = "backstage"
+#   }
+# }
