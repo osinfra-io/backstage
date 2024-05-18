@@ -15,44 +15,43 @@ permissions:
   id-token: write
 
 jobs:
-  global_infra:
+  global:
     name: "Global"
     uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.4
     if: github.actor != 'osinfra-sa'
     with:
       checkout_ref: ${{ github.ref }}
       environment: production
-      github_environment: "Production Infrastructure: Global"
+      github_environment: "Production: Global"
       service_account: plt-backstage-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com
       terraform_plan_args: -var-file=tfvars/production.tfvars
       terraform_state_bucket: plt-backstage-e194-prod
       terraform_version: ${{ vars.TERRAFORM_VERSION }}
       terraform_workspace: global-production
-      working_directory: global/infra
+      working_directory: global
       workload_identity_provider: projects/134040294660/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
       infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
       terraform_plan_secret_args: >-
-        -var=billing_account=${{ secrets.BILLING_ACCOUNT }}
         -var=datadog_api_key=${{ secrets.DATADOG_API_KEY }}
         -var=datadog_app_key=${{ secrets.DATADOG_APP_KEY }}
 
-  us_east1_infra:
-    name: "Infra: us-east1"
-    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.4
+  us_east1_b:
+    name: "Regional: us-east1-b"
+    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.4
     if: github.actor != 'dependabot[bot]'
-    needs: global_infra
+    needs: global
     with:
       checkout_ref: ${{ github.ref }}
-      environment: us-east1-production
-      github_environment: "Production Infrastructure: Regional - us-east1"
+      environment: us-east1-b-production
+      github_environment: "Production: Regional - us-east1-b"
       service_account: plt-backstage-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com
-      terraform_plan_args: -var-file=tfvars/us-east1-production.tfvars
+      terraform_plan_args: -var-file=tfvars/us-east1-b-production.tfvars
       terraform_state_bucket: plt-backstage-e194-prod
       terraform_version: ${{ vars.TERRAFORM_VERSION }}
-      terraform_workspace: us-east1-production
-      working_directory: regional/infra
+      terraform_workspace: us-east1-b-production
+      working_directory: regional
       workload_identity_provider: projects/134040294660/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}

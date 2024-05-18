@@ -7,22 +7,25 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - global/app/backstage/**
+      - global/backstage/**
     branches:
       - main
   pull_request:
     paths:
-      - global/app/backstage/**
+      - global/backstage/**
 
 permissions:
   contents: read
   packages: write
 
 jobs:
-  build-and-push-docker-image:
-    name: Build and push to GitHub Container Registry
+  build-and-push:
+    name: Build and Push
     if: github.actor != 'dependabot[bot]' && github.actor != 'osinfra-sa'
     runs-on: ubuntu-latest
+    env:
+      # The release version of Backstage plus our own versioning
+      VERSION: v1.21.1-01
 
     steps:
       # Checkout
@@ -37,16 +40,23 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4.0.2
         with:
+          cache: yarn
+          cache-dependency-path: global/backstage/yarn.lock
           node-version: 20.x
           registry-url: https://registry.npmjs.org/
 
       - name: Yarn install
-        working-directory: global/app/backstage
+        working-directory: global/backstage
         run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --prefer-offline
           yarn tsc
           yarn build:backend --config ../../app-config.yaml
 
+      # Docker Buildx
+      # https://github.com/marketplace/actions/docker-setup-buildx
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3.0.0
 
       # Docker Login
       # https://github.com/marketplace/actions/docker-login
@@ -58,22 +68,22 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # BuildX configuration for caching
-      # https://github.com/marketplace/actions/docker-setup-buildx
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3.3.0
-
-      # Build and push Docker images
+      # Build and Push Docker to GitHub Container Registry
       # https://github.com/marketplace/actions/build-and-push-docker-images
 
-      - name: Build and push
+      - name: Build and Push GitHub Container Registry
         uses: docker/build-push-action@v5.3.0
         with:
-          context: './global/app/backstage'
-          file: ./global/app/backstage/packages/backend/Dockerfile
+          context: './global/backstage'
+          file: ./global/backstage/packages/backend/Dockerfile
+          cache-from: |
+            ${{ github.event_name == 'pull_request' && 'type=gha' || '' }}
+            ${{ github.event_name == 'push' && 'type=registry,ref=ghcr.io/osinfra-io/backstage:latest' || '' }}
+          cache-to: |
+            ${{ github.event_name == 'pull_request' && 'type=gha,mode=max' || '' }}
+            ${{ github.event_name == 'push' && 'type=inline' || '' }}
           push: true
-          cache-from: type=registry,ref=ghcr.io/osinfra-io/backstage:buildcache
-          cache-to: type=registry,ref=ghcr.io/osinfra-io/backstage:buildcache,mode=max
           tags: |
-            ghcr.io/osinfra-io/backstage:latest
+            ${{ github.event_name == 'pull_request' && 'ghcr.io/osinfra-io/backstage:test' || '' }}
+            ${{ github.event_name == 'push' && format('ghcr.io/osinfra-io/backstage:{0}', env.VERSION) || '' }}
+            ${{ github.event_name == 'push' && 'ghcr.io/osinfra-io/backstage:latest' || '' }}

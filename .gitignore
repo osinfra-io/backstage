@@ -27,9 +27,6 @@ override.tf.json
 # Ignore plan output files
 plan.out
 
-# Ignore Kitchen directories and files
-.kitchen
-
 # Ignore Infracost directories and files
 .infracost
 
