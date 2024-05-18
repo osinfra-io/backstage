@@ -31,70 +31,26 @@ data "terraform_remote_state" "global" {
 # https://github.com/osinfra-io/terraform-google-cloud-sql
 
 module "cloud_sql" {
-  source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=v0.1.2"
+  source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=v0.1.4"
 
   count = var.enable_sql_instance ? 1 : 0
-
-
-  availability_type = "REGIONAL"
-  cost_center       = "x001"
-
-  # These flags are required for CIS GCP v1.3.0 compliance
-
-  database_flags = [
-    {
-      name  = "cloudsql.enable_pgaudit"
-      value = "on"
-    },
-    {
-      name  = "log_checkpoints"
-      value = "on"
-    },
-    {
-      name  = "log_connections"
-      value = "on"
-    },
-    {
-      name  = "log_disconnections"
-      value = "on"
-    },
-    {
-      name  = "log_hostname"
-      value = "on"
-    },
-    {
-      name  = "log_lock_waits"
-      value = "on"
-    },
-    {
-      name  = "log_min_duration_statement"
-      value = "-1"
-    },
-    {
-      name  = "log_min_messages"
-      value = "error"
-    },
-    {
-      name  = "log_statement"
-      value = "ddl"
-    }
-  ]
 
   deletion_protection = var.deletion_protection
   host_project_id     = var.host_project_id
   instance_name       = "backstage"
 
   labels = {
-    env        = var.environment
-    repository = "backstage"
-    platform   = "backstage"
-    team       = "platform-backstage"
+    cost-center = "x001"
+    env         = var.environment
+    repository  = "backstage"
+    platform    = "backstage"
+    team        = "platform-backstage"
   }
 
   machine_tier                   = var.machine_tier
   network                        = "standard-shared"
   point_in_time_recovery_enabled = true
-  project_id                     = local.global.project_id
+  project                        = local.global.project_id
   region                         = var.region
 }
 
