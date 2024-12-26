@@ -1,0 +1,75 @@
+apiVersion: v3
+kind: service
+metadata:
+  name: gke-info-go
+  description: An example Go application that shows metadata about the Google Kubernetes Engine (GKE) cluster.
+  displayName: gke-info-go
+
+  links:
+    - name: gke-info-go
+      type: repo
+      provider: Github
+      url: "https://github.com/osinfra-io/gke-info-go"
+
+    - name: sb.gcp.osinfra.io
+      type: other
+      url: "https://sb.gcp.osinfra.io/gke-info-go/health"
+
+    - name: us-east1-b.sb.gcp.osinfra.io
+      type: other
+      url: "https://us-east1-b.sb.gcp.osinfra.io/gke-info-go/health"
+
+    - name: us-east4-a.sb.gcp.osinfra.io
+      type: other
+      url: "https://us-east4-a.sb.gcp.osinfra.io/gke-info-go/health"
+
+    - name: nonprod.gcp.osinfra.io
+      type: other
+      url: "https://nonprod.gcp.osinfra.io/gke-info-go/health"
+
+    - name: us-east1-b.nonprod.gcp.osinfra.io
+      type: other
+      url: "https://us-east1-b.nonprod.gcp.osinfra.io/gke-info-go/health"
+
+    - name: us-east4-a.nonprod.gcp.osinfra.io
+      type: other
+      url: "https://us-east4-a.nonprod.gcp.osinfra.io/gke-info-go/health"
+
+    - name: gcp.osinfra.io
+      type: other
+      url: "https://gcp.osinfra.io/gke-info-go/health"
+
+    - name: us-east1-b.gcp.osinfra.io
+      type: other
+      url: "https://us-east1-b.gcp.osinfra.io/gke-info-go/health"
+
+    - name: us-east4-a.gcp.osinfra.io
+      type: other
+      url: "https://us-east4-a.gcp.osinfra.io/gke-info-go/health"
+
+  contacts:
+    - type: email
+      contact: platform-google-cloud-kubernetes@osinfra.io
+    - type: google-chat
+      contact: "https://mail.google.com/chat/u/0/#chat/space/AAAA1mERq4Q"
+
+  owner: platform-google-cloud-kubernetes
+
+spec:
+  lifecycle: production
+  tier: Zero
+  type: web
+  languages:
+    - go
+
+  dependsOn:
+    - 'service:istio-gateway'
+
+datadog:
+  performanceData:
+    tags:
+      - 'service:gke-info-go'
+
+  pipelines:
+    fingerprints:
+      - NabNkdMuNLxT

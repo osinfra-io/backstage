@@ -1,0 +1,91 @@
+name: Sandbox
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize]
+    paths-ignore:
+      - "**.md"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build_and_push_us:
+    name: "Sandbox Registry: us-docker.pkg.dev"
+    uses: osinfra-io/github-misc-called-workflows/.github/workflows/build-and-push.yml@v0.1.7
+    if: github.actor != 'dependabot[bot]'
+    with:
+      cache_from: type=gha
+      cache_to: type=gha,mode=max
+      build_args: |
+            DD_GIT_REPOSITORY_URL=https://github.com/${{ github.repository }}
+            DD_GIT_COMMIT_SHA=${{ github.sha }}
+      registry: us-docker.pkg.dev
+      service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
+      tags: us-docker.pkg.dev/plt-lz-services-tf7f-sb/plt-docker-standard/backstage:${{ github.sha }}
+      workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
+
+  us_east1_b:
+    name: "Sandbox Regional: us-east1-b"
+    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.5
+    if: github.actor != 'dependabot[bot]'
+    needs: build_and_push_us
+    with:
+      checkout_ref: ${{ github.ref }}
+      environment: us-east1-b-sandbox
+      github_environment: "Sandbox: Regional - us-east1-b"
+      service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
+      terraform_plan_args: -var-file=tfvars/us-east1-b-sandbox.tfvars -var=backstage_version=${{ github.sha }}
+      terraform_state_bucket: plt-backstage-4312-sb
+      terraform_version: ${{ vars.TERRAFORM_VERSION }}
+      terraform_workspace: us-east1-b-sandbox
+      working_directory: deployments/regional
+      workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
+    secrets:
+      gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
+      infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
+      terraform_plan_secret_args: >-
+        -var=datadog_api_key=${{ secrets.DATADOG_API_KEY }}
+        -var=datadog_app_key=${{ secrets.DATADOG_APP_KEY }}
+
+  us_east4_a:
+    name: "Sandbox Regional: us-east4-a"
+    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.5
+    if: github.actor != 'dependabot[bot]'
+    needs: build_and_push_us
+    with:
+      checkout_ref: ${{ github.ref }}
+      environment: us-east4-a-sandbox
+      github_environment: "Sandbox: Regional - us-east4-a"
+      service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
+      terraform_plan_args: -var-file=tfvars/us-east4-a-sandbox.tfvars -var=backstage_version=${{ github.sha }}
+      terraform_state_bucket: plt-backstage-4312-sb
+      terraform_version: ${{ vars.TERRAFORM_VERSION }}
+      terraform_workspace: us-east4-a-sandbox
+      working_directory: deployments/regional
+      workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
+    secrets:
+      gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
+      infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
+      terraform_plan_secret_args: >-
+        -var=datadog_api_key=${{ secrets.DATADOG_API_KEY }}
+        -var=datadog_app_key=${{ secrets.DATADOG_APP_KEY }}
+
+  datadog_synthetic_tests:
+    name: "Sandbox: Datadog synthetic tests"
+    runs-on: ubuntu-latest
+    needs: ["us_east1_b", "us_east4_a"]
+    steps:
+
+      # Datadog Synthetics CI
+      # https://github.com/marketplace/actions/datadog-synthetics-ci
+
+      - name: Run Datadog synthetic tests
+        uses: datadog/synthetics-ci-github-action@v1.15.0
+        with:
+          api_key: ${{ secrets.DATADOG_API_KEY }}
+          app_key: ${{ secrets.DATADOG_APP_KEY }}
+          fail_on_critical_errors: true
+          test_search_query: "env:sandbox service:backstage team:platform-backstage state:live"
