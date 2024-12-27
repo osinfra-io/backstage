@@ -1,3 +1,19 @@
+# Google Cloud SQL Module (osinfra.io)
+# https://github.com/osinfra-io/terraform-google-cloud-sql
+
+module "cloud_sql" {
+  source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=bump"
+
+  deletion_protection            = false
+  host_project_id                = var.cloud_sql_host_project_id
+  instance_name                  = "backstage"
+  labels                         = module.helpers.labels
+  network                        = "standard-shared"
+  point_in_time_recovery_enabled = false
+  project                        = data.google_project.this.project_id
+  region                         = module.helpers.region
+}
+
 # Datadog Synthetics Test Resource
 # https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/synthetics_test
 

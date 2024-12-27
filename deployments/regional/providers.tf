@@ -78,7 +78,7 @@ data "google_container_cluster" "this" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects
 
 data "google_projects" "this" {
-  filter = "name:plt-k8s-* labels.env:${module.helpers.environment}"
+  filter = "name:plt-backstage-* labels.env:${module.helpers.environment}"
 }
 
 # Google Project Data Source

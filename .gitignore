@@ -14,15 +14,9 @@ crash.log
 # Datadog Static Analysis
 static-analysis.datadog.yml
 
-# Ignore provider lock file
-.terraform.lock.hcl
-
 # Ignore any local.tfvars. Most .tfvars files are managed as part of configuration and so should
 # be included in version control.
 local.tfvars
-
-# Provider.tf is used for local development of modules and shouldn't be added to repos.
-provider.tf
 
 # Ignore override files as they are usually used to override ressources locally
 override.tf
@@ -33,11 +27,11 @@ override.tf.json
 # Ignore plan output files
 plan.out
 
+# Ignore checkov directories and files
+.external_modules
+
 # Ignore Infracost directories and files
 .infracost
-
-# Ignore Visual Studio Code directories
-.vscode
 
 # Other Files
 *.log
