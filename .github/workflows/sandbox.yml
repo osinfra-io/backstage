@@ -12,6 +12,32 @@ permissions:
   id-token: write
 
 jobs:
+  yarn_install:
+    name: "Yarn install"
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      # https://github.com/marketplace/actions/checkout
+
+      - name: Checkout code
+        uses: actions/checkout@v3.1.0
+
+      # Setup Node
+      # https://github.com/marketplace/actions/setup-node-js-environment
+
+      - name: Setup Node
+        uses: actions/setup-node@v3.5.0
+        with:
+          node-version: 20.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Yarn install
+        working-directory: app
+        run: |
+          yarn install
+          yarn tsc
+          yarn build:backend
+
   build_and_push_us:
     name: "Sandbox Registry: us-docker.pkg.dev"
     uses: osinfra-io/github-misc-called-workflows/.github/workflows/build-and-push.yml@v0.1.7
@@ -19,9 +45,11 @@ jobs:
     with:
       cache_from: type=gha
       cache_to: type=gha,mode=max
+      context: app
       build_args: |
             DD_GIT_REPOSITORY_URL=https://github.com/${{ github.repository }}
             DD_GIT_COMMIT_SHA=${{ github.sha }}
+      file: app/packages/backend/Dockerfile
       registry: us-docker.pkg.dev
       service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
       tags: us-docker.pkg.dev/plt-lz-services-tf7f-sb/plt-docker-standard/backstage:${{ github.sha }}
