@@ -46,11 +46,11 @@ jobs:
     with:
       cache_from: type=gha
       cache_to: type=gha,mode=max
-      context: app
+      context: ./app
       build_args: |
             DD_GIT_REPOSITORY_URL=https://github.com/${{ github.repository }}
             DD_GIT_COMMIT_SHA=${{ github.sha }}
-      file: app/packages/backend/Dockerfile
+      file: ./app/packages/backend/Dockerfile
       registry: us-docker.pkg.dev
       service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
       tags: us-docker.pkg.dev/plt-lz-services-tf7f-sb/plt-docker-standard/backstage:${{ github.sha }}
