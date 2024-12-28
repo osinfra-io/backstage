@@ -93,7 +93,7 @@ jobs:
       environment: sandbox
       github_environment: "Sandbox: Main"
       service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
-      terraform_plan_args: -var-file=tfvars/sandbox.tfvars -var-file=shared/tfvars/sandbox.tfvars
+      terraform_plan_args: -var-file=tfvars/sandbox.tfvars
       terraform_state_bucket: plt-backstage-4312-sb
       terraform_version: ${{ vars.TERRAFORM_VERSION }}
       terraform_workspace: main-sandbox
