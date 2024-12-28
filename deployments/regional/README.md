@@ -24,12 +24,8 @@ No requirements.
 | Name | Type |
 |------|------|
 | [datadog_synthetics_test.this](https://registry.terraform.io/providers/datadog/datadog/latest/docs/resources/synthetics_test) | resource |
-| [google_client_config.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/client_config) | data source |
-| [google_container_cluster.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/container_cluster) | data source |
 | [google_project.backstage](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
-| [google_project.k8s](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
 | [google_projects.backstage](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
-| [google_projects.k8s](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
 
 ## Inputs
 
