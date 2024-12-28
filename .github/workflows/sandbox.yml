@@ -42,6 +42,7 @@ jobs:
     name: "Sandbox Registry: us-docker.pkg.dev"
     uses: osinfra-io/github-misc-called-workflows/.github/workflows/build-and-push.yml@v0.1.7
     if: github.actor != 'dependabot[bot]'
+    needs: yarn_install
     with:
       cache_from: type=gha
       cache_to: type=gha,mode=max
