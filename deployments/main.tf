@@ -31,6 +31,7 @@ module "project" {
     "cloudbilling.googleapis.com",
     "cloudresourcemanager.googleapis.com",
     "compute.googleapis.com",
+    "container.googleapis.com",
     "iam.googleapis.com",
     "monitoring.googleapis.com",
     "servicenetworking.googleapis.com",
