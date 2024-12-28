@@ -71,19 +71,27 @@ data "google_client_config" "this" {
 data "google_container_cluster" "this" {
   name     = "plt-${module.helpers.region}-${module.helpers.zone}"
   location = module.helpers.region
-  project  = data.google_project.this.project_id
+  project  = data.google_project.k8s.project_id
 }
 
 # Google Projects Data Source
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects
 
-data "google_projects" "this" {
+data "google_projects" "backstage" {
+  filter = "name:plt-backstage-* labels.env:${module.helpers.environment}"
+}
+
+data "google_projects" "k8s" {
   filter = "name:plt-k8s-* labels.env:${module.helpers.environment}"
 }
 
 # Google Project Data Source
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project
 
-data "google_project" "this" {
-  project_id = data.google_projects.this.projects.0.project_id
+data "google_project" "backstage" {
+  project_id = data.google_projects.backstage.projects.0.project_id
+}
+
+data "google_project" "k8s" {
+  project_id = data.google_projects.k8s.projects.0.project_id
 }
