@@ -20,16 +20,16 @@ jobs:
       # https://github.com/marketplace/actions/checkout
 
       - name: Checkout code
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v4.2.2
 
       # Setup Node
       # https://github.com/marketplace/actions/setup-node-js-environment
 
       - name: Setup Node
-        uses: actions/setup-node@v3.5.0
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: 20.x
-          registry-url: https://registry.npmjs.org
+          #registry-url: https://registry.npmjs.org
 
       - name: Yarn install
         working-directory: app
