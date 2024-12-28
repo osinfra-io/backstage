@@ -34,7 +34,7 @@ jobs:
       - name: Yarn install
         working-directory: app
         run: |
-          yarn install
+          yarn install --immutable
           yarn tsc
           yarn build:backend
 
