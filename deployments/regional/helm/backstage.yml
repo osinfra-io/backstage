@@ -1,8 +1,6 @@
 backstage:
   args:
     - "app-config.yaml"
-  image:
-    repository: backstage
 
   extraContainers:
     - name: cloud-sql-proxy
@@ -22,3 +20,42 @@ backstage:
 
   extraEnvVarsSecrets:
     - postgres-secrets
+
+  image:
+    repository: backstage
+
+  podLabels:
+   tags.datadoghq.com/service: backstage
+
+  readinessProbe:
+    failureThreshold: 3
+    httpGet:
+      path: /.backstage/health/v1/readiness
+      port: 7007
+      scheme: HTTP
+    initialDelaySeconds: 30
+    periodSeconds: 10
+    successThreshold: 2
+    timeoutSeconds: 2
+
+  livenessProbe:
+    failureThreshold: 3
+    httpGet:
+      path: /.backstage/health/v1/liveness
+      port: 7007
+      scheme: HTTP
+    initialDelaySeconds: 60
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 2
+
+  startupProbe:
+    failureThreshold: 3
+    httpGet:
+      path: /.backstage/health/v1/liveness
+      port: 7007
+      scheme: HTTP
+    initialDelaySeconds: 60
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 2
