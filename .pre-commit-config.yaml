@@ -39,5 +39,5 @@ repos:
         args:
           - --download-external-modules=true
           - --skip-check
-          - "CKV_TF_1,CKV_TF_2"
+          - "CKV_TF_1"
           - --quiet
