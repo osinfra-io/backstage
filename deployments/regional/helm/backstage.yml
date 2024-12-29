@@ -17,3 +17,6 @@ backstage:
         requests:
           memory: "128Mi"
           cpu: 10m
+
+  extraEnvVarsSecrets:
+    - postgres-secrets

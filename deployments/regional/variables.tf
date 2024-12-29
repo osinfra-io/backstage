@@ -1,3 +1,8 @@
+variable "backstage_extra_app_config" {
+  description = "Extra app config for the Backstage deployment"
+  type        = string
+}
+
 variable "backstage_replicas" {
   description = "The number of replicas for the Backstage deployment"
   type        = number

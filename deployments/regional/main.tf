@@ -112,8 +112,26 @@ resource "helm_release" "backstage" {
   version = "2.3.0"
 
   depends_on = [
-    module.cloud_sql
+    module.cloud_sql,
+    kubernetes_secret.postgres
   ]
+}
+
+# Kubernetes Secret Resource
+# https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/secret
+
+resource "kubernetes_secret" "postgres" {
+  metadata {
+    name      = "postgres-secrets"
+    namespace = "backstage"
+  }
+
+  data = {
+    "username" = base64encode("backstage")
+    "password" = base64encode(random_password.this.result)
+  }
+
+  type = "Opaque"
 }
 
 resource "random_password" "this" {

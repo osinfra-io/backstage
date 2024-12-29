@@ -12,6 +12,7 @@ No requirements.
 | <a name="provider_datadog"></a> [datadog](#provider\_datadog) | 3.50.0 |
 | <a name="provider_google"></a> [google](#provider\_google) | 6.14.1 |
 | <a name="provider_helm"></a> [helm](#provider\_helm) | 2.17.0 |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.35.1 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.3 |
 
 ## Modules
@@ -29,6 +30,7 @@ No requirements.
 | [google_sql_database.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database) | resource |
 | [google_sql_user.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_user) | resource |
 | [helm_release.backstage](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
+| [kubernetes_secret.postgres](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/secret) | resource |
 | [random_password.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [google_client_config.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/client_config) | data source |
 | [google_container_cluster.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/container_cluster) | data source |
@@ -41,6 +43,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_backstage_extra_app_config"></a> [backstage\_extra\_app\_config](#input\_backstage\_extra\_app\_config) | Extra app config for the Backstage deployment | `string` | n/a | yes |
 | <a name="input_backstage_replicas"></a> [backstage\_replicas](#input\_backstage\_replicas) | The number of replicas for the Backstage deployment | `number` | `1` | no |
 | <a name="input_backstage_resources_limits_cpu"></a> [backstage\_resources\_limits\_cpu](#input\_backstage\_resources\_limits\_cpu) | The CPU limit for the audit container | `string` | `"40m"` | no |
 | <a name="input_backstage_resources_limits_memory"></a> [backstage\_resources\_limits\_memory](#input\_backstage\_resources\_limits\_memory) | The memory limit for the audit container | `string` | `"128Mi"` | no |
