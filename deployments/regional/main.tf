@@ -109,7 +109,7 @@ resource "helm_release" "backstage" {
     file("${path.module}/helm/backstage.yml")
   ]
 
-  version = var.backstage_version
+  version = "2.3.0"
 
   depends_on = [
     module.cloud_sql
