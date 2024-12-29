@@ -2,7 +2,7 @@
 # https://github.com/osinfra-io/terraform-google-cloud-sql
 
 module "cloud_sql" {
-  source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=bump"
+  source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=v0.2.1"
 
   deletion_protection            = false
   host_project_id                = var.cloud_sql_host_project_id
