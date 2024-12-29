@@ -127,8 +127,8 @@ resource "kubernetes_secret" "postgres" {
   }
 
   data = {
-    "username" = "backstage"
-    "password" = random_password.this.result
+    "POSTGRES_USER"     = "backstage"
+    "POSTGRES_PASSWORD" = random_password.this.result
   }
 
   type = "Opaque"

@@ -43,7 +43,8 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_backstage_extra_app_config"></a> [backstage\_extra\_app\_config](#input\_backstage\_extra\_app\_config) | Extra app config for the Backstage deployment | `string` | n/a | yes |
+| <a name="input_backstage_extra_app_config_file"></a> [backstage\_extra\_app\_config\_file](#input\_backstage\_extra\_app\_config\_file) | Extra app config file for the Backstage deployment | `string` | n/a | yes |
+| <a name="input_backstage_extra_app_config_ref"></a> [backstage\_extra\_app\_config\_ref](#input\_backstage\_extra\_app\_config\_ref) | Extra app config config map reference for the Backstage deployment | `string` | n/a | yes |
 | <a name="input_backstage_replicas"></a> [backstage\_replicas](#input\_backstage\_replicas) | The number of replicas for the Backstage deployment | `number` | `1` | no |
 | <a name="input_backstage_resources_limits_cpu"></a> [backstage\_resources\_limits\_cpu](#input\_backstage\_resources\_limits\_cpu) | The CPU limit for the audit container | `string` | `"40m"` | no |
 | <a name="input_backstage_resources_limits_memory"></a> [backstage\_resources\_limits\_memory](#input\_backstage\_resources\_limits\_memory) | The memory limit for the audit container | `string` | `"128Mi"` | no |
