@@ -1,3 +1,33 @@
+variable "backstage_replicas" {
+  description = "The number of replicas for the Backstage deployment"
+  type        = number
+  default     = 1
+}
+
+variable "backstage_resources_limits_cpu" {
+  description = "The CPU limit for the audit container"
+  type        = string
+  default     = "40m"
+}
+
+variable "backstage_resources_limits_memory" {
+  description = "The memory limit for the audit container"
+  type        = string
+  default     = "128Mi"
+}
+
+variable "backstage_resources_requests_cpu" {
+  description = "The CPU request for the audit container"
+  type        = string
+  default     = "10m"
+}
+
+variable "backstage_resources_requests_memory" {
+  description = "The memory request for the audit container"
+  type        = string
+  default     = "32Mi"
+}
+
 variable "backstage_version" {
   description = "The version of the Backstage deployment"
   type        = string

@@ -105,7 +105,7 @@ backstage:
     registry: ghcr.io
 
     # -- Backstage image repository
-    repository: backstage/backstage
+    repository: backstage
 
     # -- Backstage image tag (immutable tags are recommended)
     tag: latest
@@ -163,18 +163,6 @@ backstage:
 
   # -- Directory containing the backstage installation
   installDir: /app
-
-  # -- Resource requests/limits
-  # <br /> Ref: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-requests-and-limits-of-pod-and-container
-  # <!-- E.g.
-  # resources:
-  #   limits:
-  #     memory: 1Gi
-  #     cpu: 1000m
-  #   requests:
-  #     memory: 250Mi
-  #     cpu: 100m -->
-  resources: {}
 
   # -- Readiness Probe
   # Ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes
@@ -380,69 +368,6 @@ networkPolicy:
     #           matchLabels:
     #             label: example
 
-
-# -- PostgreSQL [chart configuration](https://github.com/bitnami/charts/blob/master/bitnami/postgresql/values.yaml)
-# @default -- See below
-postgresql:
-
-  # -- Switch to enable or disable the PostgreSQL helm chart
-  enabled: false
-
-  # -- The authentication details of the Postgres database
-  auth:
-
-    # -- Name for a custom user to create
-    username: bn_backstage
-
-    # -- Password for the custom user to create
-    password: ""
-
-    # -- Name of existing secret to use for PostgreSQL credentials
-    existingSecret: ""
-
-    # -- The secret keys Postgres will look for to retrieve the relevant password
-    secretKeys:
-
-
-
-      # -- The key in which Postgres will look for, for the admin password, in the existing Secret
-
-      # Base64 High Entropy String
-      # checkov:skip=CKV_SECRET_6: False positive
-      adminPasswordKey: admin-password
-
-      # -- The key in which Postgres will look for, for the user password, in the existing Secret
-      # Base64 High Entropy String
-      # checkov:skip=CKV_SECRET_6: False positive
-      userPasswordKey: user-password
-
-      # -- The key in which Postgres will look for, for the replication password, in the existing Secret
-      # Base64 High Entropy String
-      # checkov:skip=CKV_SECRET_6: False positive
-      replicationPasswordKey: replication-password
-
-  # -- PostgreSQL architecture (`standalone` or `replication`)
-  architecture: standalone
-
-# -- Service Account Configuration
-# @default -- See below
-serviceAccount:
-
-  # -- Enable the creation of a ServiceAccount for Backstage pods
-  create: false
-
-  # -- Name of the ServiceAccount to use
-  # If not set and `serviceAccount.create` is true, a name is generated
-  name: ""
-
-  # -- Additional custom labels to the service ServiceAccount.
-  labels: {}
-
-  # -- Additional custom annotations for the ServiceAccount.
-  annotations: {}
-
-  # -- Auto-mount the service account token in the pod
-  automountServiceAccountToken: true
 
 # -- Metrics configuration
 metrics:

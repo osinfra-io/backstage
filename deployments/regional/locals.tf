@@ -23,10 +23,22 @@ locals {
       region           = module.helpers.region
       service          = local.datadog_synthetic_service
       status           = "paused"
-      url              = module.helpers.environment == "production" ? "https://us-east1.gcp.osinfra.io/${local.datadog_synthetic_service}" : "https://us-east1.${module.helpers.env}.gcp.osinfra.io/${local.datadog_synthetic_service}"
+      url              = module.helpers.environment == "production" ? "https://backstage.gcp.osinfra.io" : "https://backstage.${module.helpers.env}.gcp.osinfra.io"
     }
   } : {}
 
-  registry           = module.helpers.environment == "sandbox" ? "us-docker.pkg.dev/plt-lz-services-tf7f-sb/plt-docker-virtual" : "us-docker.pkg.dev/plt-lz-services-tf79-prod/plt-docker-virtual"
+  helm_values = {
+    "backstage.image.registry"                           = local.registry
+    "backstage.image.tag"                                = var.backstage_version
+    "backstage.podLabels.tags\\.datadoghq\\.com/env"     = module.helpers.environment
+    "backstage.podLabels.tags\\.datadoghq\\.com/version" = var.backstage_version
+    "backstage.replicas"                                 = var.backstage_replicas
+    "backstage.resources.limits.cpu"                     = var.backstage_resources_limits_cpu
+    "backstage.resources.limits.memory"                  = var.backstage_resources_limits_memory
+    "backstage.resources.requests.cpu"                   = var.backstage_resources_requests_cpu
+    "backstage.resources.requests.memory"                = var.backstage_resources_requests_memory
+  }
+
   kubernetes_project = module.helpers.environment == "sandbox" ? "plt-k8s-tf39-sb" : module.helpers.environment == "production" ? "plt-k8s-tf10-prod" : "plt-k8s-tf33-nonprod"
+  registry           = module.helpers.environment == "sandbox" ? "us-docker.pkg.dev/plt-lz-services-tf7f-sb/plt-docker-virtual" : "us-docker.pkg.dev/plt-lz-services-tf79-prod/plt-docker-virtual"
 }
