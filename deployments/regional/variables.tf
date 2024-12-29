@@ -1,13 +1,3 @@
-variable "backstage_extra_app_config_file" {
-  description = "Extra app config file for the Backstage deployment"
-  type        = string
-}
-
-variable "backstage_extra_app_config_ref" {
-  description = "Extra app config config map reference for the Backstage deployment"
-  type        = string
-}
-
 variable "backstage_replicas" {
   description = "The number of replicas for the Backstage deployment"
   type        = number
