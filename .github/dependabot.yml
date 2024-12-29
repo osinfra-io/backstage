@@ -1,0 +1,18 @@
+# Dependabot
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates
+
+version: 2.0
+updates:
+  - package-ecosystem: github-actions
+
+    # NOTE: The "/" here is for checking for workflow files in .github/workflows
+
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: terraform
+    directories:
+      - "**/*"
+    schedule:
+      interval: daily

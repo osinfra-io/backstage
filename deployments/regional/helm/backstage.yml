@@ -1,0 +1,61 @@
+backstage:
+  args:
+    - "app-config.yaml"
+
+  extraContainers:
+    - name: cloud-sql-proxy
+      image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.14.2
+      args:
+        - "--private-ip"
+        - "--port=5432"
+      securityContext:
+        runAsNonRoot: true
+      resources:
+        limits:
+          memory: "1Gi"
+          cpu: "100m"
+        requests:
+          memory: "128Mi"
+          cpu: 10m
+
+  extraEnvVarsSecrets:
+    - postgres-secrets
+
+  image:
+    repository: backstage
+
+  podLabels:
+   tags.datadoghq.com/service: backstage
+
+  readinessProbe:
+    failureThreshold: 3
+    httpGet:
+      path: /.backstage/health/v1/readiness
+      port: 7007
+      scheme: HTTP
+    initialDelaySeconds: 30
+    periodSeconds: 10
+    successThreshold: 2
+    timeoutSeconds: 2
+
+  livenessProbe:
+    failureThreshold: 3
+    httpGet:
+      path: /.backstage/health/v1/liveness
+      port: 7007
+      scheme: HTTP
+    initialDelaySeconds: 60
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 2
+
+  startupProbe:
+    failureThreshold: 3
+    httpGet:
+      path: /.backstage/health/v1/liveness
+      port: 7007
+      scheme: HTTP
+    initialDelaySeconds: 60
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 2

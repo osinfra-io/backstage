@@ -1,0 +1,45 @@
+apiVersion: v3
+kind: service
+metadata:
+  name: backstage
+  description: Backstage is an open platform for building internal developer portals.
+  displayName: backstage
+
+  links:
+    - name: backstage
+      type: repo
+      provider: Github
+      url: "https://github.com/osinfra-io/backstage"
+
+    - name: backstage.sb.gcp.osinfra.io
+      type: other
+      url: "https://backstage.sb.gcp.osinfra.io"
+
+    - name: backstage.gcp.osinfra.io
+      type: other
+      url: "https://backstage.gcp.osinfra.io"
+
+  contacts:
+    - type: email
+      contact: platform-backstage@osinfra.io
+    - type: google-chat
+      contact: "https://mail.google.com/chat/u/0/#chat/space/AAAA1mERq4Q"
+
+  owner: platform-backstage
+
+spec:
+  lifecycle: emerging
+  tier: three
+  type: web
+  languages:
+    - typescript
+
+
+datadog:
+  performanceData:
+    tags:
+      - 'service:backstage'
+
+  # pipelines:
+  #   fingerprints:
+  #     - NabNkdMuNLxT
