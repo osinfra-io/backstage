@@ -35,10 +35,10 @@ locals {
     "backstage.podLabels.tags\\.datadoghq\\.com/env"     = module.helpers.environment
     "backstage.podLabels.tags\\.datadoghq\\.com/version" = var.backstage_version
     "backstage.replicas"                                 = var.backstage_replicas
-    "backstage.resources.limits.cpu"                     = var.backstage_resources_limits_cpu
-    "backstage.resources.limits.memory"                  = var.backstage_resources_limits_memory
-    "backstage.resources.requests.cpu"                   = var.backstage_resources_requests_cpu
-    "backstage.resources.requests.memory"                = var.backstage_resources_requests_memory
+    # "backstage.resources.limits.cpu"                     = var.backstage_resources_limits_cpu
+    # "backstage.resources.limits.memory"                  = var.backstage_resources_limits_memory
+    # "backstage.resources.requests.cpu"                   = var.backstage_resources_requests_cpu
+    # "backstage.resources.requests.memory"                = var.backstage_resources_requests_memory
   }
 
   kubernetes_project = module.helpers.environment == "sandbox" ? "plt-k8s-tf39-sb" : module.helpers.environment == "production" ? "plt-k8s-tf10-prod" : "plt-k8s-tf33-nonprod"
