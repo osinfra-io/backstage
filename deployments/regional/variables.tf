@@ -1,9 +1,3 @@
-variable "backstage_replicas" {
-  description = "The number of replicas for the Backstage deployment"
-  type        = number
-  default     = 1
-}
-
 variable "backstage_version" {
   description = "The version of the Backstage deployment"
   type        = string

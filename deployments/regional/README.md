@@ -24,16 +24,13 @@ No requirements.
 | Name | Type |
 |------|------|
 | [datadog_synthetics_test.this](https://registry.terraform.io/providers/datadog/datadog/latest/docs/resources/synthetics_test) | resource |
-| [google_client_config.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/client_config) | data source |
-| [google_container_cluster.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/container_cluster) | data source |
-| [google_project.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
-| [google_projects.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
+| [google_project.backstage](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
+| [google_projects.backstage](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_backstage_replicas"></a> [backstage\_replicas](#input\_backstage\_replicas) | The number of replicas for the Backstage deployment | `number` | `1` | no |
 | <a name="input_backstage_version"></a> [backstage\_version](#input\_backstage\_version) | The version of the Backstage deployment | `string` | n/a | yes |
 | <a name="input_cloud_sql_host_project_id"></a> [cloud\_sql\_host\_project\_id](#input\_cloud\_sql\_host\_project\_id) | Host project ID for the shared VPC | `string` | n/a | yes |
 | <a name="input_datadog_api_key"></a> [datadog\_api\_key](#input\_datadog\_api\_key) | Datadog API key | `string` | n/a | yes |

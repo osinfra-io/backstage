@@ -10,7 +10,7 @@ module "cloud_sql" {
   labels                         = module.helpers.labels
   network                        = "standard-shared"
   point_in_time_recovery_enabled = false
-  project                        = data.google_project.this.project_id
+  project                        = data.google_project.backstage.project_id
   region                         = module.helpers.region
 }
 

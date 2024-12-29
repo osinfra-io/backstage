@@ -12,14 +12,15 @@ permissions:
   id-token: write
 
 jobs:
-  yarn_install:
-    name: "Yarn install"
+  build_and_push:
+    name: Build and push
     runs-on: ubuntu-latest
+
     steps:
-      # Checkout
+      # GitHub - Checkout
       # https://github.com/marketplace/actions/checkout
 
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4.2.2
 
       # Setup Node
@@ -37,38 +38,66 @@ jobs:
           yarn tsc
           yarn build:backend
 
-  build_and_push_us:
-    name: "Sandbox Registry: us-docker.pkg.dev"
-    uses: osinfra-io/github-misc-called-workflows/.github/workflows/build-and-push.yml@v0.1.7
-    if: github.actor != 'dependabot[bot]'
-    needs: yarn_install
-    with:
-      cache_from: type=gha
-      cache_to: type=gha,mode=max
-      context: ./app
-      build_args: |
+      # Google Cloud Platform - Create Credentials
+      # https://github.com/marketplace/actions/authenticate-to-google-cloud
+
+      - name: Create credentials
+        id: create_credentials
+        uses: google-github-actions/auth@v2.1.7
+        with:
+          token_format: access_token
+          service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
+          workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
+          access_token_lifetime: 300s
+
+      # Docker Buildx
+      # https://github.com/marketplace/actions/docker-setup-buildx
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3.8.0
+
+      # Docker Login
+      # https://github.com/marketplace/actions/docker-login
+
+      - name: Login to Google Artifact Registry
+        uses: docker/login-action@v3.3.0
+        with:
+          registry: us-docker.pkg.dev
+          username: oauth2accesstoken
+          password: ${{ steps.create_credentials.outputs.access_token }}
+
+
+      # Build and Push Docker to Google Artifact Registry
+      # https://github.com/marketplace/actions/build-and-push-docker-images
+
+      - name: Build and push to Google Artifact Registry
+        uses: docker/build-push-action@v6.10.0
+        with:
+          tags: us-docker.pkg.dev/plt-lz-services-tf7f-sb/plt-docker-standard/backstage:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          context: ./app
+          file: ./app/packages/backend/Dockerfile
+          build-args: |
             DD_GIT_REPOSITORY_URL=https://github.com/${{ github.repository }}
             DD_GIT_COMMIT_SHA=${{ github.sha }}
-      file: ./app/packages/backend/Dockerfile
-      registry: us-docker.pkg.dev
-      service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
-      tags: us-docker.pkg.dev/plt-lz-services-tf7f-sb/plt-docker-standard/backstage:${{ github.sha }}
-      workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
+          push: true
 
   main:
     name: "Main"
     uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.5
     if: github.actor != 'dependabot[bot]'
-    needs: build_and_push_us
+    needs: build_and_push
     with:
       checkout_ref: ${{ github.ref }}
       environment: sandbox
       github_environment: "Sandbox: Main"
       service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
-      terraform_plan_args: -var-file=tfvars/sandbox.tfvars -var-file=shared/tfvars/sandbox.tfvars
+      terraform_plan_args: -var-file=tfvars/sandbox.tfvars
       terraform_state_bucket: plt-backstage-4312-sb
       terraform_version: ${{ vars.TERRAFORM_VERSION }}
       terraform_workspace: main-sandbox
+      working_directory: deployments
       workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
