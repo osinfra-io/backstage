@@ -1,4 +1,6 @@
 backstage:
+  args:
+    - "app-config.yaml"
   image:
     repository: backstage
 
