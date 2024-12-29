@@ -29,7 +29,7 @@ locals {
 
   helm_values = {
     "backstage.extraAppConfig[0].filename"               = "app-config.${module.helpers.environment}.yaml"
-    "backstage.extraAppConfig[0].configMapRef"           = "app-config.${module.helpers.environment}"
+    "backstage.extraAppConfig[0].configMapRef"           = "app-config-${module.helpers.environment}"
     "backstage.extraContainers[0].args[2]"               = "${data.google_project.backstage.project_id}:${module.helpers.region}:${module.cloud_sql.instance}"
     "backstage.image.registry"                           = local.registry
     "backstage.image.tag"                                = var.backstage_version
