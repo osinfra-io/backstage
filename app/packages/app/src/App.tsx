@@ -37,6 +37,10 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 
+import LightIcon from '@material-ui/icons/WbSunny';
+import { UnifiedThemeProvider } from '@backstage/theme';
+import { osinfraTheme } from './themes/osinfra';
+
 const app = createApp({
   apis,
   bindRoutes({ bind }) {
@@ -59,6 +63,16 @@ const app = createApp({
   components: {
     SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
+
+  themes: [{
+    id: 'osinfra',
+    title: 'Open Source Infrastructure (as Code) Theme',
+    variant: 'dark',
+    icon: <LightIcon />,
+    Provider: ({ children }) => (
+      <UnifiedThemeProvider theme={osinfraTheme} children={children} />
+    ),
+  }]
 });
 
 const routes = (
