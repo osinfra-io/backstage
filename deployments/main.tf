@@ -55,7 +55,7 @@ resource "google_iap_brand" "this" {
   # they are not actual valid email addresses, and cannot be used when creating a brand. However, a service account can be the owner
   # of a Google Group.
 
-  support_email = "gcp-iap@idexx.com"
+  support_email = "iap@osinfra.io"
 }
 
 # IAP Client Resource
