@@ -48,7 +48,7 @@ module "project" {
 # If you need to delete the Brand, you must do so manually in the Google Cloud Console.
 
 resource "google_iap_brand" "this" {
-  application_title = "Backstage (Cloud IAP Protected)"
+  application_title = "Backstage"
   project           = module.project.id
 
   # This email address can either be a user's address or a Google Groups alias. While service accounts also have an email address,
