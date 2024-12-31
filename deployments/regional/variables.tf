@@ -49,3 +49,18 @@ variable "datadog_app_key" {
   type        = string
   sensitive   = true
 }
+
+variable "dns_project" {
+  description = "DNS project ID for the record set"
+  type        = string
+}
+
+variable "dns_zone" {
+  description = "DNS zone for the record set"
+  type        = string
+}
+
+variable "remote_bucket" {
+  description = "The remote bucket the `terraform_remote_state` data source retrieves the state from"
+  type        = string
+}
