@@ -167,7 +167,7 @@ resource "kubernetes_ingress_v1" "backstage" {
             service {
               name = "backstage"
               port {
-                number = 7000 # Check this..
+                name = "http-backend"
               }
             }
           }
