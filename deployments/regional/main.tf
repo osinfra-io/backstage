@@ -88,7 +88,7 @@ resource "datadog_synthetics_test" "this" {
 
 resource "google_dns_record_set" "backstage_a_record" {
   project      = var.networking_project_id
-  name         = local.hostname
+  name         = "${local.hostname}." # Trailing dot is required
   managed_zone = local.managed_zone
   type         = "A"
   ttl          = 300

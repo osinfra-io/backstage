@@ -6,6 +6,6 @@ module "helpers" {
 
   cost_center         = "x001"
   data_classification = "public"
-  repository          = "google-cloud-kubernetes"
-  team                = "platform-google-cloud-kubernetes"
+  repository          = "backstage"
+  team                = "platform-backstage"
 }
