@@ -39,7 +39,6 @@ locals {
     # "backstage.resources.limits.memory"                  = var.backstage_resources_limits_memory
     # "backstage.resources.requests.cpu"                   = var.backstage_resources_requests_cpu
     # "backstage.resources.requests.memory"                = var.backstage_resources_requests_memory
-    "service.annotations.cloud\\.google\\.com/backend-config" = jsonencode({ "default" : "backstage-backend-config" })
   }
 
   hostname           = module.helpers.environment == "production" ? "backstage-${module.helpers.region}.gcp.osinfra.io" : "backstage-${module.helpers.region}-${module.helpers.environment}.gcp.osinfra.io"
