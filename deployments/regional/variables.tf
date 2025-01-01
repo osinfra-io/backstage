@@ -45,11 +45,6 @@ variable "datadog_app_key" {
   sensitive   = true
 }
 
-variable "dns_zone" {
-  description = "DNS zone for the record set"
-  type        = string
-}
-
 variable "networking_project_id" {
   description = "The project ID for the shared VPC"
   type        = string

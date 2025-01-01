@@ -58,7 +58,6 @@ No requirements.
 | <a name="input_backstage_version"></a> [backstage\_version](#input\_backstage\_version) | The version of the Backstage deployment | `string` | n/a | yes |
 | <a name="input_datadog_api_key"></a> [datadog\_api\_key](#input\_datadog\_api\_key) | Datadog API key | `string` | n/a | yes |
 | <a name="input_datadog_app_key"></a> [datadog\_app\_key](#input\_datadog\_app\_key) | Datadog APP key | `string` | n/a | yes |
-| <a name="input_dns_zone"></a> [dns\_zone](#input\_dns\_zone) | DNS zone for the record set | `string` | n/a | yes |
 | <a name="input_networking_project_id"></a> [networking\_project\_id](#input\_networking\_project\_id) | The project ID for the shared VPC | `string` | n/a | yes |
 | <a name="input_remote_bucket"></a> [remote\_bucket](#input\_remote\_bucket) | The remote bucket the `terraform_remote_state` data source retrieves the state from | `string` | n/a | yes |
 
