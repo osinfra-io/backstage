@@ -186,7 +186,7 @@ resource "kubernetes_manifest" "backstage_backend_config" {
     "apiVersion" = "cloud.google.com/v1"
     "kind"       = "BackendConfig"
     "metadata" = {
-      "name"      = "backstage-backend-config"
+      "name"      = "backstage-backend"
       "namespace" = "backstage"
     }
     "spec" = {

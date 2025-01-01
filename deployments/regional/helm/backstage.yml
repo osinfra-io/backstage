@@ -62,5 +62,5 @@ backstage:
 
 service:
   annotations:
-    cloud.google.com/backend-config: '{"default": "backstage-backendconfig"}'
+    cloud.google.com/backend-config: '{"default": "backstage-backend"}'
   type: NodePort
