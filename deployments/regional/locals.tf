@@ -41,7 +41,7 @@ locals {
     # "backstage.resources.requests.memory"                = var.backstage_resources_requests_memory
   }
 
-  hostname           = module.helpers.environment == "production" ? "backstage-${module.helpers.region}.gcp.osinfra.io" : "backstage-${module.helpers.region}-${module.helpers.env}.gcp.osinfra.io"
+  hostname           = module.helpers.environment == "production" ? "backstage-${module.helpers.region}.gcp.osinfra.io" : "backstage-${module.helpers.region}.${module.helpers.env}.gcp.osinfra.io"
   kubernetes_project = module.helpers.environment == "sandbox" ? "plt-k8s-tf39-sb" : module.helpers.environment == "production" ? "plt-k8s-tf10-prod" : "plt-k8s-tf33-nonprod"
   managed_zone       = module.helpers.environment == "production" ? "gcp-osinfra-io" : "${module.helpers.env}-gcp-osinfra-io"
   main               = data.terraform_remote_state.main.outputs
