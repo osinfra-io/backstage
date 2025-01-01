@@ -31,8 +31,9 @@ backend:
 auth:
   providers:
     gcpIap:
-      audience: '/projects/362793201562/global/backendServices/k8s-ig--edd854c497a47e5f'
-      # jwtHeader: x-custom-header # Optional: Only if you are using a custom header for the IAP JWT
+      # gcloud compute backend-services list --format="table(name, id)"
+      audience: '/projects/362793201562/global/backendServices/3529575844611151066'
+      jwtHeader: x-custom-header # Optional: Only if you are using a custom header for the IAP JWT
       signIn:
         resolvers:
           # See https://backstage.io/docs/auth/google/gcp-iap-auth#resolvers for more resolvers
