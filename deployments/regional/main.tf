@@ -19,7 +19,7 @@ module "cloud_sql" {
   source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=v0.2.1"
 
   deletion_protection            = false
-  host_project_id                = var.cloud_sql_host_project_id
+  host_project_id                = var.networking_project_id
   instance_name                  = "backstage"
   labels                         = module.helpers.labels
   network                        = "standard-shared"
@@ -87,9 +87,9 @@ resource "datadog_synthetics_test" "this" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/dns_record_set
 
 resource "google_dns_record_set" "backstage_a_record" {
-  project      = var.dns_project
+  project      = var.networking_project_id
   name         = local.hostname
-  managed_zone = var.dns_zone
+  managed_zone = local.managed_zone
   type         = "A"
   ttl          = 300
 

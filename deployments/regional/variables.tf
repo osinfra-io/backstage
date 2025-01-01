@@ -33,11 +33,6 @@ variable "backstage_version" {
   type        = string
 }
 
-variable "cloud_sql_host_project_id" {
-  description = "Host project ID for the shared VPC"
-  type        = string
-}
-
 variable "datadog_api_key" {
   description = "Datadog API key"
   type        = string
@@ -50,13 +45,13 @@ variable "datadog_app_key" {
   sensitive   = true
 }
 
-variable "dns_project" {
-  description = "DNS project ID for the record set"
+variable "dns_zone" {
+  description = "DNS zone for the record set"
   type        = string
 }
 
-variable "dns_zone" {
-  description = "DNS zone for the record set"
+variable "networking_project_id" {
+  description = "The project ID for the shared VPC"
   type        = string
 }
 
