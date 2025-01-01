@@ -25,7 +25,6 @@ No requirements.
 |------|------|
 | [google_iap_brand.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iap_brand) | resource |
 | [google_iap_client.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iap_client) | resource |
-| [google_iap_web_iam_binding.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iap_web_iam_binding) | resource |
 
 ## Inputs
 

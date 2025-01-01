@@ -65,19 +65,3 @@ resource "google_iap_client" "this" {
   brand        = google_iap_brand.this.name
   display_name = "Backstage"
 }
-
-# IAP Web IAM Binding Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iap_web_iam
-
-resource "google_iap_web_iam_binding" "this" {
-
-  members = [
-    "domain:osinfra.io"
-  ]
-
-  project = module.project.id
-
-  # Authoritative for a given role.
-
-  role = "roles/iap.httpsResourceAccessor"
-}
