@@ -3,6 +3,7 @@ backstage:
     - name: cloud-sql-proxy
       image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.14.2
       args:
+        - --debug=true
         - --private-ip
         - --port=5432
       securityContext:
