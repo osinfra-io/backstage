@@ -1,0 +1,20 @@
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: admin
+spec:
+  profile:
+    displayName: Brett Curtis
+    email: brett@osinfra.io
+  memberOf: [admins]
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: admins
+spec:
+  type: team
+  children: []

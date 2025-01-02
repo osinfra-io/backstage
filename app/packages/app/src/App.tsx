@@ -30,6 +30,7 @@ import {
   AlertDisplay,
   OAuthRequestDialog,
   ProxiedSignInPage,
+  SignInPage,
 } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
@@ -60,8 +61,11 @@ const app = createApp({
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
   },
+
   components: {
-    SignInPage: props => <ProxiedSignInPage {...props} provider="gcpiap" />,
+    SignInPage: props => process.env.NODE_ENV !== 'development'
+      ? <ProxiedSignInPage {...props} provider="gcpiap" />
+      : <SignInPage {...props} auto providers={['guest']} />,
   },
 
   themes: [{
