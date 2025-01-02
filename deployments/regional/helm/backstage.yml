@@ -104,3 +104,6 @@ service:
   annotations:
     cloud.google.com/backend-config: '{"default": "backstage-backend"}'
   type: NodePort
+
+serviceAccount:
+  name: backstage-workload-identity-sa
