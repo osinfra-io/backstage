@@ -1,5 +1,5 @@
 app:
-  title: Backstage
+  title: Backstage (Local Development)
   baseUrl: http://localhost:3000
 
 organization:

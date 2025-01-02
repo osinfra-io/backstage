@@ -1,6 +1,6 @@
 backstage:
-  # args:
-  #   - "app-config.yaml"
+  args:
+    - "app-config.yaml"
 
   extraContainers:
     - name: cloud-sql-proxy
