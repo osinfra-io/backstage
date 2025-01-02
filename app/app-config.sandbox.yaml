@@ -32,7 +32,7 @@ backend:
 auth:
   providers:
     gcpIap:
-      audience: '/projects/362793201562/global/backendServices/3529575844611151066'
+      audience: /projects/362793201562/global/backendServices/3529575844611151066
       jwtHeader: x-goog-iap-jwt-assertion
       signIn:
         resolvers:
