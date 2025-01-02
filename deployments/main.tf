@@ -74,3 +74,9 @@ resource "google_project_iam_member" "cloud_sql_proxy" {
   project = module.project.id
   role    = "roles/cloudsql.client"
 }
+
+resource "google_project_iam_member" "workload_identity" {
+  member  = "serviceAccount:${var.k8s_workload_identity_service_account}"
+  project = module.project.id
+  role    = "roles/iam.workloadIdentityUser"
+}

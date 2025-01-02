@@ -26,6 +26,7 @@ No requirements.
 | [google_iap_brand.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iap_brand) | resource |
 | [google_iap_client.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iap_client) | resource |
 | [google_project_iam_member.cloud_sql_proxy](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
+| [google_project_iam_member.workload_identity](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 
 ## Inputs
 
