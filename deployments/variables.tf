@@ -16,6 +16,11 @@ variable "datadog_enable" {
   default     = false
 }
 
+variable "k8s_workload_identity_service_account" {
+  description = "The service account to use for the workload identity"
+  type        = string
+}
+
 variable "project_billing_account" {
   description = "The alphanumeric ID of the billing account this project belongs to"
   type        = string

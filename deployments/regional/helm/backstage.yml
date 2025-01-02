@@ -67,7 +67,6 @@ backstage:
 
     backend:
       baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
-      listen: ':7007'
 
       database:
         client: pg
