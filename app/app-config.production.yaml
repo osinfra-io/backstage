@@ -17,11 +17,7 @@ backend:
 auth:
   providers:
     gcpIap:
-      audience:
-        project: 1036446604184
-        backendService: XXXX
-      jwtHeader:
-        name: x-goog-iap-jwt-assertion
+      audience: '/projects/XXXXX/global/backendServices/XXXXX'
       signIn:
         resolvers:
           - resolver: emailMatchingUserEntityProfileEmail
