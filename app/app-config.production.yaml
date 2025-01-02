@@ -17,7 +17,7 @@ backend:
 auth:
   providers:
     gcpIap:
-      audience: '/projects/XXXXX/global/backendServices/XXXXX'
+      audience: '/projects/1036446604184/global/backendServices/UNKNOWN'
       signIn:
         resolvers:
           - resolver: emailMatchingUserEntityProfileEmail

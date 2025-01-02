@@ -1,6 +1,6 @@
 backstage:
-  args:
-    - "app-config.yaml"
+  # args:
+  #   - "app-config.yaml"
 
   extraContainers:
     - name: cloud-sql-proxy
@@ -59,6 +59,47 @@ backstage:
     periodSeconds: 10
     successThreshold: 1
     timeoutSeconds: 2
+
+  appConfig:
+    app:
+      title: Backstage (Sandbox)
+      baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
+
+    backend:
+      baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
+      listen: ':7007'
+
+      database:
+        client: pg
+        connection:
+          host: localhost
+          port: 5432
+          user: ${POSTGRES_USER}
+          password: ${POSTGRES_PASSWORD}
+
+    auth:
+      providers:
+        gcpIap:
+          audience: '/projects/362793201562/global/backendServices/3529575844611151066'
+          signIn:
+            resolvers:
+              - resolver: emailMatchingUserEntityProfileEmail
+
+      permissions:
+        rules:
+          - name: backstage-admin-rule
+            resourceType: all
+            policy: allow
+            conditions:
+              - type: group
+                group: admins
+
+    catalog:
+      locations:
+        - type: file
+          target: ./examples/admin.yaml
+          rules:
+            - allow: [User, Group]
 
 service:
   annotations:
