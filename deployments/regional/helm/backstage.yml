@@ -104,4 +104,3 @@ service:
 
 serviceAccount:
   name: backstage-workload-identity-sa
-  automountServiceAccountToken: false
