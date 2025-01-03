@@ -86,7 +86,7 @@ backstage:
     auth:
       providers:
         gcpIap:
-          audience: /projects/362793201562/global/backendServices/3529575844611151066
+          audience: /projects/362793201562/global/backendServices/7413458338808744263
           signIn:
             resolvers:
               - resolver: emailMatchingUserEntityProfileEmail
