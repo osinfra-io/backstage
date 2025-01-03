@@ -28,7 +28,6 @@ locals {
   } : {}
 
   helm_values = {
-    "backstage.args[1]"                                  = "app-config.${module.helpers.environment}.yaml"
     "backstage.extraContainers[0].args[2]"               = "${data.google_project.backstage.project_id}:${module.helpers.region}:${module.cloud_sql.instance}"
     "backstage.image.registry"                           = local.registry
     "backstage.image.tag"                                = var.backstage_version
@@ -41,6 +40,9 @@ locals {
     # "backstage.resources.requests.memory"                = var.backstage_resources_requests_memory
   }
 
+  hostname           = module.helpers.environment == "production" ? "backstage-${module.helpers.region}.gcp.osinfra.io" : "backstage-${module.helpers.region}.${module.helpers.env}.gcp.osinfra.io"
   kubernetes_project = module.helpers.environment == "sandbox" ? "plt-k8s-tf39-sb" : module.helpers.environment == "production" ? "plt-k8s-tf10-prod" : "plt-k8s-tf33-nonprod"
+  managed_zone       = module.helpers.environment == "production" ? "gcp-osinfra-io" : "${module.helpers.env}-gcp-osinfra-io"
+  main               = data.terraform_remote_state.main.outputs
   registry           = module.helpers.environment == "sandbox" ? "us-docker.pkg.dev/plt-lz-services-tf7f-sb/plt-docker-virtual" : "us-docker.pkg.dev/plt-lz-services-tf79-prod/plt-docker-virtual"
 }

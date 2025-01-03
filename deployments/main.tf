@@ -33,8 +33,44 @@ module "project" {
     "compute.googleapis.com",
     "container.googleapis.com",
     "iam.googleapis.com",
+    "iap.googleapis.com",
     "monitoring.googleapis.com",
     "servicenetworking.googleapis.com",
     "sqladmin.googleapis.com"
   ]
+}
+
+# IAP Client Brand Resource
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iap_brand
+
+# Brands can only be created once for a Google Cloud project and the underlying Google API doesn't not support DELETE or PATCH methods.
+# Destroying a Terraform-managed Brand will remove it from state but will not delete it from Google Cloud.
+# If you need to delete the Brand, you must do so manually in the Google Cloud Console.
+
+resource "google_iap_brand" "this" {
+  application_title = "Backstage"
+  project           = module.project.id
+
+  # This email address can either be a user's address or a Google Groups alias. While service accounts also have an email address,
+  # they are not actual valid email addresses, and cannot be used when creating a brand. However, a service account can be the owner
+  # of a Google Group.
+
+  support_email = "iap@osinfra.io"
+}
+
+# IAP Client Resource
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iap_client
+
+resource "google_iap_client" "this" {
+  brand        = google_iap_brand.this.name
+  display_name = "Backstage"
+}
+
+# Project IAM Member Resource
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_project_iam#google_project_iam_member
+
+resource "google_project_iam_member" "cloud_sql_proxy" {
+  member  = "serviceAccount:${var.k8s_workload_identity_service_account}"
+  project = module.project.id
+  role    = "roles/cloudsql.client"
 }

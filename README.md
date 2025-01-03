@@ -40,6 +40,20 @@ Links to documentation and other resources required to develop and iterate in th
 
 - [backstage](https://backstage.io/docs)
 
+### 🔍 Tests
+
+A local instance of Backstage can be used to test some of the changes made to the repository. You can go to the application
+directory and start the app using the `yarn dev` command. The `yarn dev` command will run both the frontend and backend as separate
+processes (named `[0]` and `[1]`) in the same window.
+
+```none
+cd app
+```
+
+```none
+yarn dev
+```
+
 ### 📓 Terraform Documentation
 
 - [main](deployments/README.md)

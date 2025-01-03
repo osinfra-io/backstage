@@ -1,21 +1,18 @@
 backstage:
-  args:
-    - "app-config.yaml"
-
   extraContainers:
     - name: cloud-sql-proxy
       image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.14.2
       args:
-        - "--private-ip"
-        - "--port=5432"
+        - --private-ip
+        - --port=5432
       securityContext:
         runAsNonRoot: true
       resources:
         limits:
-          memory: "1Gi"
-          cpu: "100m"
+          memory: 1Gi
+          cpu: 100m
         requests:
-          memory: "128Mi"
+          memory: 128Mi
           cpu: 10m
 
   extraEnvVarsSecrets:
@@ -59,3 +56,64 @@ backstage:
     periodSeconds: 10
     successThreshold: 1
     timeoutSeconds: 2
+
+  appConfig:
+    app:
+      title: Backstage (Sandbox)
+      baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
+
+    organization:
+      name: Open Source Infrastructure (as Code)
+
+    backend:
+      baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
+
+      database:
+        client: pg
+        connection:
+          host: localhost
+          port: 5432
+          user: ${POSTGRES_USER}
+          password: ${POSTGRES_PASSWORD}
+
+    techdocs:
+      builder: 'local'
+      generator:
+        runIn: 'docker'
+      publisher:
+        type: 'local'
+
+    auth:
+      providers:
+        gcpIap:
+          audience: /projects/362793201562/global/backendServices/7413458338808744263
+          signIn:
+            resolvers:
+              - resolver: emailMatchingUserEntityProfileEmail
+
+      permissions:
+        rules:
+          - name: backstage-admin-rule
+            resourceType: all
+            policy: allow
+            conditions:
+              - type: group
+                group: admins
+
+    catalog:
+      locations:
+        - type: file
+          target: ./examples/admin.yaml
+          rules:
+            - allow: [User, Group]
+
+    permission:
+      enable: true
+
+service:
+  annotations:
+    cloud.google.com/backend-config: '{"default": "backstage-backend"}'
+  type: NodePort
+
+serviceAccount:
+  name: backstage-workload-identity-sa

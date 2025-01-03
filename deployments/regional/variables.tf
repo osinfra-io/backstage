@@ -33,11 +33,6 @@ variable "backstage_version" {
   type        = string
 }
 
-variable "cloud_sql_host_project_id" {
-  description = "Host project ID for the shared VPC"
-  type        = string
-}
-
 variable "datadog_api_key" {
   description = "Datadog API key"
   type        = string
@@ -48,4 +43,14 @@ variable "datadog_app_key" {
   description = "Datadog APP key"
   type        = string
   sensitive   = true
+}
+
+variable "networking_project_id" {
+  description = "The project ID for the shared VPC"
+  type        = string
+}
+
+variable "remote_bucket" {
+  description = "The remote bucket the `terraform_remote_state` data source retrieves the state from"
+  type        = string
 }
