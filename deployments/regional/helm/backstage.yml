@@ -107,7 +107,7 @@ backstage:
           rules:
             - allow: [User, Group]
 
-    permissions:
+    permission:
       enable: true
 
 service:
