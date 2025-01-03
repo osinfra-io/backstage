@@ -20,7 +20,7 @@
     "@backstage/config": "backstage:^",
     "@backstage/plugin-app-backend": "backstage:^",
     "@backstage/plugin-auth-backend": "backstage:^",
-    "@backstage/plugin-auth-backend-module-gcp-iap-provider": "^0.3.3",
+    "@backstage/plugin-auth-backend-module-gcp-iap-provider": "backstage:^",
     "@backstage/plugin-auth-backend-module-github-provider": "backstage:^",
     "@backstage/plugin-auth-backend-module-guest-provider": "backstage:^",
     "@backstage/plugin-auth-node": "backstage:^",
