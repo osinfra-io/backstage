@@ -1,10 +1,8 @@
 backstage:
   extraContainers:
     - name: cloud-sql-proxy
-      image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.11.4
+      image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.14.2
       args:
-        - --debug
-        - --debug-logs
         - --private-ip
         - --port=5432
       securityContext:
@@ -70,7 +68,7 @@ backstage:
       database:
         client: pg
         connection:
-          host: 127.0.0.1
+          host: localhost
           port: 5432
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
