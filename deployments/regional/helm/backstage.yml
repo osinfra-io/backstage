@@ -62,6 +62,9 @@ backstage:
       title: Backstage (Sandbox)
       baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
 
+    organization:
+      name: Open Source Infrastructure (as Code)
+
     backend:
       baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
 
@@ -72,6 +75,13 @@ backstage:
           port: 5432
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
+
+    techdocs:
+      builder: 'local'
+      generator:
+        runIn: 'docker'
+      publisher:
+        type: 'local'
 
     auth:
       providers:
@@ -96,6 +106,9 @@ backstage:
           target: ./examples/admin.yaml
           rules:
             - allow: [User, Group]
+
+    permissions:
+      enable: true
 
 service:
   annotations:
