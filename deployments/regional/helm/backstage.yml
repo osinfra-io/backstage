@@ -1,8 +1,9 @@
 backstage:
   extraContainers:
     - name: cloud-sql-proxy
-      image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.14.2
+      image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.11.4
       args:
+        - --debug
         - --debug-logs
         - --private-ip
         - --port=5432
