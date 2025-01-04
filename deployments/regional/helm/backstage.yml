@@ -120,7 +120,7 @@ backstage:
       providers:
         githubOrg:
           id: github
-          gitHubUrl: https://github.com
+          githubUrl: https://github.com
           orgs: [osinfra-io]
           schedule:
             initialDelay: { seconds: 30 }
