@@ -15,7 +15,6 @@ jobs:
   build_and_push:
     name: Build and push
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && contains(github.event.pull_request.head.ref, 'app/')
 
     steps:
       # GitHub - Checkout
@@ -31,6 +30,7 @@ jobs:
         uses: actions/setup-node@v4.1.0
         with:
           node-version: 20.x
+          #cache: 'yarn'
 
       - name: Yarn install
         working-directory: app
@@ -87,7 +87,7 @@ jobs:
   main:
     name: "Main"
     uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.5
-    if: github.actor != 'dependabot[bot]' && github.event_name == 'push' && contains(github.event.pull_request.head.ref, 'deployments/')
+    if: github.actor != 'dependabot[bot]'
     needs: build_and_push
     with:
       checkout_ref: ${{ github.ref }}
