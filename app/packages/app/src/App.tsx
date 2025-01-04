@@ -64,7 +64,7 @@ const app = createApp({
 
   components: {
     SignInPage: props => process.env.NODE_ENV !== 'development'
-      ? <ProxiedSignInPage {...props} provider="custom-auth-provider" />
+      ? <ProxiedSignInPage {...props} provider="gcpiap" />
       : <SignInPage {...props} auto providers={['guest']} />,
   },
 
