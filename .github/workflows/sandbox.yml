@@ -30,7 +30,8 @@ jobs:
         uses: actions/setup-node@v4.1.0
         with:
           node-version: 20.x
-          cache: 'npm'
+          cache: 'yarn'
+          cache-dependency-path: app
 
       - name: Yarn install
         working-directory: app
