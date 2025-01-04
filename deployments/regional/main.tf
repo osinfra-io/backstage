@@ -219,6 +219,23 @@ resource "kubernetes_manifest" "backstage_tls" {
 # Kubernetes Secret Resource
 # https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/secret
 
+resource "kubernetes_secret_v1" "github_app_credentials" {
+  data = {
+    appId         = var.github_app_id
+    clientId      = var.github_app_client_id
+    clientSecret  = var.github_app_client_secret
+    privateKey    = var.github_app_private_key
+    webhookSecret = var.github_app_webhook_secret
+  }
+
+  metadata {
+    name      = "github-app-credentials"
+    namespace = "backstage"
+  }
+
+  type = "Opaque"
+}
+
 resource "kubernetes_secret_v1" "iap" {
 
   data = {
@@ -234,14 +251,14 @@ resource "kubernetes_secret_v1" "iap" {
 }
 
 resource "kubernetes_secret" "postgres" {
-  metadata {
-    name      = "postgres-secrets"
-    namespace = "backstage"
-  }
-
   data = {
     "POSTGRES_USER"     = "backstage"
     "POSTGRES_PASSWORD" = random_password.this.result
+  }
+
+  metadata {
+    name      = "postgres-secrets"
+    namespace = "backstage"
   }
 
   type = "Opaque"
