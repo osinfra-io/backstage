@@ -31,7 +31,9 @@ jobs:
         with:
           node-version: 20.x
           cache: 'yarn'
-          cache-dependency-path: app
+          cache-dependency-path: |
+            app/yarn.lock
+            app/packages.json
 
       - name: Yarn install
         working-directory: app
