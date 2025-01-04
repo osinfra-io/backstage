@@ -224,7 +224,7 @@ resource "kubernetes_secret_v1" "github_app_credentials" {
     appId         = var.github_app_id
     clientId      = var.github_app_client_id
     clientSecret  = var.github_app_client_secret
-    privateKey    = var.github_app_private_key
+    privateKey    = base64decode(var.github_app_private_key)
     webhookSecret = var.github_app_webhook_secret
   }
 
