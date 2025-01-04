@@ -100,19 +100,21 @@ resource "google_dns_record_set" "backstage_a_record" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database
 
 resource "google_sql_database" "this" {
-  instance = module.cloud_sql.instance
-  name     = "backstage"
-  project  = data.google_project.backstage.project_id
+  deletion_policy = "ABANDON"
+  instance        = module.cloud_sql.instance
+  name            = "backstage"
+  project         = data.google_project.backstage.project_id
 }
 
 # Cloud SQL Database Users
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_user
 
 resource "google_sql_user" "this" {
-  instance = module.cloud_sql.instance
-  name     = "backstage"
-  password = random_password.this.result
-  project  = data.google_project.backstage.project_id
+  deletion_policy = "ABANDON"
+  instance        = module.cloud_sql.instance
+  name            = "backstage"
+  password        = random_password.this.result
+  project         = data.google_project.backstage.project_id
 }
 
 # Helm Release
@@ -221,11 +223,11 @@ resource "kubernetes_manifest" "backstage_tls" {
 
 resource "kubernetes_secret_v1" "github_app_credentials" {
   data = {
-    appId         = var.github_app_id
-    clientId      = var.github_app_client_id
-    clientSecret  = var.github_app_client_secret
-    privateKey    = base64decode(var.github_app_private_key)
-    webhookSecret = var.github_app_webhook_secret
+    GTIHUB_APP_ID             = var.github_app_id
+    GITHUB_CLIENT_ID          = var.github_app_client_id
+    GITHUB_APP_CLIENT_SECRET  = var.github_app_client_secret
+    GITHUB_APP_PRIVATE_KEY    = base64decode(var.github_app_private_key)
+    GITHUB_APP_WEBHOOK_SECRET = var.github_app_webhook_secret
   }
 
   metadata {
