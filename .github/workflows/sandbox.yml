@@ -35,7 +35,7 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: |
             app/yarn.lock
-            app/packages.json
+            app/package.json
 
       - name: Yarn install
         working-directory: app
