@@ -128,6 +128,9 @@ jobs:
       terraform_plan_secret_args: >-
         -var=datadog_api_key=${{ secrets.DATADOG_API_KEY }}
         -var=datadog_app_key=${{ secrets.DATADOG_APP_KEY }}
+        -var=github_app_client_secret=${{ secrets.APP_CLIENT_SECRET }}
+        -var=github_app_provate_key=${{ secrets.APP_PRIVATE_KEY }}
+        -var=github_app_webhook_secret=${{ secrets.APP_WEBHOOK_SECRET }}
 
   datadog_synthetic_tests:
     name: "Sandbox: Datadog synthetic tests"
