@@ -10,6 +10,7 @@ spec:
     email: brett@osinfra.io
   memberOf: [admins]
 ---
+
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1
 kind: Group

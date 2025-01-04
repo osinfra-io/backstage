@@ -16,6 +16,7 @@ backstage:
           cpu: 10m
 
   extraEnvVarsSecrets:
+    - github-app-credentials
     - postgres-secrets
 
   image:
@@ -75,6 +76,16 @@ backstage:
           port: 5432
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
+
+    integrations:
+      github:
+        - host: github.com
+          apps:
+            - appId: ${AUTH_ORG_APP_ID}
+              clientId: ${AUTH_ORG_CLIENT_ID}
+              clientSecret: ${AUTH_ORG_CLIENT_SECRET}
+              privateKey: ${AUTH_ORG1_PRIVATE_KEY}
+              webhookSecret: ${AUTH_ORG_WEBHOOK_SECRET}
 
     techdocs:
       builder: 'local'
