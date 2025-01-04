@@ -141,6 +141,8 @@ resource "helm_release" "backstage" {
   version = "2.3.0"
 
   depends_on = [
+    kubernetes_secret_v1.github_app_credentials,
+    kubernetes_secret_v1.postgres,
     module.cloud_sql
   ]
 }
