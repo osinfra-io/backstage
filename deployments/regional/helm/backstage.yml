@@ -117,6 +117,15 @@ backstage:
           target: ./examples/admin.yaml
           rules:
             - allow: [User, Group]
+      providers:
+        githubOrg:
+          id: github
+          gitHubUrl: https://github.com
+          orgs: [osinfra-io]
+          schedule:
+            initialDelay: { seconds: 30 }
+            frequency: { hours: 24 }
+            timeout: { minutes: 50 }
 
     permission:
       enabled: true
