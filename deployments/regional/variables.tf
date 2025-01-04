@@ -47,8 +47,8 @@ variable "datadog_app_key" {
 
 variable "github_app_id" {
   description = "GitHub App ID"
-  type        = string
-  default     = "1102240"
+  type        = number
+  default     = 1102240
 }
 
 variable "github_app_client_id" {

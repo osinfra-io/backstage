@@ -141,8 +141,7 @@ resource "helm_release" "backstage" {
   version = "2.3.0"
 
   depends_on = [
-    module.cloud_sql,
-    kubernetes_secret.postgres
+    module.cloud_sql
   ]
 }
 
@@ -223,8 +222,8 @@ resource "kubernetes_manifest" "backstage_tls" {
 
 resource "kubernetes_secret_v1" "github_app_credentials" {
   data = {
-    GTIHUB_APP_ID             = var.github_app_id
-    GITHUB_CLIENT_ID          = var.github_app_client_id
+    GITHUB_APP_ID             = var.github_app_id
+    GITHUB_APP_CLIENT_ID      = var.github_app_client_id
     GITHUB_APP_CLIENT_SECRET  = var.github_app_client_secret
     GITHUB_APP_PRIVATE_KEY    = base64decode(var.github_app_private_key)
     GITHUB_APP_WEBHOOK_SECRET = var.github_app_webhook_secret
@@ -234,8 +233,6 @@ resource "kubernetes_secret_v1" "github_app_credentials" {
     name      = "github-app-credentials"
     namespace = "backstage"
   }
-
-  type = "Opaque"
 }
 
 resource "kubernetes_secret_v1" "iap" {
@@ -252,18 +249,16 @@ resource "kubernetes_secret_v1" "iap" {
 
 }
 
-resource "kubernetes_secret" "postgres" {
+resource "kubernetes_secret_v1" "postgres" {
   data = {
-    "POSTGRES_USER"     = "backstage"
-    "POSTGRES_PASSWORD" = random_password.this.result
+    POSTGRES_USER     = "backstage"
+    POSTGRES_PASSWORD = random_password.this.result
   }
 
   metadata {
     name      = "postgres-secrets"
     namespace = "backstage"
   }
-
-  type = "Opaque"
 }
 
 resource "random_password" "this" {
