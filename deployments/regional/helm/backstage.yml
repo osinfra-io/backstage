@@ -16,6 +16,7 @@ backstage:
           cpu: 10m
 
   extraEnvVarsSecrets:
+    - github-app-credentials
     - postgres-secrets
 
   image:
@@ -76,6 +77,16 @@ backstage:
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
 
+    integrations:
+      github:
+        - host: github.com
+          apps:
+            - appId: ${GITHUB_APP_ID}
+              clientId: ${GITHUB_APP_CLIENT_ID}
+              clientSecret: ${GITHUB_APP_CLIENT_SECRET}
+              privateKey: ${GITHUB_APP_PRIVATE_KEY}
+              webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
+
     techdocs:
       builder: 'local'
       generator:
@@ -86,7 +97,7 @@ backstage:
     auth:
       providers:
         gcpIap:
-          audience: /projects/362793201562/global/backendServices/7413458338808744263
+          audience: /projects/362793201562/global/backendServices/7572550146564879805
           signIn:
             resolvers:
               - resolver: emailMatchingUserEntityProfileEmail

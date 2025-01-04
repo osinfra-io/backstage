@@ -45,6 +45,37 @@ variable "datadog_app_key" {
   sensitive   = true
 }
 
+variable "github_app_id" {
+  description = "GitHub App ID"
+  type        = number
+  default     = 1102240
+}
+
+variable "github_app_client_id" {
+  description = "GitHub App Client ID"
+  type        = string
+  default     = "Iv23liBR7fZfikt1WnLb"
+}
+
+variable "github_app_client_secret" {
+  description = "GitHub App Client Secret"
+  type        = string
+  sensitive   = true
+}
+
+variable "github_app_private_key" {
+  description = "GitHub App Private Key"
+  type        = string
+  sensitive   = true
+}
+
+variable "github_app_webhook_secret" {
+  description = "GitHub App Webhook Secret"
+  type        = string
+  sensitive   = true
+}
+
+
 variable "networking_project_id" {
   description = "The project ID for the shared VPC"
   type        = string
