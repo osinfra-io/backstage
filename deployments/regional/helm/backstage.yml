@@ -119,7 +119,7 @@ backstage:
             - allow: [User, Group]
 
     permission:
-      enable: true
+      enabled: true
 
 service:
   annotations:
