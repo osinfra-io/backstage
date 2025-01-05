@@ -124,8 +124,8 @@ backstage:
             frequency: { hours: 24 }
             timeout: { minutes: 50 }
 
-    # permission:
-    #   enabled: true
+    permission:
+      enabled: true
 
 service:
   annotations:
