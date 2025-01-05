@@ -17,7 +17,7 @@ const customAuth = createBackendModule({
       deps: { providers: authProvidersExtensionPoint },
       async init({ providers }) {
         providers.registerProvider({
-          providerId: 'gcpiap',
+          providerId: 'gcpIap',
           factory: createProxyAuthProviderFactory({
             authenticator: gcpIapAuthenticator,
             async signInResolver(info, ctx) {
