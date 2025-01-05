@@ -1,21 +1,13 @@
-/*
- * Hi!
- *
- * Note that this is an EXAMPLE Backstage backend. Please check the README.
- *
- * Happy hacking!
- */
-
 import { createBackend } from '@backstage/backend-defaults';
 import { createBackendModule } from '@backstage/backend-plugin-api';
+import { gcpIapAuthenticator } from '@backstage/plugin-auth-backend-module-gcp-iap-provider';
 import { githubOrgEntityProviderTransformsExtensionPoint } from '@backstage/plugin-catalog-backend-module-github-org';
-import { myTeamTransformer, myUserTransformer } from './transformers';
+import { myTeamTransformer, myVerifiedUserTransformer } from './transformers';
 
 import {
   authProvidersExtensionPoint,
   createProxyAuthProviderFactory,
 } from '@backstage/plugin-auth-node';
-import { gcpIapAuthenticator } from '@backstage/plugin-auth-backend-module-gcp-iap-provider';
 
 const customAuth = createBackendModule({
   // This ID must be exactly "auth" because that's the plugin it targets
@@ -27,7 +19,8 @@ const customAuth = createBackendModule({
       deps: { providers: authProvidersExtensionPoint },
       async init({ providers }) {
         providers.registerProvider({
-          // This ID must match the actual provider config
+          // This ID must match the actual provider config, e.g. addressing
+          // auth.providers.github means that this must be "github".
           providerId: 'gcpiap',
           // Use createProxyAuthProviderFactory instead if it's one of the proxy
           // based providers rather than an OAuth based one
@@ -63,7 +56,7 @@ const githubOrgModule = createBackendModule({
       },
       async init({ githubOrg }) {
         githubOrg.setTeamTransformer(myTeamTransformer);
-        githubOrg.setUserTransformer(myUserTransformer);
+        githubOrg.setUserTransformer(myVerifiedUserTransformer);
       },
     });
   },
@@ -82,7 +75,6 @@ backend.add(import('@backstage/plugin-auth-backend'));
 // See https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin
 backend.add(import('@backstage/plugin-auth-backend-module-guest-provider'));
 // See https://backstage.io/docs/auth/guest/provider
-backend.add(import('@backstage/plugin-auth-backend-module-gcp-iap-provider'));
 backend.add(customAuth);
 
 // catalog plugin
