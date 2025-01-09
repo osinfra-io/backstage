@@ -101,19 +101,20 @@ backstage:
 
       permissions:
         rules:
-          - name: backstage-admin-rule
+          - name: backstage-owners
             resourceType: all
             policy: allow
             conditions:
               - type: group
-                group: admins
+                group: owners
 
     catalog:
       locations:
         - type: file
-          target: ./examples/admin.yaml
+          target: ./examples/owners.yaml
           rules:
             - allow: [User, Group]
+
       providers:
         githubOrg:
           id: github
