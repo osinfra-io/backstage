@@ -2,7 +2,8 @@ import { createBackend } from '@backstage/backend-defaults';
 import { createBackendModule } from '@backstage/backend-plugin-api';
 import { gcpIapAuthenticator } from '@backstage/plugin-auth-backend-module-gcp-iap-provider';
 import { githubOrgEntityProviderTransformsExtensionPoint } from '@backstage/plugin-catalog-backend-module-github-org';
-import { myTeamTransformer, myVerifiedUserTransformer } from './transformers';
+// import { myTeamTransformer, myVerifiedUserTransformer } from './transformers';
+import { myVerifiedUserTransformer } from './transformers';
 
 import {
   authProvidersExtensionPoint,
@@ -44,7 +45,7 @@ const githubOrgModule = createBackendModule({
         githubOrg: githubOrgEntityProviderTransformsExtensionPoint,
       },
       async init({ githubOrg }) {
-        githubOrg.setTeamTransformer(myTeamTransformer);
+        // githubOrg.setTeamTransformer(myTeamTransformer);
         githubOrg.setUserTransformer(myVerifiedUserTransformer);
       },
     });
