@@ -99,21 +99,21 @@ backstage:
         gcpIap:
           audience: /projects/362793201562/global/backendServices/8147500242906033830
 
-      # permissions:
-      #   rules:
-      #     - name: backstage-admin-rule
-      #       resourceType: all
-      #       policy: allow
-      #       conditions:
-      #         - type: group
-      #           group: admins
+      permissions:
+        rules:
+          - name: backstage-admin-rule
+            resourceType: all
+            policy: allow
+            conditions:
+              - type: group
+                group: admins
 
     catalog:
-      # locations:
-      #   - type: file
-      #     target: ./examples/admin.yaml
-      #     rules:
-      #       - allow: [User, Group]
+      locations:
+        - type: file
+          target: ./examples/admin.yaml
+          rules:
+            - allow: [User, Group]
       providers:
         githubOrg:
           id: github

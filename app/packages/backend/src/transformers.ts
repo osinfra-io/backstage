@@ -21,15 +21,6 @@ export const myTeamTransformer: TeamTransformer = async team => {
 	};
 };
 
-// This user transformer makes use of the built in logic, but also sets the description field
-// export const myUserTransformer: UserTransformer = async (user, ctx) => {
-// 	const backstageUser = await defaultUserTransformer(user, ctx);
-// 	if (backstageUser) {
-// 		backstageUser.metadata.description = 'Loaded from GitHub';
-// 	}
-// 	return backstageUser;
-// };
-
 export const myVerifiedUserTransformer: UserTransformer = async (user, ctx) => {
 	const backstageUser = await defaultUserTransformer(user, ctx);
 	if (backstageUser && user.organizationVerifiedDomainEmails?.length) {
