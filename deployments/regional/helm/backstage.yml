@@ -124,8 +124,6 @@ backstage:
             initialDelay: { seconds: 30 }
             frequency: { hours: 24 }
             timeout: { minutes: 50 }
-          rules:
-            - allow: [User, Group]
 
     permission:
       enabled: true
