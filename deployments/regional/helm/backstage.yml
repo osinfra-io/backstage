@@ -68,6 +68,7 @@ backstage:
 
     backend:
       baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
+      #baseUrl: http://backstage.backstage.svc.cluster.local
 
       database:
         client: pg
@@ -97,33 +98,33 @@ backstage:
     auth:
       providers:
         gcpIap:
-          audience: /projects/362793201562/global/backendServices/8147500242906033830
+          audience: /projects/362793201562/global/backendServices/2987785769127659321
 
-      permissions:
-        rules:
-          - name: backstage-owners
-            resourceType: all
-            policy: allow
-            conditions:
-              - type: group
-                group: owners
+    #   permissions:
+    #     rules:
+    #       - name: backstage-owners
+    #         resourceType: all
+    #         policy: allow
+    #         conditions:
+    #           - type: group
+    #             group: owners
 
-    catalog:
+    # catalog:
       # locations:
       #   - type: file
       #     target: ./examples/owners.yaml
       #     rules:
       #       - allow: [User, Group]
 
-      providers:
-        githubOrg:
-          id: github
-          githubUrl: https://github.com
-          orgs: [osinfra-io]
-          schedule:
-            initialDelay: { seconds: 30 }
-            frequency: { hours: 24 }
-            timeout: { minutes: 50 }
+      # providers:
+      #   githubOrg:
+      #     id: github
+      #     githubUrl: https://github.com
+      #     orgs: [osinfra-io]
+      #     schedule:
+      #       initialDelay: { seconds: 30 }
+      #       frequency: { hours: 24 }
+      #       timeout: { minutes: 50 }
 
     permission:
       enabled: true
