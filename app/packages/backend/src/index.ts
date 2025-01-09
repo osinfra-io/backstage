@@ -69,7 +69,6 @@ backend.add(customAuth);
 
 // catalog plugin
 backend.add(import('@backstage/plugin-catalog-backend'));
-backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
 backend.add(
   import('@backstage/plugin-catalog-backend-module-scaffolder-entity-model'),
 );
@@ -100,5 +99,6 @@ backend.add(import('@backstage/plugin-kubernetes-backend'));
 
 // github
 // backend.add(githubOrgModule);
+backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
 
 backend.start();
