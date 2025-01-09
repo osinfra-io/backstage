@@ -179,6 +179,10 @@ resource "kubernetes_ingress_v1" "backstage" {
     }
   }
   wait_for_load_balancer = true
+
+  depends_on = [
+    module.cloud_sql
+  ]
 }
 
 # Kubernetes Manifest Resource
