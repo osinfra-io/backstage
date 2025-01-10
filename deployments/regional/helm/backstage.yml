@@ -97,7 +97,7 @@ backstage:
     auth:
       providers:
         gcpIap:
-          audience: /projects/362793201562/global/backendServices/2987785769127659321
+          audience: /projects/362793201562/global/backendServices/6742709641163840709
 
       permissions:
         rules:

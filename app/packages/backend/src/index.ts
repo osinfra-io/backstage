@@ -99,6 +99,6 @@ backend.add(import('@backstage/plugin-kubernetes-backend'));
 
 // github
 backend.add(githubOrgModule);
-// backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
+backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
 
 backend.start();
