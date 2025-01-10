@@ -109,11 +109,11 @@ backstage:
                 group: owners
 
     catalog:
-      locations:
-        - type: file
-          target: ./examples/owners.yaml
-          rules:
-            - allow: [User, Group]
+    #   locations:
+    #     - type: file
+    #       target: ./examples/owners.yaml
+    #       rules:
+    #         - allow: [User, Group]
 
       providers:
         githubOrg:

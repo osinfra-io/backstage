@@ -32,16 +32,9 @@ import {
 
 export const myVerifiedUserTransformer: UserTransformer = async (user, ctx) => {
 	const backstageUser = await defaultUserTransformer(user, ctx);
-
-	if (backstageUser) {
-		backstageUser.spec.profile = backstageUser.spec.profile || {};
-
-		if (user.organizationVerifiedDomainEmails?.length) {
-			backstageUser.spec.profile.email = user.organizationVerifiedDomainEmails[0];
-		} else {
-			console.warn(`No organizationVerifiedDomainEmails found for user ${user.login}`);
-		}
+	if (backstageUser && user.organizationVerifiedDomainEmails?.length) {
+		backstageUser.spec.profile!.email =
+			user.organizationVerifiedDomainEmails[0];
 	}
-
 	return backstageUser;
 };

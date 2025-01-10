@@ -1,9 +1,9 @@
 import { createBackend } from '@backstage/backend-defaults';
 import { createBackendModule } from '@backstage/backend-plugin-api';
 import { gcpIapAuthenticator } from '@backstage/plugin-auth-backend-module-gcp-iap-provider';
-// import { githubOrgEntityProviderTransformsExtensionPoint } from '@backstage/plugin-catalog-backend-module-github-org';
+import { githubOrgEntityProviderTransformsExtensionPoint } from '@backstage/plugin-catalog-backend-module-github-org';
 // import { myTeamTransformer, myVerifiedUserTransformer } from './transformers';
-// import { myVerifiedUserTransformer } from './transformers';
+import { myVerifiedUserTransformer } from './transformers';
 
 import {
   authProvidersExtensionPoint,
@@ -36,21 +36,21 @@ const customAuth = createBackendModule({
   },
 });
 
-// const githubOrgModule = createBackendModule({
-//   pluginId: 'catalog',
-//   moduleId: 'github-org-extensions',
-//   register(env) {
-//     env.registerInit({
-//       deps: {
-//         githubOrg: githubOrgEntityProviderTransformsExtensionPoint,
-//       },
-//       async init({ githubOrg }) {
-//         // githubOrg.setTeamTransformer(myTeamTransformer);
-//         githubOrg.setUserTransformer(myVerifiedUserTransformer);
-//       },
-//     });
-//   },
-// });
+const githubOrgModule = createBackendModule({
+  pluginId: 'catalog',
+  moduleId: 'github-org-extensions',
+  register(env) {
+    env.registerInit({
+      deps: {
+        githubOrg: githubOrgEntityProviderTransformsExtensionPoint,
+      },
+      async init({ githubOrg }) {
+        // githubOrg.setTeamTransformer(myTeamTransformer);
+        githubOrg.setUserTransformer(myVerifiedUserTransformer);
+      },
+    });
+  },
+});
 
 const backend = createBackend();
 
@@ -98,7 +98,7 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 backend.add(import('@backstage/plugin-kubernetes-backend'));
 
 // github
-// backend.add(githubOrgModule);
-backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
+backend.add(githubOrgModule);
+// backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
 
 backend.start();
