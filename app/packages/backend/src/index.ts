@@ -2,13 +2,14 @@ import { createBackend } from '@backstage/backend-defaults';
 import { createBackendModule } from '@backstage/backend-plugin-api';
 import { gcpIapAuthenticator } from '@backstage/plugin-auth-backend-module-gcp-iap-provider';
 import { githubOrgEntityProviderTransformsExtensionPoint } from '@backstage/plugin-catalog-backend-module-github-org';
-// import { myTeamTransformer, myVerifiedUserTransformer } from './transformers';
 import { myVerifiedUserTransformer } from './transformers';
 
 import {
   authProvidersExtensionPoint,
   createProxyAuthProviderFactory,
 } from '@backstage/plugin-auth-node';
+
+// Custom resolver for GCP IAP auth for use with the GitHub Organizational Data plugin.
 
 const customAuth = createBackendModule({
   pluginId: 'auth',
@@ -36,6 +37,8 @@ const customAuth = createBackendModule({
   },
 });
 
+// Transformation logic to help map from GH API responses into backstage entities.
+
 const githubOrgModule = createBackendModule({
   pluginId: 'catalog',
   moduleId: 'github-org-extensions',
@@ -45,7 +48,6 @@ const githubOrgModule = createBackendModule({
         githubOrg: githubOrgEntityProviderTransformsExtensionPoint,
       },
       async init({ githubOrg }) {
-        // githubOrg.setTeamTransformer(myTeamTransformer);
         githubOrg.setUserTransformer(myVerifiedUserTransformer);
       },
     });
@@ -72,6 +74,8 @@ backend.add(import('@backstage/plugin-catalog-backend'));
 backend.add(
   import('@backstage/plugin-catalog-backend-module-scaffolder-entity-model'),
 );
+backend.add(githubOrgModule);
+backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
 
 // See https://backstage.io/docs/features/software-catalog/configuration#subscribing-to-catalog-errors
 backend.add(import('@backstage/plugin-catalog-backend-module-logs'));
@@ -96,9 +100,5 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend'));
-
-// github
-backend.add(githubOrgModule);
-backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
 
 backend.start();

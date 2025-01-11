@@ -69,6 +69,12 @@ backstage:
     backend:
       baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
 
+      # Content-Security-Policy that allows the backend to load GitHub avatars as part of the
+      # GitHub Organizational Data plugin.
+      csp:
+        connect-src: ["'self'", 'http:', 'https:']
+        img-src: ["'self'", 'data:', 'https://avatars.githubusercontent.com']
+
       database:
         client: pg
         connection:
@@ -97,7 +103,9 @@ backstage:
     auth:
       providers:
         gcpIap:
-          audience: /projects/362793201562/global/backendServices/6742709641163840709
+          # You can find the backend service ID using the following command:
+          # gcloud compute backend-services list --format="table(name, id)"
+          audience: /projects/362793201562/global/backendServices/7075411753670809865
 
       permissions:
         rules:
@@ -109,12 +117,6 @@ backstage:
                 group: owners
 
     catalog:
-    #   locations:
-    #     - type: file
-    #       target: ./examples/owners.yaml
-    #       rules:
-    #         - allow: [User, Group]
-
       providers:
         githubOrg:
           id: github
@@ -127,6 +129,8 @@ backstage:
 
     permission:
       enabled: true
+
+
 
 service:
   annotations:
