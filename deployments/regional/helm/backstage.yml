@@ -83,6 +83,14 @@ backstage:
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
 
+    events:
+      http:
+        topics:
+          - github
+      modules:
+        github:
+          webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
+
     integrations:
       github:
         - host: github.com
@@ -105,7 +113,7 @@ backstage:
         gcpIap:
           # You can find the backend service ID using the following command:
           # gcloud compute backend-services list --format="table(name, id)"
-          audience: /projects/362793201562/global/backendServices/7075411753670809865
+          audience: /projects/362793201562/global/backendServices/5966106823071093522
 
       permissions:
         rules:
