@@ -5,6 +5,8 @@ import { githubOrgEntityProviderTransformsExtensionPoint } from '@backstage/plug
 import { myVerifiedUserTransformer } from './transformers';
 
 import { eventsModuleGithubEventRouter } from '@backstage/plugin-events-backend-module-github/alpha';
+import { eventsModuleGithubWebhook } from '@backstage/plugin-events-backend-module-github/alpha';
+
 
 import {
   authProvidersExtensionPoint,
@@ -108,5 +110,6 @@ backend.add(import('@backstage/plugin-events-backend'));
 
 // github events plugin
 backend.add(eventsModuleGithubEventRouter);
+backend.add(eventsModuleGithubWebhook);
 
 backend.start();

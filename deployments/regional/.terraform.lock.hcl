@@ -4,6 +4,7 @@
 provider "registry.terraform.io/datadog/datadog" {
   version = "3.51.0"
   hashes = [
+    "h1:Sf3dDUZbBo+Jb0srHRp1O/5z0w2tp/07cORjimemBTc=",
     "h1:TdnuY7pwqvfVaE8GJdL7IzPUPtBwS4cqYmY8SV7HFUE=",
     "zh:13ce1cf57e0c7fac66dc0dd0239cad287fe2974b41d054da0b1d78367a9c0b0f",
     "zh:33ddf6ddb2007c4e786797a53c87220376120f09ab142fc2e18fd6f889eb1201",
