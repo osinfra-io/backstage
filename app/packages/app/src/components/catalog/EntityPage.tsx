@@ -159,7 +159,7 @@ const serviceEntityPage = (
       {cicdContent}
     </EntityLayout.Route> */}
 
-    <EntityLayout.Route path="/github-actions" title="GitHub Actions">
+    <EntityLayout.Route path="/ci-cd" title="CI/CD">
       <EntityGithubActionsContent />
     </EntityLayout.Route>
 
