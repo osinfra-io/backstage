@@ -4,6 +4,9 @@ import { gcpIapAuthenticator } from '@backstage/plugin-auth-backend-module-gcp-i
 import { githubOrgEntityProviderTransformsExtensionPoint } from '@backstage/plugin-catalog-backend-module-github-org';
 import { myVerifiedUserTransformer } from './transformers';
 
+import { eventsModuleGithubEventRouter } from '@backstage/plugin-events-backend-module-github/alpha';
+import { eventsModuleGithubWebhook } from '@backstage/plugin-events-backend-module-github/alpha';
+
 import {
   authProvidersExtensionPoint,
   createProxyAuthProviderFactory,
@@ -100,5 +103,9 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend'));
+
+// github events plugin
+backend.add(eventsModuleGithubEventRouter);
+backend.add(eventsModuleGithubWebhook);
 
 backend.start();

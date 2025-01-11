@@ -83,6 +83,14 @@ backstage:
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
 
+    events:
+      http:
+        topics:
+          - github
+      modules:
+        github:
+          webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
+
     integrations:
       github:
         - host: github.com
