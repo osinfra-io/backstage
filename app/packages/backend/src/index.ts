@@ -1,12 +1,58 @@
-/*
- * Hi!
- *
- * Note that this is an EXAMPLE Backstage backend. Please check the README.
- *
- * Happy hacking!
- */
-
 import { createBackend } from '@backstage/backend-defaults';
+import { createBackendModule } from '@backstage/backend-plugin-api';
+import { gcpIapAuthenticator } from '@backstage/plugin-auth-backend-module-gcp-iap-provider';
+import { githubOrgEntityProviderTransformsExtensionPoint } from '@backstage/plugin-catalog-backend-module-github-org';
+import { myVerifiedUserTransformer } from './transformers';
+
+import {
+  authProvidersExtensionPoint,
+  createProxyAuthProviderFactory,
+} from '@backstage/plugin-auth-node';
+
+// Custom resolver for GCP IAP auth for use with the GitHub Organizational Data plugin.
+
+const customAuth = createBackendModule({
+  pluginId: 'auth',
+  moduleId: 'custom-auth-provider',
+  register(reg) {
+    reg.registerInit({
+      deps: { providers: authProvidersExtensionPoint },
+      async init({ providers }) {
+        providers.registerProvider({
+          providerId: 'gcpIap',
+          factory: createProxyAuthProviderFactory({
+            authenticator: gcpIapAuthenticator,
+            async signInResolver(info, ctx) {
+              return ctx.signInWithCatalogUser({
+                filter: {
+                  kind: ['User'],
+                  'spec.profile.email': info.result.iapToken.email as string,
+                },
+              });
+            },
+          }),
+        });
+      },
+    });
+  },
+});
+
+// Transformation logic to help map from GH API responses into backstage entities.
+
+const githubOrgModule = createBackendModule({
+  pluginId: 'catalog',
+  moduleId: 'github-org-extensions',
+  register(env) {
+    env.registerInit({
+      deps: {
+        githubOrg: githubOrgEntityProviderTransformsExtensionPoint,
+      },
+      async init({ githubOrg }) {
+        githubOrg.setUserTransformer(myVerifiedUserTransformer);
+      },
+    });
+  },
+});
 
 const backend = createBackend();
 
@@ -21,13 +67,15 @@ backend.add(import('@backstage/plugin-auth-backend'));
 // See https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin
 backend.add(import('@backstage/plugin-auth-backend-module-guest-provider'));
 // See https://backstage.io/docs/auth/guest/provider
-backend.add(import('@backstage/plugin-auth-backend-module-gcp-iap-provider'));
+backend.add(customAuth);
 
 // catalog plugin
 backend.add(import('@backstage/plugin-catalog-backend'));
 backend.add(
   import('@backstage/plugin-catalog-backend-module-scaffolder-entity-model'),
 );
+backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
+backend.add(githubOrgModule);
 
 // See https://backstage.io/docs/features/software-catalog/configuration#subscribing-to-catalog-errors
 backend.add(import('@backstage/plugin-catalog-backend-module-logs'));
