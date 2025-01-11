@@ -104,6 +104,9 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend'));
 
+// events backend plugin
+backend.add(import('@backstage/plugin-events-backend'));
+
 // github events plugin
 backend.add(eventsModuleGithubEventRouter);
 backend.add(eventsModuleGithubWebhook);
