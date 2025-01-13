@@ -13613,7 +13613,7 @@ __metadata:
     "@backstage/plugin-catalog-graph": "backstage:^"
     "@backstage/plugin-catalog-import": "backstage:^"
     "@backstage/plugin-catalog-react": "backstage:^"
-    "@backstage/plugin-home": "npm:^0.8.3"
+    "@backstage/plugin-home": "backstage:^"
     "@backstage/plugin-kubernetes": "backstage:^"
     "@backstage/plugin-org": "backstage:^"
     "@backstage/plugin-permission-react": "backstage:^"
