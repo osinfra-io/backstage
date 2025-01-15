@@ -127,6 +127,7 @@ backstage:
             frequency: { hours: 24 }
             timeout: { minutes: 50 }
       rules:
+        - allow: [User, Group]
         - deny: ["github.com/orgs/*/teams/*/*"]
 
     permission:
