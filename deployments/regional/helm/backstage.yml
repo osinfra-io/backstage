@@ -126,6 +126,8 @@ backstage:
             initialDelay: { seconds: 30 }
             frequency: { hours: 24 }
             timeout: { minutes: 50 }
+      rules:
+        - deny: ["github.com/orgs/*/teams/*/*"]
 
     permission:
       enabled: true
