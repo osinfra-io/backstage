@@ -23,7 +23,7 @@ backstage:
     repository: backstage
 
   podLabels:
-   tags.datadoghq.com/service: backstage
+    tags.datadoghq.com/service: backstage
 
   readinessProbe:
     failureThreshold: 3
@@ -72,8 +72,8 @@ backstage:
       # Content-Security-Policy that allows the backend to load GitHub avatars as part of the
       # GitHub Organizational Data plugin.
       csp:
-        connect-src: ["'self'", 'http:', 'https:']
-        img-src: ["'self'", 'data:', 'https://avatars.githubusercontent.com']
+        connect-src: ["'self'", "http:", "https:"]
+        img-src: ["'self'", "data:", "https://avatars.githubusercontent.com"]
 
       database:
         client: pg
@@ -94,11 +94,11 @@ backstage:
               webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
 
     techdocs:
-      builder: 'local'
+      builder: "local"
       generator:
-        runIn: 'docker'
+        runIn: "docker"
       publisher:
-        type: 'local'
+        type: "local"
 
     auth:
       providers:
@@ -127,7 +127,7 @@ backstage:
             frequency: { hours: 24 }
             timeout: { minutes: 50 }
       rules:
-        - allow: [User, Group]
+        - allow: [Component, API, Location, Template, User, Group]
         - deny: ["github.com/orgs/*/teams/*/*"]
 
     permission:
