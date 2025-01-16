@@ -25,39 +25,6 @@ backstage:
   podLabels:
     tags.datadoghq.com/service: backstage
 
-  readinessProbe:
-    failureThreshold: 3
-    httpGet:
-      path: /.backstage/health/v1/readiness
-      port: 7007
-      scheme: HTTP
-    initialDelaySeconds: 30
-    periodSeconds: 10
-    successThreshold: 2
-    timeoutSeconds: 2
-
-  livenessProbe:
-    failureThreshold: 3
-    httpGet:
-      path: /.backstage/health/v1/liveness
-      port: 7007
-      scheme: HTTP
-    initialDelaySeconds: 60
-    periodSeconds: 10
-    successThreshold: 1
-    timeoutSeconds: 2
-
-  startupProbe:
-    failureThreshold: 3
-    httpGet:
-      path: /.backstage/health/v1/liveness
-      port: 7007
-      scheme: HTTP
-    initialDelaySeconds: 60
-    periodSeconds: 10
-    successThreshold: 1
-    timeoutSeconds: 2
-
   appConfig:
     app:
       title: Backstage (Sandbox)
@@ -105,16 +72,7 @@ backstage:
         gcpIap:
           # You can find the backend service ID using the following command:
           # gcloud compute backend-services list --format="table(name, id)"
-          audience: /projects/362793201562/global/backendServices/5607652121016399534
-
-      permissions:
-        rules:
-          - name: backstage-owners
-            resourceType: all
-            policy: allow
-            conditions:
-              - type: group
-                group: owners
+          audience: /projects/362793201562/global/backendServices/1248042603684159396
 
     catalog:
       providers:
@@ -126,9 +84,6 @@ backstage:
             initialDelay: { seconds: 30 }
             frequency: { hours: 24 }
             timeout: { minutes: 50 }
-      rules:
-        - allow: [Component, API, Location, Template, User, Group]
-        - deny: ["github.com/orgs/*/teams/*/*"]
 
     permission:
       enabled: true

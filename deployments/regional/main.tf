@@ -24,8 +24,16 @@ module "cloud_sql" {
   labels                         = module.helpers.labels
   network                        = "standard-shared"
   point_in_time_recovery_enabled = false
-  project                        = data.google_project.backstage.project_id
-  region                         = module.helpers.region
+
+  postgres_database_flags = [
+    {
+      name  = "max_connections"
+      value = "100"
+    }
+  ]
+
+  project = data.google_project.backstage.project_id
+  region  = module.helpers.region
 }
 
 # Datadog Synthetics Test Resource
@@ -94,16 +102,6 @@ resource "google_dns_record_set" "backstage_a_record" {
   ttl          = 300
 
   rrdatas = [kubernetes_ingress_v1.backstage.status.0.load_balancer.0.ingress.0.ip]
-}
-
-# Cloud SQL Database Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database
-
-resource "google_sql_database" "this" {
-  deletion_policy = "ABANDON"
-  instance        = module.cloud_sql.instance
-  name            = "backstage"
-  project         = data.google_project.backstage.project_id
 }
 
 # Cloud SQL Database Users
