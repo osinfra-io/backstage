@@ -50,6 +50,20 @@ backstage:
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
 
+      techInsights:
+      factRetrievers:
+        entityMetadataFactRetriever:
+          # How often the fact retriever should run
+          cadence: '*/15 * * * *'
+          # How long to keep the fact data
+          lifecycle: { timeToLive: { weeks: 2 } }
+        entityOwnershipFactRetriever:
+          cadence: '*/15 * * * *'
+          lifecycle: { timeToLive: { weeks: 2 } }
+        techdocsFactRetriever:
+          cadence: '*/15 * * * *'
+          lifecycle: { timeToLive: { weeks: 2 } }
+
     integrations:
       github:
         - host: github.com

@@ -53,6 +53,7 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
+import { EntityTechInsightsScorecardContent } from '@backstage-community/plugin-tech-insights';
 
 import {
   EntityKubernetesContent,
@@ -163,6 +164,13 @@ const serviceEntityPage = (
       <EntityKubernetesContent />
     </EntityLayout.Route>
 
+    <EntityLayout.Route path="/tech-insights" title="Scorecards">
+      <EntityTechInsightsScorecardContent
+        title="Customized title for the scorecard"
+        description="Small description about scorecards"
+      />
+    </EntityLayout.Route>
+
     <EntityLayout.Route path="/api" title="API">
       <Grid container spacing={3} alignItems="stretch">
         <Grid item md={6}>
@@ -207,6 +215,13 @@ const websiteEntityPage = (
       if={isKubernetesAvailable}
     >
       <EntityKubernetesContent />
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/tech-insights" title="Scorecards">
+      <EntityTechInsightsScorecardContent
+        title="Customized title for the scorecard"
+        description="Small description about scorecards"
+      />
     </EntityLayout.Route>
 
     <EntityLayout.Route path="/dependencies" title="Dependencies">

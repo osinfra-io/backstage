@@ -52,5 +52,8 @@
       "prettier --write"
     ]
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "dependencies": {
+    "@backstage/plugin-tech-insights": "^0.3.27"
+  }
 }
