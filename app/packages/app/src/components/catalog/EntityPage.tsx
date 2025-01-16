@@ -164,10 +164,9 @@ const serviceEntityPage = (
       <EntityKubernetesContent />
     </EntityLayout.Route>
 
-    <EntityLayout.Route path="/tech-insights" title="Scorecards">
+    <EntityLayout.Route path="/tech-insights" title="Tech Insights">
       <EntityTechInsightsScorecardContent
-        title="Customized title for the scorecard"
-        description="Small description about scorecards"
+        title="🎯 Visualize, understand and optimize your team's tech health."
       />
     </EntityLayout.Route>
 
@@ -217,10 +216,9 @@ const websiteEntityPage = (
       <EntityKubernetesContent />
     </EntityLayout.Route>
 
-    <EntityLayout.Route path="/tech-insights" title="Scorecards">
+    <EntityLayout.Route path="/tech-insights" title="Tech Insights">
       <EntityTechInsightsScorecardContent
-        title="Customized title for the scorecard"
-        description="Small description about scorecards"
+        title="🎯 Visualize, understand and optimize your team's tech health."
       />
     </EntityLayout.Route>
 

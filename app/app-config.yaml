@@ -32,6 +32,34 @@ backend:
     connection: ':memory:'
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
+  techInsights:
+    factRetrievers:
+      entityMetadataFactRetriever:
+        # How often the fact retriever should run
+        cadence: '*/15 * * * *'
+        # How long to keep the fact data
+        lifecycle: { timeToLive: { weeks: 2 } }
+      entityOwnershipFactRetriever:
+        cadence: '*/15 * * * *'
+        lifecycle: { timeToLive: { weeks: 2 } }
+      techdocsFactRetriever:
+        cadence: '*/15 * * * *'
+        lifecycle: { timeToLive: { weeks: 2 } }
+    factChecker:
+      checks:
+        groupOwnerCheck:
+          type: json-rules-engine
+          name: Group Owner Check
+          description: Verifies that a group has been set as the spec.owner for this entity
+          factIds:
+            - entityOwnershipFactRetriever
+          rule:
+            conditions:
+              all:
+                - fact: hasGroupOwner
+                  operator: equal
+                  value: true
+
 integrations:
   github:
     - host: github.com

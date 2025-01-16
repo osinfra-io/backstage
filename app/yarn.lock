@@ -2748,6 +2748,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage-community/plugin-tech-insights-backend-module-jsonfc@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "@backstage-community/plugin-tech-insights-backend-module-jsonfc@npm:0.3.1"
+  dependencies:
+    "@backstage-community/plugin-tech-insights-common": "npm:^0.4.0"
+    "@backstage-community/plugin-tech-insights-node": "npm:^2.2.0"
+    "@backstage/backend-plugin-api": "npm:^1.1.0"
+    "@backstage/config": "npm:^1.3.1"
+    "@backstage/errors": "npm:^1.2.6"
+    "@backstage/types": "npm:^1.2.0"
+    ajv: "npm:^8.10.0"
+    json-rules-engine: "npm:^7.0.0"
+    lodash: "npm:^4.17.21"
+    luxon: "npm:^3.0.0"
+  checksum: 10c0/c9704c95fa6d6a538cc236d9e1c04447a0029404543191fa7d63e98188105f33c3aa75c7c9aa0bb7bb9e297f7c262e44dd273266a8561756f14701bc15f2504e
+  languageName: node
+  linkType: hard
+
 "@backstage-community/plugin-tech-insights-backend@npm:^2.1.1":
   version: 2.1.1
   resolution: "@backstage-community/plugin-tech-insights-backend@npm:2.1.1"
@@ -14790,6 +14808,7 @@ __metadata:
   resolution: "backend@workspace:packages/backend"
   dependencies:
     "@backstage-community/plugin-tech-insights-backend": "npm:^2.1.1"
+    "@backstage-community/plugin-tech-insights-backend-module-jsonfc": "npm:^0.3.1"
     "@backstage/backend-defaults": "backstage:^"
     "@backstage/cli": "backstage:^"
     "@backstage/config": "backstage:^"
@@ -15842,7 +15861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clone@npm:2.x":
+"clone@npm:2.x, clone@npm:^2.1.2":
   version: 2.1.2
   resolution: "clone@npm:2.1.2"
   checksum: 10c0/ed0601cd0b1606bc7d82ee7175b97e68d1dd9b91fd1250a3617b38d34a095f8ee0431d40a1a611122dcccb4f93295b4fdb94942aa763392b5fe44effa50c2d5e
@@ -18786,6 +18805,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eventemitter2@npm:^6.4.4":
+  version: 6.4.9
+  resolution: "eventemitter2@npm:6.4.9"
+  checksum: 10c0/b2adf7d9f1544aa2d95ee271b0621acaf1e309d85ebcef1244fb0ebc7ab0afa6ffd5e371535d0981bc46195ad67fd6ff57a8d1db030584dee69aa5e371a27ea7
+  languageName: node
+  linkType: hard
+
 "eventemitter3@npm:^3.1.0":
   version: 3.1.2
   resolution: "eventemitter3@npm:3.1.2"
@@ -20427,6 +20453,13 @@ __metadata:
     inherits: "npm:^2.0.4"
     safe-buffer: "npm:^5.2.1"
   checksum: 10c0/6dc185b79bad9b6d525cd132a588e4215380fdc36fec6f7a8a58c5db8e3b642557d02ad9c367f5e476c7c3ad3ccffa3607f308b124e1ed80e3b80a1b254db61e
+  languageName: node
+  linkType: hard
+
+"hash-it@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "hash-it@npm:6.0.0"
+  checksum: 10c0/edac58ed7b7a9e8e39e9991e89c97b5ce8235f340af4018037b4f3fb873a1e631505411543f41659888392a84b3c95b05dfc751355924b8216b8a2291775ce50
   languageName: node
   linkType: hard
 
@@ -22656,6 +22689,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"json-rules-engine@npm:^7.0.0":
+  version: 7.3.0
+  resolution: "json-rules-engine@npm:7.3.0"
+  dependencies:
+    clone: "npm:^2.1.2"
+    eventemitter2: "npm:^6.4.4"
+    hash-it: "npm:^6.0.0"
+    jsonpath-plus: "npm:^10.2.0"
+  checksum: 10c0/4767e315b3b6e543c898b58f173732fb1f2344394a3868236a2a415d23a0fd391fae678b07e51b81796ef34aa10b05c8d233b156f944bec60010a1727375404a
+  languageName: node
+  linkType: hard
+
 "json-schema-compare@npm:^0.2.2":
   version: 0.2.2
   resolution: "json-schema-compare@npm:0.2.2"
@@ -22795,7 +22840,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonpath-plus@npm:10.2.0, jsonpath-plus@npm:^10.0.0, jsonpath-plus@npm:^6.0.1 || ^10.1.0":
+"jsonpath-plus@npm:10.2.0, jsonpath-plus@npm:^10.0.0, jsonpath-plus@npm:^10.2.0, jsonpath-plus@npm:^6.0.1 || ^10.1.0":
   version: 10.2.0
   resolution: "jsonpath-plus@npm:10.2.0"
   dependencies:
