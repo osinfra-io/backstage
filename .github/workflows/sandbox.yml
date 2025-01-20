@@ -91,7 +91,7 @@ jobs:
 
   main:
     name: "Main"
-    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.5
+    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.6
     if: github.actor != 'dependabot[bot]'
     needs: build_and_push
     with:
@@ -114,7 +114,7 @@ jobs:
 
   us_east1_b:
     name: "Sandbox Regional: us-east1-b"
-    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.5
+    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.6
     if: github.actor != 'dependabot[bot]'
     needs: main
     with:
