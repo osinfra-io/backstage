@@ -32,7 +32,7 @@ spec:
   tier: three
   type: web
   languages:
-    - typescript
+    - backstage
 
 
 datadog:
