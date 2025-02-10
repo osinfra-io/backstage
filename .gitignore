@@ -11,14 +11,11 @@
 # Crash log files
 crash.log
 
-# Datadog Static Analysis
-static-analysis.datadog.yml
-
 # Ignore any local.tfvars. Most .tfvars files are managed as part of configuration and so should
 # be included in version control.
 local.tfvars
 
-# Ignore override files as they are usually used to override ressources locally
+# Ignore override files as they are usually used to override resources locally
 override.tf
 override.tf.json
 *_override.tf
