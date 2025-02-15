@@ -45,6 +45,8 @@ import { osinfraTheme } from './themes/osinfra';
 import { HomepageCompositionRoot } from '@backstage/plugin-home';
 import { HomePage } from './components/home/HomePage';
 
+import { githubAuthApiRef } from '@backstage/core-plugin-api';
+
 const app = createApp({
   apis,
   bindRoutes({ bind }) {
@@ -68,7 +70,13 @@ const app = createApp({
   components: {
     SignInPage: props => process.env.NODE_ENV !== 'development'
       ? <ProxiedSignInPage {...props} provider="gcpIap" />
-      : <SignInPage {...props} auto providers={['guest']} />,
+      : <SignInPage {...props} auto
+        provider={{
+          id: 'github-auth-provider',
+          title: 'GitHub',
+          message: 'Sign in using GitHub',
+          apiRef: githubAuthApiRef,
+        }} />,
   },
 
   themes: [{

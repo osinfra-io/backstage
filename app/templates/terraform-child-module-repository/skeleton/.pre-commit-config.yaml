@@ -1,13 +1,14 @@
+# Pre-commit
+# https://github.com/pre-commit/pre-commit
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
       - id: check-yaml
-        args: [--allow-multiple-documents]
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-symlinks
-
 
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.97.3
@@ -21,20 +22,16 @@ repos:
         args:
           - --hook-config=--retry-once-with-cleanup=true
           - --tf-init-args=-upgrade
+        exclude: tests/fixtures/shared
 
       # Always run after terraform_validate
 
       - id: terraform_docs
-        args:
-          - --hook-config=--path-to-file=README.md
-          - --hook-config=--add-to-existing-file=true
-          - --hook-config=--create-file-if-not-exist=false
 
   - repo: https://github.com/bridgecrewio/checkov.git
     rev: 3.2.370
     hooks:
       - id: checkov
-        files: Dockerfile
         verbose: true
         args:
           - --download-external-modules=true

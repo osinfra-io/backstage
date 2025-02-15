@@ -9,8 +9,8 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_datadog"></a> [datadog](#provider\_datadog) | 3.50.0 |
-| <a name="provider_google"></a> [google](#provider\_google) | 6.14.1 |
+| <a name="provider_datadog"></a> [datadog](#provider\_datadog) | 3.54.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 6.20.0 |
 | <a name="provider_helm"></a> [helm](#provider\_helm) | 2.17.0 |
 | <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.35.1 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.3 |
