@@ -6,9 +6,8 @@ metadata:
   description: ${{values.description}}
 
   annotations:
-    github.com/project-slug: osinfra/${{values.destination }}
+    github.com/project-slug: osinfra/${{values.destination}}
     backstage.io/techdocs-ref: dir:.
-
   tags:
     - terraform
     - terraform-child-module
