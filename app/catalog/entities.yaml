@@ -1,0 +1,77 @@
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-domain
+
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: engineering-experience
+  description: |
+    The domain of engineering experience is responsible for providing tools and services that help engineers be more productive and effective in their work.
+
+spec:
+  owner: owners
+
+---
+
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: backstage
+  description: |
+    Backstage is an open platform for building developer portals. It is a central place for all your software development and operations tooling.
+
+  tags:
+    - platform-engineering
+    - backstage
+
+spec:
+  domain: engineering-experience
+  owner: platform-backstage
+
+---
+
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage
+  description: |
+    Open Source Infrastructure (as Code) Backstage engineering portal.
+
+  tags:
+    - platform-engineering
+    - backstage
+
+spec:
+  type: website
+  lifecycle: experimental
+  owner: platform-backstage
+  system: backstage
+  providesApis: [backstage-software-catalog-api]
+
+---
+
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: backstage-software-catalog-api
+  description: |
+    The software catalog backend has a JSON based REST API, which can be leveraged by external systems.
+
+  tags:
+    - platform-engineering
+    - backstage
+
+spec:
+  lifecycle: experimental
+  owner: platform-backstage
+  system: backstage
+  type: openapi
+
+  definition:
+    $text: https://github.com/backstage/backstage/blob/master/plugins/catalog-backend/src/schema/openapi.yaml
