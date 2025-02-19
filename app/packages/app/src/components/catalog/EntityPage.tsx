@@ -53,7 +53,7 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
-import { EntityGithubActionsContent, EntityRecentGithubActionsRunsCard, isGithubActionsAvailable } from '@backstage-community/plugin-github-actions';
+import { EntityGithubActionsContent, isGithubActionsAvailable } from '@backstage-community/plugin-github-actions';
 
 
 import {
