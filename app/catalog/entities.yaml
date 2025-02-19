@@ -41,6 +41,23 @@ metadata:
   description: |
     Open Source Infrastructure (as Code) Backstage engineering portal.
 
+  annotations:
+    backstage.io/source-location: url:https://github.com/osinfra-io/backstage
+    github.com/project-slug: osinfra-io/backstage
+
+  links:
+    - url: http://localhost:3000
+      title: Local Development
+      icon: web
+
+    - url: https://sb.backstage.osinfra.io
+      title: Sandbox
+      icon: web
+
+    - url: https://backstage.osinfra.io
+      title: Production
+      icon: web
+
   tags:
     - platform-engineering
     - backstage
