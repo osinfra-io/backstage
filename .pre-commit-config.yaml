@@ -10,7 +10,7 @@ repos:
 
 
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.97.3
+    rev: v1.97.4
     hooks:
       - id: terraform_fmt
 
@@ -31,7 +31,7 @@ repos:
           - --hook-config=--create-file-if-not-exist=false
 
   - repo: https://github.com/bridgecrewio/checkov.git
-    rev: 3.2.372
+    rev: 3.2.390
     hooks:
       - id: checkov
         files: Dockerfile
