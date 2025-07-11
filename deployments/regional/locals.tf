@@ -27,7 +27,7 @@ locals {
     }
   } : {}
 
-  helm_values = {
+  helm_values_map = {
     "backstage.extraContainers[0].args[2]"               = "${data.google_project.backstage.project_id}:${module.helpers.region}:${module.cloud_sql.instance}"
     "backstage.image.registry"                           = local.registry
     "backstage.image.tag"                                = var.backstage_version
@@ -39,6 +39,13 @@ locals {
     # "backstage.resources.requests.cpu"                   = var.backstage_resources_requests_cpu
     # "backstage.resources.requests.memory"                = var.backstage_resources_requests_memory
   }
+
+  helm_values = [
+    for k, v in local.helm_values_map : {
+      name  = k
+      value = v
+    }
+  ]
 
   hostname           = module.helpers.environment == "production" ? "backstage-${module.helpers.region}.gcp.osinfra.io" : "backstage-${module.helpers.region}.${module.helpers.env}.gcp.osinfra.io"
   kubernetes_project = module.helpers.environment == "sandbox" ? "plt-k8s-tf39-sb" : module.helpers.environment == "production" ? "plt-k8s-tf10-prod" : "plt-k8s-tf33-nonprod"
