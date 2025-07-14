@@ -4,7 +4,7 @@ import { Content, InfoCard, Page } from '@backstage/core-components';
 import { HomePageCompanyLogo, HomePageStarredEntities, HomePageToolkit } from '@backstage/plugin-home';
 import { HomePageSearchBar } from '@backstage/plugin-search';
 import { SearchContextProvider } from '@backstage/plugin-search-react';
-import LogoHome from '../Root/LogoHome';
+import HomePageLogo from './logo/HomePageLogo';
 import { simpleIcons } from '@dweber019/backstage-plugin-simple-icons';
 
 const tools = [
@@ -31,7 +31,7 @@ export const HomePage = () => (
 			<Content>
 				<Grid container justifyContent="center" spacing={6}>
 					<Grid item xs={12} style={{ display: 'flex', justifyContent: 'center', marginBottom: '-25px' }}>
-						<HomePageCompanyLogo logo={<LogoHome />} />
+						<HomePageCompanyLogo logo={<HomePageLogo />} />
 					</Grid>
 					<Grid container item xs={12} justifyContent="center">
 						<HomePageSearchBar placeholder="Search" />
