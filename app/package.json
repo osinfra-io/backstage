@@ -52,5 +52,8 @@
       "prettier --write"
     ]
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "dependencies": {
+    "@dweber019/backstage-plugin-simple-icons": "^0.1.0"
+  }
 }
