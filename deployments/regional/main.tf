@@ -129,14 +129,7 @@ resource "helm_release" "backstage" {
   name       = "backstage"
   namespace  = "backstage"
   repository = "https://backstage.github.io/charts"
-
-  dynamic "set" {
-    for_each = local.helm_values
-    content {
-      name  = set.key
-      value = set.value
-    }
-  }
+  set        = local.helm_values
 
   values = [
     file("${path.module}/helm/backstage.yml")
