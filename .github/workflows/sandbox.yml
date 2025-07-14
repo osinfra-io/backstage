@@ -60,7 +60,7 @@ jobs:
       # https://github.com/marketplace/actions/docker-setup-buildx
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3.10.0
+        uses: docker/setup-buildx-action@v3.11.1
 
       # Docker Login
       # https://github.com/marketplace/actions/docker-login
@@ -77,7 +77,7 @@ jobs:
       # https://github.com/marketplace/actions/build-and-push-docker-images
 
       - name: Build and push to Google Artifact Registry
-        uses: docker/build-push-action@v6.16.0
+        uses: docker/build-push-action@v6.18.0
         with:
           tags: us-docker.pkg.dev/plt-lz-services-tf7f-sb/plt-docker-standard/backstage:${{ github.sha }}
           cache-from: type=gha
@@ -148,9 +148,9 @@ jobs:
       # https://github.com/marketplace/actions/datadog-synthetics-ci
 
       - name: Run Datadog synthetic tests
-        uses: datadog/synthetics-ci-github-action@v2.2.0
+        uses: datadog/synthetics-ci-github-action@v3.5.0
         with:
-          api_key: ${{ secrets.DATADOG_API_KEY }}
-          app_key: ${{ secrets.DATADOG_APP_KEY }}
-          fail_on_critical_errors: true
-          test_search_query: "env:sandbox service:backstage team:platform-backstage state:live"
+          api-key: ${{ secrets.DATADOG_API_KEY }}
+          app-key: ${{ secrets.DATADOG_APP_KEY }}
+          fail-on-critical-errors: true
+          test-search-query: "env:sandbox service:backstage team:platform-backstage state:live"
