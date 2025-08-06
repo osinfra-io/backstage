@@ -10,7 +10,7 @@ permissions:
 jobs:
   us_east1_b:
     name: "Sandbox Regional: us-east1-b"
-    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.6
+    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.7
     if: github.actor != 'dependabot[bot]'
     with:
       checkout_ref: ${{ github.ref }}
