@@ -1,6 +1,3 @@
-# Ensure that HEALTHCHECK instructions have been added to container images
-# checkov:skip=CKV_DOCKER_2: https://github.com/kubernetes/kubernetes/issues/50703
-
 # This dockerfile builds an image for the backend package.
 # It should be executed with the root of the repo as docker context.
 #

@@ -4,12 +4,6 @@
 
 [![Terraform Tests](https://github.com/osinfra-io/${{values.destination}}/actions/workflows/test.yml/badge.svg)](https://github.com/osinfra-io/${{values.destination}}/actions/workflows/test.yml) [![Dependabot](https://github.com/osinfra-io/${{values.destination}}/actions/workflows/dependabot.yml/badge.svg)](https://github.com/osinfra-io/${{values.destination}}/actions/workflows/dependabot.yml)
 
-**[Infracost](https://www.infracost.io):**
-
-[![infracost](https://img.shields.io/endpoint?url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/b4d909ac-2f7e-4c12-92c9-fe6759755494/branch/a863d75f-3eaa-49c4-a28b-2de0e18da95d)](https://dashboard.infracost.io/org/osinfra-io/repos/b4d909ac-2f7e-4c12-92c9-fe6759755494?tab=settings)
-
-💵 Monthly estimates based on Infracost baseline costs.
-
 ## Repository Description
 
 ${{values.description}}
@@ -34,15 +28,12 @@ Our focus is on the core fundamental practice of platform engineering, Infrastru
 
 To avoid slowing down stream-aligned teams, we want to open up the possibility for contributions. The Open Source Infrastructure (as Code) model allows team members external to the platform team to contribute with only a slight increase in cognitive load. This section is for developers who want to contribute to this repository, describing the tools used, the skills, and the knowledge required, along with Terraform documentation.
 
-See the documentation for setting up a local development environment [here](https://docs.osinfra.io/fundamentals/development-setup).
+See the [documentation](https://docs.osinfra.io/fundamentals/development-setup) for setting up a development environment.
 
 ### 🛠️ Tools
 
-- [checkov](https://github.com/bridgecrewio/checkov)
-- [infracost](https://github.com/infracost/infracost)
 - [pre-commit](https://github.com/pre-commit/pre-commit)
-- [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform)
-- [terraform-docs](https://github.com/terraform-docs/terraform-docs)
+- [osinfra-pre-commit-hooks](https://github.com/osinfra-io/pre-commit-hooks)
 
 ### 📋 Skills and Knowledge
 
@@ -61,45 +52,3 @@ terraform init
 ```none
 terraform test
 ```
-
-## 📓 Terraform Documentation
-
-> A child module automatically inherits default (un-aliased) provider configurations from its parent. The provider versions below are informational only and do **not** need to align with the provider configurations from its parent.
-
-<!-- BEGIN_TF_DOCS -->
-### Requirements
-
-No requirements.
-
-### Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_random"></a> [random](#provider\_random) | 3.7.2 |
-
-### Modules
-
-No modules.
-
-### Resources
-
-| Name | Type |
-|------|------|
-| [random_id.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id) | resource |
-
-### Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | Example prefix | `string` | `"example"` | no |
-
-### Outputs
-
-| Name | Description |
-|------|-------------|
-| <a name="output_prefix"></a> [prefix](#output\_prefix) | Example prefix |
-<!-- END_TF_DOCS -->
-
-## 📓 Terraform Regional Documentation
-
-- [regional](regional/README.md)

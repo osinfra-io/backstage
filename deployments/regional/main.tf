@@ -16,10 +16,6 @@ data "terraform_remote_state" "main" {
 # https://github.com/osinfra-io/terraform-google-cloud-sql
 
 module "cloud_sql" {
-
-  # Ensure SQL database is using latest Major version
-  # checkov:skip=CKV_GCP_79: Bump version default in the child module
-
   source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=v0.2.1"
 
   deletion_protection            = false
