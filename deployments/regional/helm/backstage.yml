@@ -60,7 +60,7 @@ backstage:
 
   extraAppConfig:
     - filename: app-config.override.yaml
-      config:
+      content: |
         app:
           title: Backstage (Sandbox)
           baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
