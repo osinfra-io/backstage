@@ -29,7 +29,6 @@ import { Root } from './components/Root';
 import {
   AlertDisplay,
   OAuthRequestDialog,
-  ProxiedSignInPage,
   SignInPage,
 } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
@@ -68,15 +67,15 @@ const app = createApp({
   },
 
   components: {
-    SignInPage: props => process.env.NODE_ENV !== 'development'
-      ? <ProxiedSignInPage {...props} provider="gcpIap" />
-      : <SignInPage {...props} auto
+    SignInPage: props => (
+      <SignInPage {...props} auto
         provider={{
           id: 'github-auth-provider',
           title: 'GitHub',
           message: 'Sign in using GitHub',
           apiRef: githubAuthApiRef,
-        }} />,
+        }} />
+    ),
   },
 
   themes: [{

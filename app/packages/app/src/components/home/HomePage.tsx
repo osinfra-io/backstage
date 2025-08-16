@@ -25,7 +25,7 @@ const tools = [
 		icon: React.createElement(simpleIcons['datadog']),
 	},
 	{
-		url: 'https://github.com',
+		url: 'https://github.com/osinfra-io',
 		label: 'GitHub',
 		icon: React.createElement(simpleIcons['github']),
 	},
