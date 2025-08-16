@@ -1,5 +1,5 @@
 # OpenTofu Remote State Datasource
-# https://www.terraform.io/docs/language/state/remote-state-data.html
+# https://opentofu.org/docs/language/state/remote-state-data/
 
 data "terraform_remote_state" "main" {
   backend = "gcs"
@@ -13,10 +13,10 @@ data "terraform_remote_state" "main" {
 }
 
 # Google Cloud SQL Module (osinfra.io)
-# https://github.com/osinfra-io/terraform-google-cloud-sql
+# https://github.com/osinfra-io/opentofu-google-cloud-sql
 
 module "cloud_sql" {
-  source = "github.com/osinfra-io/terraform-google-cloud-sql//regional?ref=v0.2.1"
+  source = "github.com/osinfra-io/opentofu-google-cloud-sql//regional?ref=v0.2.1"
 
   deletion_protection            = false
   host_project_id                = var.networking_project_id

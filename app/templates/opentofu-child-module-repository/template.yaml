@@ -2,14 +2,14 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 
 metadata:
-  name: terraform-child-module-repository
+  name: opentofu-child-module-repository
   title: OpenTofu Child Module Repository
   description: Create a new OpenTofu child module repository with default files and structure.
 
   tags:
     - google-cloud-platform
     - terraform
-    - terraform-child-module
+    - opentofu-child-module
 
 spec:
   lifecycle: experimental
@@ -28,8 +28,8 @@ spec:
           title: Repository Name
           type: string
           description: Unique name of the GitHub repository
-          ui:help: e.g. terraform-google-cloud-sql
-          pattern: ^terraform-[a-z]+-[a-z-]+$
+          ui:help: e.g. opentofu-google-cloud-sql
+          pattern: ^opentofu-[a-z]+-[a-z-]+$
 
         description:
           title: Description
@@ -74,7 +74,7 @@ spec:
         repoVisibility: public
         squashMergeCommitMessage: BLANK
         squashMergeCommitTitle: PR_TITLE
-        topics: [infrastructure-as-code, google-cloud-platform, osinfra, terraform, terraform-child-module]
+        topics: [infrastructure-as-code, google-cloud-platform, osinfra, terraform, opentofu-child-module]
 
     - id: register
       name: Register Component to the Backstage Catalog
