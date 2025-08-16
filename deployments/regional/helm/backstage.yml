@@ -160,8 +160,6 @@ backstage:
       enabled: true
 
 service:
-  annotations:
-    cloud.google.com/backend-config: '{"default": "backstage-backend"}'
   type: NodePort
 
 serviceAccount:
