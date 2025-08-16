@@ -58,24 +58,6 @@ backstage:
     successThreshold: 1
     timeoutSeconds: 2
 
-  extraAppConfig:
-    - filename: app-config.override.yaml
-      content: |
-        app:
-          title: Backstage (Sandbox)
-          baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
-
-        backend:
-          baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
-
-          database:
-            client: pg
-            connection:
-              host: localhost
-              port: 5432
-              user: ${POSTGRES_USER}
-              password: ${POSTGRES_PASSWORD}
-
 service:
   type: NodePort
 
