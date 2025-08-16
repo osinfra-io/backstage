@@ -106,13 +106,15 @@ backstage:
         type: "local"
 
     auth:
+      environment: google
       providers:
         github:
-          clientId: ${GITHUB_AUTH_CLIENT_ID}
-          clientSecret: ${GITHUB_AUTH_CLIENT_SECRET}
-          signIn:
-            resolvers:
-              - resolver: usernameMatchingUserEntityName
+          google:
+            clientId: ${GITHUB_AUTH_CLIENT_ID}
+            clientSecret: ${GITHUB_AUTH_CLIENT_SECRET}
+            signIn:
+              resolvers:
+                - resolver: usernameMatchingUserEntityName
 
     scaffolder:
       defaultAuthor:
