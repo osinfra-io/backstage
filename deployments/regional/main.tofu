@@ -131,7 +131,7 @@ resource "helm_release" "backstage" {
     file("${path.module}/helm/backstage.yml")
   ]
 
-  version = "2.3.0"
+  version = "2.6.0"
 
   depends_on = [
     kubernetes_secret_v1.github_app_credentials,
