@@ -106,15 +106,12 @@ backstage:
         type: "local"
 
     auth:
+      environment: google
       providers:
-        gcpIap:
-          # You can find the backend service ID using the following command:
-          # gcloud compute backend-services list --format="table(name, id)"
-          audience: /projects/362793201562/global/backendServices/7075411753670809865
         github:
-          development:
-            clientId: ${AUTH_GITHUB_CLIENT_ID}
-            clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+          google:
+            clientId: ${GITHUB_AUTH_CLIENT_ID}
+            clientSecret: ${GITHUB_AUTH_CLIENT_SECRET}
             signIn:
               resolvers:
                 - resolver: usernameMatchingUserEntityName
@@ -123,7 +120,7 @@ backstage:
       defaultAuthor:
         name: backstage-osinfra-io[bot]
         email: backstage@osinfra.io
-      defaultCommitMessage: Initial commit
+      defaultCommitMessage: Initial commit by Backstage
 
       permissions:
         rules:
@@ -165,8 +162,6 @@ backstage:
       enabled: true
 
 service:
-  annotations:
-    cloud.google.com/backend-config: '{"default": "backstage-backend"}'
   type: NodePort
 
 serviceAccount:

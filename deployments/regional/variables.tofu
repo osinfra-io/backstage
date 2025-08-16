@@ -78,6 +78,17 @@ variable "github_app_webhook_secret" {
   sensitive   = true
 }
 
+variable "github_auth_client_id" {
+  description = "GitHub Auth Client ID"
+  type        = string
+  default     = "Ov23lijQa2sBs3IE89nt"
+}
+
+variable "github_auth_client_secret" {
+  description = "GitHub Auth Client Secret"
+  type        = string
+  sensitive   = true
+}
 
 variable "networking_project_id" {
   description = "The project ID for the shared VPC"

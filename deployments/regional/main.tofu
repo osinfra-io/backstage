@@ -181,24 +181,6 @@ resource "kubernetes_ingress_v1" "backstage" {
 # Kubernetes Manifest Resource
 # https://search.opentofu.org/provider/hashicorp/kubernetes/latest/docs/resources/manifest
 
-resource "kubernetes_manifest" "backstage_backend_config" {
-  manifest = {
-    "apiVersion" = "cloud.google.com/v1"
-    "kind"       = "BackendConfig"
-    "metadata" = {
-      "name"      = "backstage-backend"
-      "namespace" = "backstage"
-    }
-    "spec" = {
-      "iap" = {
-        "enabled" = true
-        "oauthclientCredentials" = {
-          "secretName" = kubernetes_secret_v1.iap.metadata.0.name
-        }
-      }
-    }
-  }
-}
 
 resource "kubernetes_manifest" "backstage_tls" {
   manifest = {
@@ -226,26 +208,14 @@ resource "kubernetes_secret_v1" "github_app_credentials" {
     GITHUB_APP_CLIENT_SECRET  = var.github_app_client_secret
     GITHUB_APP_PRIVATE_KEY    = base64decode(var.github_app_private_key)
     GITHUB_APP_WEBHOOK_SECRET = var.github_app_webhook_secret
+    GITHUB_AUTH_CLIENT_ID     = var.github_auth_client_id
+    GITHUB_AUTH_CLIENT_SECRET = var.github_auth_client_secret
   }
 
   metadata {
     name      = "github-app-credentials"
     namespace = "backstage"
   }
-}
-
-resource "kubernetes_secret_v1" "iap" {
-
-  data = {
-    client_id     = local.main.backstage_iap_client_id
-    client_secret = local.main.backstage_iap_client_secret
-  }
-
-  metadata {
-    name      = "iap"
-    namespace = "backstage"
-  }
-
 }
 
 resource "kubernetes_secret_v1" "postgres" {
