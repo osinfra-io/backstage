@@ -17,7 +17,7 @@ jobs:
       github_environment: "Sandbox: Regional - us-east1-b"
       service_account: plt-backstage-github@plt-lz-backend-tf69-sb.iam.gserviceaccount.com
       opentofu_plan_args: -destroy -var-file=tfvars/us-east1-b-sandbox.tfvars -var=backstage_version=${{ github.sha }}
-      opentofu_state_bucket: plt-backstage-4312-sb
+      opentofu_state_bucket: plt-backstage-0bf7-sb
       opentofu_version: ${{ vars.OPENTOFU_VERSION }}
       opentofu_workspace: us-east1-b-sandbox
       working_directory: deployments/regional
