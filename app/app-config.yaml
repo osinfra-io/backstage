@@ -80,10 +80,10 @@ techdocs:
 #     guest: {}
 
 auth:
-  environment: development
+  environment: shared
   providers:
     github:
-      development:
+      shared:
         clientId: ${GITHUB_AUTH_CLIENT_ID}
         clientSecret: ${GITHUB_AUTH_CLIENT_SECRET}
         signIn:
@@ -114,7 +114,7 @@ catalog:
       orgs: [osinfra-io]
       schedule:
         initialDelay: { seconds: 30 }
-        frequency: { minutes: 01 }
+        frequency: { minutes: 05 }
         timeout: { minutes: 50 }
 
   import:
@@ -133,7 +133,7 @@ catalog:
       rules:
         - allow: [Template]
 
-kubernetes:
+# kubernetes:
   # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
