@@ -1,0 +1,98 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+
+metadata:
+  name: terraform-child-module-repository
+  title: OpenTofu Child Module Repository
+  description: Create a new OpenTofu child module repository with default files and structure.
+
+  tags:
+    - google-cloud-platform
+    - terraform
+    - terraform-child-module
+
+spec:
+  lifecycle: experimental
+  owner: inner-source
+  system: backstage
+  type: infrastructure-as-code
+
+  parameters:
+    - title: OpenTofu Child Module
+      required:
+        - component_id
+        - description
+
+      properties:
+        component_id:
+          title: Repository Name
+          type: string
+          description: Unique name of the GitHub repository
+          ui:help: e.g. terraform-google-cloud-sql
+          pattern: ^terraform-[a-z]+-[a-z-]+$
+
+        description:
+          title: Description
+          type: string
+          description: Description of the OpenTofu child module
+          ui:help: e.g. OpenTofu example module for Google Cloud Platform Cloud SQL instance
+
+  steps:
+    - id: template
+      name: Fetch Skeleton
+      action: fetch:template
+
+      input:
+        url: ./skeleton
+        values:
+          component_id: ${{ parameters.component_id }}
+          description: ${{ parameters.description }}
+          destination: ${{ parameters.component_id }}
+          owner: inner-source
+
+    - id: publish
+      name: Create GitHub Repository
+      action: publish:github
+      input:
+        allowAutoMerge: true
+        allowMergeCommit: false
+        allowRebaseMerge: false
+        allowSquashMerge: true
+        allowUpdateBranch: true
+        allowedHosts: [github.com]
+        defaultBranch: main
+        deleteBranchOnMerge: true
+        description: ${{ parameters.description }}
+        hasDownloads: false
+        hasDiscussions: false
+        hasIssues: true
+        hasProjects: true
+        hasWiki: false
+        homepage: https://www.osinfra.io
+        license: gpl-2.0
+        repoUrl: github.com?owner=osinfra-io&repo=${{ parameters.component_id }}
+        repoVisibility: public
+        squashMergeCommitMessage: BLANK
+        squashMergeCommitTitle: PR_TITLE
+        topics: [infrastructure-as-code, google-cloud-platform, osinfra, terraform, terraform-child-module]
+
+    - id: register
+      name: Register Component to the Backstage Catalog
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    links:
+      - title: Repository
+        icon: github
+        url: ${{ steps['publish'].output.remoteUrl }}
+
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
+
+      - title: Read the docs
+        icon: docs
+        url: https://backstage.osinfra.io/docs/default/component/${{ parameters.component_id }}
