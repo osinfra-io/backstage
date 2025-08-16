@@ -5,6 +5,10 @@
 **/.tofu/*
 **/.terraform/*
 
+# Ignore provider lock file
+.tofu.lock.hcl
+.terraform.lock.hcl
+
 # Ignore plan output files
 plan.out
 

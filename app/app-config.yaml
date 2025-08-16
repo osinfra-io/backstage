@@ -129,7 +129,7 @@ catalog:
         - allow: [Domain, System, Component, API]
 
     - type: file
-      target: ../../templates/terraform-child-module-repository/template.yaml
+      target: ../../templates/opentofu-child-module-repository/template.yaml
       rules:
         - allow: [Template]
 

@@ -52,7 +52,7 @@ jobs:
         uses: google-github-actions/auth@v2.1.10
         with:
           token_format: access_token
-          service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
+          service_account: plt-backstage-github@plt-lz-backend-tf69-sb.iam.gserviceaccount.com
           workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
           access_token_lifetime: 300s
 
@@ -91,47 +91,43 @@ jobs:
 
   main:
     name: "Main"
-    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.6
+    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@367d86eecaab18bb7fae7f5fa17fe7001df13f16
     if: github.actor != 'dependabot[bot]'
     needs: build_and_push
     with:
       checkout_ref: ${{ github.ref }}
-      environment: sandbox
       github_environment: "Sandbox: Main"
-      service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
-      terraform_plan_args: -var-file=tfvars/sandbox.tfvars
-      terraform_state_bucket: plt-backstage-4312-sb
-      terraform_version: ${{ vars.TERRAFORM_VERSION }}
-      terraform_workspace: main-sandbox
+      service_account: plt-backstage-github@plt-lz-backend-tf69-sb.iam.gserviceaccount.com
+      opentofu_plan_args: -var-file=tfvars/sandbox.tfvars
+      opentofu_state_bucket: plt-backstage-0bf7-sb
+      opentofu_version: ${{ vars.OPENTOFU_VERSION }}
+      opentofu_workspace: main-sandbox
       working_directory: deployments
       workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-      infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
-      terraform_plan_secret_args: >-
+      opentofu_plan_secret_args: >-
         -var=datadog_api_key=${{ secrets.DATADOG_API_KEY }}
         -var=datadog_app_key=${{ secrets.DATADOG_APP_KEY }}
 
   us_east1_b:
     name: "Sandbox Regional: us-east1-b"
-    uses: osinfra-io/github-terraform-gcp-called-workflows/.github/workflows/plan-and-apply.yml@v0.2.6
+    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@367d86eecaab18bb7fae7f5fa17fe7001df13f16
     if: github.actor != 'dependabot[bot]'
     needs: main
     with:
       checkout_ref: ${{ github.ref }}
-      environment: us-east1-b-sandbox
       github_environment: "Sandbox: Regional - us-east1-b"
-      service_account: plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com
-      terraform_plan_args: -var-file=tfvars/us-east1-b-sandbox.tfvars -var=backstage_version=${{ github.sha }}
-      terraform_state_bucket: plt-backstage-4312-sb
-      terraform_version: ${{ vars.TERRAFORM_VERSION }}
-      terraform_workspace: us-east1-b-sandbox
+      service_account: plt-backstage-github@plt-lz-backend-tf69-sb.iam.gserviceaccount.com
+      opentofu_plan_args: -var-file=tfvars/us-east1-b-sandbox.tfvars -var=backstage_version=${{ github.sha }}
+      opentofu_state_bucket: plt-backstage-0bf7-sb
+      opentofu_version: ${{ vars.OPENTOFU_VERSION }}
+      opentofu_workspace: us-east1-b-sandbox
       working_directory: deployments/regional
       workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-      infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
-      terraform_plan_secret_args: >-
+      opentofu_plan_secret_args: >-
         -var=datadog_api_key=${{ secrets.DATADOG_API_KEY }}
         -var=datadog_app_key=${{ secrets.DATADOG_APP_KEY }}
         -var=github_app_client_secret=${{ secrets.APP_CLIENT_SECRET }}
