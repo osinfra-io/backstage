@@ -108,8 +108,8 @@ backstage:
     auth:
       providers:
         github:
-          clientId: ${AUTH_GITHUB_CLIENT_ID}
-          clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+          clientId: ${GITHUB_AUTH_CLIENT_ID}
+          clientSecret: ${GITHUB_AUTH_CLIENT_SECRET}
           signIn:
             resolvers:
               - resolver: usernameMatchingUserEntityName

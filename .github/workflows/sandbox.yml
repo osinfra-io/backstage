@@ -133,6 +133,7 @@ jobs:
         -var=github_app_client_secret=${{ secrets.APP_CLIENT_SECRET }}
         -var=github_app_private_key=${{ secrets.APP_PRIVATE_KEY }}
         -var=github_app_webhook_secret=${{ secrets.APP_WEBHOOK_SECRET }}
+        -var=github_auth_client_secret=${{ secrets.AUTH_CLIENT_SECRET }}
 
   datadog_synthetic_tests:
     name: "Sandbox: Datadog synthetic tests"
