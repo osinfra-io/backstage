@@ -1,4 +1,106 @@
 backstage:
+  appConfig:
+    app:
+      title: Backstage (Sandbox)
+      baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
+
+    organization:
+      name: Open Source Infrastructure (as Code)
+
+    backend:
+      baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
+      listen:
+        port: 7007
+      csp:
+        connect-src: ["'self'", "http:", "https:"]
+        img-src: ["'self'", "data:", "https://avatars.githubusercontent.com"]
+      cors:
+        origin: https://backstage.osinfra.io
+        methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+        credentials: true
+      database:
+        client: pg
+        connection:
+          host: localhost
+          port: 5432
+          user: ${POSTGRES_USER}
+          password: ${POSTGRES_PASSWORD}
+
+    integrations:
+      github:
+        - host: github.com
+          apps:
+            - appId: ${GITHUB_APP_ID}
+              clientId: ${GITHUB_APP_CLIENT_ID}
+              clientSecret: ${GITHUB_APP_CLIENT_SECRET}
+              privateKey: ${GITHUB_APP_PRIVATE_KEY}
+              webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
+
+    techdocs:
+      builder: "external"
+      generator:
+        runIn: "local"
+      publisher:
+        type: "googleGcs"
+        googleGcs:
+          bucketName: ${TECHDOCS_GCS_BUCKET_NAME}
+
+    auth:
+      environment: shared
+      providers:
+        github:
+          shared:
+            clientId: ${GITHUB_AUTH_CLIENT_ID}
+            clientSecret: ${GITHUB_AUTH_CLIENT_SECRET}
+            signIn:
+              resolvers:
+                - resolver: usernameMatchingUserEntityName
+
+      permissions:
+        rules:
+          - name: backstage-owners
+            resourceType: all
+            policy: allow
+            conditions:
+              - type: group
+                group: owners
+
+    scaffolder:
+      defaultAuthor:
+        name: backstage-osinfra-io[bot]
+        email: backstage@osinfra.io
+      defaultCommitMessage: Initial commit
+
+    catalog:
+      providers:
+        githubOrg:
+          id: github
+          githubUrl: https://github.com
+          orgs: [osinfra-io]
+          schedule:
+            initialDelay: { seconds: 30 }
+            frequency: { minutes: 05 }
+            timeout: { minutes: 50 }
+
+      import:
+        entityFilename: catalog-info.yaml
+        pullRequestBranchName: backstage-integration
+      rules:
+        - allow: [Component, System, API, Resource, Location]
+      locations:
+        - type: file
+          target: ../../catalog/entities.yaml
+          rules:
+            - allow: [Domain, System, Component, API]
+
+        - type: file
+          target: ../../templates/opentofu-child-module-repository/template.yaml
+          rules:
+            - allow: [Template]
+
+    permission:
+      enabled: true
+
   extraContainers:
     - name: cloud-sql-proxy
       image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.14.2
