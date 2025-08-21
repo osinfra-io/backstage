@@ -10,7 +10,7 @@ permissions:
 jobs:
   us_east1_b:
     name: "Sandbox Regional: us-east1-b"
-    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@367d86eecaab18bb7fae7f5fa17fe7001df13f16
+    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@367d86eecaab18bb7fae7f5fa17fe7001df13f16 # v0.2.7
     if: github.actor != 'dependabot[bot]'
     with:
       checkout_ref: ${{ github.ref }}

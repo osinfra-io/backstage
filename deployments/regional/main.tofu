@@ -16,7 +16,7 @@ data "terraform_remote_state" "main" {
 # https://github.com/osinfra-io/opentofu-google-cloud-sql
 
 module "cloud_sql" {
-  source = "github.com/osinfra-io/opentofu-google-cloud-sql//regional?ref=v0.2.1"
+  source = "github.com/osinfra-io/opentofu-google-cloud-sql//regional?ref=ba94389414819380c7c61ef7ceb14acdfe67565c" # v0.2.1
 
   deletion_protection            = false
   host_project_id                = var.networking_project_id
@@ -131,7 +131,7 @@ resource "helm_release" "backstage" {
     file("${path.module}/helm/backstage.yml")
   ]
 
-  version = "2.3.0"
+  version = "2.6.0"
 
   depends_on = [
     kubernetes_secret_v1.github_app_credentials,

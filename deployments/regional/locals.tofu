@@ -28,6 +28,10 @@ locals {
   } : {}
 
   helm_values_map = {
+    "backstage.appConfig.app.title"                      = var.backstage_app_config_app_title
+    "backstage.appConfig.app.baseUrl"                    = var.backstage_app_config_base_url
+    "backstage.appConfig.backend.baseUrl"                = var.backstage_app_config_base_url
+    "backstage.appConfig.backend.cors.origin"            = var.backstage_app_config_base_url
     "backstage.extraContainers[0].args[2]"               = "${data.google_project.backstage.project_id}:${module.helpers.region}:${module.cloud_sql.instance}"
     "backstage.image.registry"                           = local.registry
     "backstage.image.tag"                                = var.backstage_version

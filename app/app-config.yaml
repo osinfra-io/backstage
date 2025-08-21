@@ -27,7 +27,6 @@ backend:
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
   # This is for local development only, it is not recommended to use this in production
-  # The production database configuration is stored in app-config.production.yaml
   database:
     client: better-sqlite3
     connection: ":memory:"
@@ -54,7 +53,7 @@ integrations:
           privateKey: ${GITHUB_APP_PRIVATE_KEY}
           webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
 
-proxy:
+# proxy:
   ### Example for how to add a proxy endpoint for the frontend.
   ### A typical reason to do this is to handle HTTPS and CORS for internal services.
   # endpoints:
@@ -80,10 +79,10 @@ techdocs:
 #     guest: {}
 
 auth:
-  environment: development
+  environment: shared
   providers:
     github:
-      development:
+      shared:
         clientId: ${GITHUB_AUTH_CLIENT_ID}
         clientSecret: ${GITHUB_AUTH_CLIENT_SECRET}
         signIn:
@@ -114,8 +113,8 @@ catalog:
       orgs: [osinfra-io]
       schedule:
         initialDelay: { seconds: 30 }
-        frequency: { minutes: 01 }
-        timeout: { minutes: 50 }
+        frequency: { minutes: 02 }
+        timeout: { minutes: 60 }
 
   import:
     entityFilename: catalog-info.yaml
@@ -133,7 +132,7 @@ catalog:
       rules:
         - allow: [Template]
 
-kubernetes:
+# kubernetes:
   # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
