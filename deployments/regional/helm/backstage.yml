@@ -82,12 +82,12 @@ backstage:
         - allow: [Component, System, API, Resource, Location]
       locations:
         - type: file
-          target: ../../catalog/entities.yaml
+          target: catalog/entities.yaml
           rules:
             - allow: [Domain, System, Component, API]
 
         - type: file
-          target: ../../templates/opentofu-child-module-repository/template.yaml
+          target: templates/opentofu-child-module-repository/template.yaml
           rules:
             - allow: [Template]
 
