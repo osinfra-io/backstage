@@ -37,13 +37,11 @@ backstage:
               webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
 
     techdocs:
-      builder: "external"
+      builder: "local"
       generator:
-        runIn: "local"
+        runIn: "docker"
       publisher:
-        type: "googleGcs"
-        googleGcs:
-          bucketName: ${TECHDOCS_GCS_BUCKET_NAME}
+        type: "local"
 
     auth:
       environment: shared
