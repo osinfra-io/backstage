@@ -2,7 +2,7 @@
 # https://github.com/osinfra-io/opentofu-datadog-google-integration
 
 module "datadog" {
-  source = "github.com/osinfra-io/opentofu-datadog-google-integration?ref=v0.3.5"
+  source = "github.com/osinfra-io/opentofu-datadog-google-integration?ref=3e87e321842678ad478ba2c8d007a7685338e8d7" # v0.3.5
   count  = var.datadog_enable ? 1 : 0
 
   api_key                            = var.datadog_api_key
@@ -16,7 +16,7 @@ module "datadog" {
 # https://github.com/osinfra-io/opentofu-google-project
 
 module "project" {
-  source = "github.com/osinfra-io/opentofu-google-project?ref=v0.4.5"
+  source = "github.com/osinfra-io/opentofu-google-project?ref=655916e58848e16af406e4968b25bb77fb0f1119" # v0.4.5
 
   billing_account                 = var.project_billing_account
   cis_2_2_logging_sink_project_id = var.project_cis_2_2_logging_sink_project_id

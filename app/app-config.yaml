@@ -114,8 +114,8 @@ catalog:
       orgs: [osinfra-io]
       schedule:
         initialDelay: { seconds: 30 }
-        frequency: { minutes: 05 }
-        timeout: { minutes: 50 }
+        frequency: { minutes: 02 }
+        timeout: { minutes: 60 }
 
   import:
     entityFilename: catalog-info.yaml
