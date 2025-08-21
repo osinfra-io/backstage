@@ -10,7 +10,6 @@ backstage:
         connect-src: ["'self'", "http:", "https:"]
         img-src: ["'self'", "data:", "https://avatars.githubusercontent.com"]
       cors:
-        origin: https://backstage.osinfra.io
         methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
         credentials: true
       database:
