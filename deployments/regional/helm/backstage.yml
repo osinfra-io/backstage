@@ -1,14 +1,9 @@
 backstage:
   appConfig:
-    app:
-      title: Backstage (Sandbox)
-      baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
-
     organization:
       name: Open Source Infrastructure (as Code)
 
     backend:
-      baseUrl: https://backstage-us-east1.sb.gcp.osinfra.io
       listen:
         port: 7007
       csp:

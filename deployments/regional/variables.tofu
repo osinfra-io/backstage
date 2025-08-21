@@ -1,6 +1,18 @@
 # Input Variables
 # https://opentofu.org/docs/language/values/variables
 
+variable "backstage_app_config_app_title" {
+  description = "The title of the Backstage application"
+  type        = string
+  default     = "Backstage (Sandbox)"
+}
+
+variable "backstage_app_config_base_url" {
+  description = "The base URL of the Backstage application"
+  type        = string
+  default     = "https://backstage-us-east1.sb.gcp.osinfra.io"
+}
+
 variable "backstage_replicas" {
   description = "The number of replicas for the Backstage deployment"
   type        = number
