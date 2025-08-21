@@ -42,6 +42,12 @@ backend.add(
 backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
 backend.add(githubOrgModule);
 
+// events plugin
+backend.add(import('@backstage/plugin-events-backend'));
+
+// github events plugin
+backend.add(import('@backstage/plugin-events-backend-module-github'));
+
 // See https://backstage.io/docs/features/software-catalog/configuration#subscribing-to-catalog-errors
 backend.add(import('@backstage/plugin-catalog-backend-module-logs'));
 

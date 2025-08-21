@@ -32,6 +32,14 @@ backend:
     connection: ":memory:"
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
+events:
+  http:
+    topics:
+      - github
+  modules:
+    github:
+      webhookSecret: ${GITHUB_APP_WEBHOOK_SECRET}
+
 # integrations:
 #   github:
 #     - host: github.com
