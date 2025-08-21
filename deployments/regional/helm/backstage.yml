@@ -62,7 +62,7 @@ backstage:
       defaultAuthor:
         name: backstage-osinfra-io[bot]
         email: backstage@osinfra.io
-      defaultCommitMessage: Initial commit
+      defaultCommitMessage: Initial commit by Backstage
 
     catalog:
       providers:
