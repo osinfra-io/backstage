@@ -6,7 +6,9 @@
 
 ## 📄 Repository Description
 
-This repository manages Backstage resources.
+This repository manages Backstage resources. It provides a centralized repository for managing all Backstage configurations, plugins, and customizations. It runs on Google Kubernetes Engine (GKE) and leverages various Google Cloud Platform (GCP) services for scalability and reliability. It depends on [google-kubernetes-engine](https://github.com/osinfra-io/google-kubernetes-engine) for cluster provisioning and onboarding of namespaces.
+
+The continuous delivery workflows are implemented using GitHub Actions, ensuring testing, building, and deployment of Backstage components.
 
 ## 🏭 Platform Information
 

@@ -46,6 +46,7 @@ backend.add(
   import('@backstage/plugin-catalog-backend-module-scaffolder-entity-model'),
 );
 backend.add(import('@backstage/plugin-catalog-backend-module-github-org'));
+backend.add(import('@backstage/plugin-catalog-backend-module-github'));
 backend.add(githubOrgModule);
 
 // See https://backstage.io/docs/features/software-catalog/configuration#subscribing-to-catalog-errors

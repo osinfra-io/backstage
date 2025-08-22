@@ -79,8 +79,20 @@ backstage:
           orgs: [osinfra-io]
           schedule:
             initialDelay: { seconds: 30 }
-            frequency: { minutes: 05 }
-            timeout: { minutes: 50 }
+            frequency: { minutes: 15 }
+            timeout: { minutes: 60 }
+
+        github:
+          osinfraOrg:
+            organization: osinfra-io
+            catalogPath: /catalog-info.yaml
+            filters:
+              branch: main
+              repository: ".*"
+            schedule:
+              initialDelay: { seconds: 30 }
+              frequency: { minutes: 15 }
+              timeout: { minutes: 60 }
 
       import:
         entityFilename: catalog-info.yaml
