@@ -82,6 +82,18 @@ backstage:
             frequency: { minutes: 05 }
             timeout: { minutes: 50 }
 
+        github:
+          osinfraOrg:
+            organization: osinfra-io
+            catalogPath: /catalog-info.yaml
+            filters:
+              branch: main
+              repository: ".*"
+            schedule:
+              initialDelay: { seconds: 30 }
+              frequency: { minutes: 05 }
+              timeout: { minutes: 50 }
+
       import:
         entityFilename: catalog-info.yaml
         pullRequestBranchName: backstage-integration
