@@ -47,3 +47,9 @@ resource "google_project_iam_member" "cloud_sql_proxy" {
   project = module.project.id
   role    = "roles/cloudsql.client"
 }
+
+resource "null_resource" "force_apply" {
+  triggers = {
+    always_run = timestamp()
+  }
+}
