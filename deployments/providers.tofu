@@ -51,10 +51,6 @@ terraform {
     google = {
       source = "hashicorp/google"
     }
-
-    null = {
-      source = "hashicorp/null"
-    }
   }
 }
 
