@@ -235,9 +235,3 @@ resource "random_password" "this" {
   length  = 12
   special = true
 }
-
-resource "null_resource" "force_apply" {
-  triggers = {
-    always_run = timestamp()
-  }
-}
