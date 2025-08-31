@@ -5,8 +5,9 @@ data "terraform_remote_state" "main" {
   backend = "gcs"
 
   config = {
-    bucket = var.remote_bucket
-    prefix = module.helpers.repository
+    bucket             = var.remote_bucket
+    kms_encryption_key = var.state_kms_encryption_key
+    prefix             = module.helpers.repository
   }
 
   workspace = "main-${module.helpers.environment}"

@@ -91,13 +91,14 @@ jobs:
 
   main:
     name: "Main"
-    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@367d86eecaab18bb7fae7f5fa17fe7001df13f16 # v0.2.7
+    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@e3c59e43f2458550c7f13b6369fb6978b6f42c6e # v0.2.9
     if: github.actor != 'dependabot[bot]'
     needs: build_and_push
     with:
       checkout_ref: ${{ github.ref }}
       github_environment: "Sandbox: Main"
       service_account: plt-backstage-github@plt-lz-backend-tf69-sb.iam.gserviceaccount.com
+      opentofu_kms_encryption_key: projects/plt-lz-backend-tf69-sb/locations/us/keyRings/state-encryption/cryptoKeys/default
       opentofu_plan_args: -var-file=tfvars/sandbox.tfvars
       opentofu_state_bucket: plt-backstage-0bf7-sb
       opentofu_version: ${{ vars.OPENTOFU_VERSION }}
@@ -105,20 +106,20 @@ jobs:
       working_directory: deployments
       workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
-      gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
       opentofu_plan_secret_args: >-
         -var=datadog_api_key=${{ secrets.DATADOG_API_KEY }}
         -var=datadog_app_key=${{ secrets.DATADOG_APP_KEY }}
 
   us_east1_b:
     name: "Sandbox Regional: us-east1-b"
-    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@367d86eecaab18bb7fae7f5fa17fe7001df13f16 # v0.2.7
+    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@e3c59e43f2458550c7f13b6369fb6978b6f42c6e # v0.2.9
     if: github.actor != 'dependabot[bot]'
     needs: main
     with:
       checkout_ref: ${{ github.ref }}
       github_environment: "Sandbox: Regional - us-east1-b"
       service_account: plt-backstage-github@plt-lz-backend-tf69-sb.iam.gserviceaccount.com
+      opentofu_kms_encryption_key: projects/plt-lz-backend-tf69-sb/locations/us/keyRings/state-encryption/cryptoKeys/default
       opentofu_plan_args: -var-file=tfvars/us-east1-b-sandbox.tfvars -var=backstage_version=${{ github.sha }}
       opentofu_state_bucket: plt-backstage-0bf7-sb
       opentofu_version: ${{ vars.OPENTOFU_VERSION }}
@@ -126,7 +127,6 @@ jobs:
       working_directory: deployments/regional
       workload_identity_provider: projects/746490462722/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
-      gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
       opentofu_plan_secret_args: >-
         -var=datadog_api_key=${{ secrets.DATADOG_API_KEY }}
         -var=datadog_app_key=${{ secrets.DATADOG_APP_KEY }}
