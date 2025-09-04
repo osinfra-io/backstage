@@ -52,12 +52,18 @@ export const osinfraTheme = createUnifiedTheme({
 					backgroundImage: 'unset',
 					boxShadow: 'unset',
 				}),
-
+				title: () => ({
+					lineHeight: '1.3',
+				}),
 			},
 		},
 		MuiCssBaseline: {
 			styleOverrides: {
 				'@font-face': [openSansCustomFont],
+
+				'span, div, p, a, button': {
+					lineHeight: '1.4 !important',
+				},
 			},
 		},
 	},
