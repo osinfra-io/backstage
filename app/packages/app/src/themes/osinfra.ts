@@ -62,13 +62,13 @@ export const osinfraTheme = createUnifiedTheme({
 				'@font-face': [openSansCustomFont],
 
 				// Target the specific Backstage sidebar submenu for "My Groups"
-				'[class*="BackstageSidebarSubmenu-drawer"]': {
-					maxWidth: '400px !important',
-					width: '400px !important',
+				'div[class*="BackstageSidebarSubmenu-drawer"][class*="BackstageSidebarSubmenu-drawerOpen"]': {
+					maxWidth: '400px',
+					width: '400px',
 				},
 
 				// Target text elements within the sidebar submenu for line-height
-				'[class*="BackstageSidebarSubmenu-drawer"] span': {
+				'div[class*="BackstageSidebarSubmenu-drawer"] span': {
 					lineHeight: '1.4',
 				},
 			},
