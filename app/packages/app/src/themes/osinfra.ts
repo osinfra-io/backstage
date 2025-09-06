@@ -63,7 +63,6 @@ export const osinfraTheme = createUnifiedTheme({
 
 				// Target the specific Backstage sidebar submenu for "My Groups"
 				'div[class*="BackstageSidebarSubmenu-drawer"][class*="BackstageSidebarSubmenu-drawerOpen"]': {
-					maxWidth: '400px',
 					width: '400px',
 				},
 
