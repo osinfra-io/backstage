@@ -61,7 +61,14 @@ export const osinfraTheme = createUnifiedTheme({
 			styleOverrides: {
 				'@font-face': [openSansCustomFont],
 
-				'span, div, p, a, button': {
+				// Target the specific Backstage sidebar submenu for "My Groups"
+				'[class*="BackstageSidebarSubmenu-drawer"]': {
+					maxWidth: '400px !important',
+					width: '400px !important',
+				},
+
+				// Target text elements within the sidebar submenu for line-height
+				'[class*="BackstageSidebarSubmenu-drawer"] span': {
 					lineHeight: '1.4 !important',
 				},
 			},
