@@ -69,7 +69,7 @@ export const osinfraTheme = createUnifiedTheme({
 
 				// Target text elements within the sidebar submenu for line-height
 				'[class*="BackstageSidebarSubmenu-drawer"] span': {
-					lineHeight: '1.4 !important',
+					lineHeight: '1.4',
 				},
 			},
 		},
