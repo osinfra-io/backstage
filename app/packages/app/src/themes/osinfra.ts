@@ -52,12 +52,24 @@ export const osinfraTheme = createUnifiedTheme({
 					backgroundImage: 'unset',
 					boxShadow: 'unset',
 				}),
-
+				title: () => ({
+					lineHeight: '1.3',
+				}),
 			},
 		},
 		MuiCssBaseline: {
 			styleOverrides: {
 				'@font-face': [openSansCustomFont],
+
+				// Target the specific Backstage sidebar submenu for "My Groups"
+				'div[class*="BackstageSidebarSubmenu-drawer"][class*="BackstageSidebarSubmenu-drawerOpen"]': {
+					width: '400px',
+				},
+
+				// Target text elements within the sidebar submenu for line-height
+				'div[class*="BackstageSidebarSubmenu-drawer"] span': {
+					lineHeight: '1.4',
+				},
 			},
 		},
 	},
