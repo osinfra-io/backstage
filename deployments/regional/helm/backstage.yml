@@ -105,8 +105,8 @@ backstage:
           rules:
             - allow: [Domain, System, Component, API]
 
-        - type: file
-          target: templates/opentofu-child-module-repository/template.yaml
+        - type: url
+          target: https://github.com/osinfra-io/backstage-github-repository-templates/blob/main/opentofu-child-module/template.yaml
           rules:
             - allow: [Template]
 
