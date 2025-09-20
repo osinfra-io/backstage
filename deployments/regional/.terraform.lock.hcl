@@ -5,6 +5,7 @@ provider "registry.opentofu.org/datadog/datadog" {
   version = "3.71.0"
   hashes = [
     "h1:ZZ3jZrvm+C3ckDlMVji+zbrF6YTSdMcziqQJegPvaYY=",
+    "h1:x3MndHjiIuwxOfuYBvT4E6GOAmFCvjhYTssN/Jk6XEc=",
     "zh:159d7e2a7ef7e2a58dedce708eaca65a85b287c36065fbaf1de84846b72e432a",
     "zh:24ecb6d5d7c82f7009127e0fb50c6ade8b2d4ba7f4eaf23f34ac4081f87ae9e9",
     "zh:53f889cc9aa3a5619c480360ee0fe0698715204269096987fb2ddc911884442a",
@@ -26,6 +27,7 @@ provider "registry.opentofu.org/hashicorp/google" {
   version = "6.48.0"
   hashes = [
     "h1:v4d3msmCatVBRTQsVIcbEHVu8kmE37ucQboF52/p0lI=",
+    "h1:y5eo1nP4geQ62hoMrMhsf5fEhd8Di/GayE2cdESmBEU=",
     "zh:32e18025c1a1cc440d511de362ff0d066f03014c6f1aa874a4ce3c368d90ea4b",
     "zh:554a50ef629ee68c8e61e2c7180e0da4a052937cd1ce9ea01f419ebe4967ff96",
     "zh:5c844e6ef60cb6a344ed532df764e01134e28f25c4dca4ff39dd7324c0627774",
@@ -42,6 +44,7 @@ provider "registry.opentofu.org/hashicorp/google" {
 provider "registry.opentofu.org/hashicorp/helm" {
   version = "3.0.2"
   hashes = [
+    "h1:17Ro1Gs9aCN5QGQ6RDvuianmNV3AxgegYqTJODlYdHI=",
     "h1:GMW0C0TkkYmURt4OZIlwcLdvREL08PDbsSn5sfH4/TU=",
     "zh:100f75a700074568cfaee7884e4477c50b5468e086db5bb95d7d519581b65621",
     "zh:578d09c7319d0dd0fee03a7fcb48bf68ac978c1fefaa0752cfcb9ecfb0a56a4e",
@@ -60,6 +63,7 @@ provider "registry.opentofu.org/hashicorp/kubernetes" {
   version = "2.38.0"
   hashes = [
     "h1:ems+O2dA7atxMWpbtqIrsH7Oa+u+ERWSfpMaFnZPbh0=",
+    "h1:nY7J9jFXcsRINog0KYagiWZw1GVYF9D2JmtIB7Wnrao=",
     "zh:1096b41c4e5b2ee6c1980916fb9a8579bc1892071396f7a9432be058aabf3cbc",
     "zh:2959fde9ae3d1deb5e317df0d7b02ea4977951ee6b9c4beb083c148ca8f3681c",
     "zh:5082f98fcb3389c73339365f7df39fc6912bf2bd1a46d5f97778f441a67fd337",
@@ -76,6 +80,7 @@ provider "registry.opentofu.org/hashicorp/random" {
   version = "3.7.2"
   hashes = [
     "h1:cFGCdxTlsrteTiaOV/iOQdql7eJkD3F/vtJxenkj9IE=",
+    "h1:yHMBbZOIHlXUuBQ8Mhioe0hwmhermuboq2eNNoCJaf8=",
     "zh:2ffeb1058bd7b21a9e15a5301abb863053a2d42dffa3f6cf654a1667e10f4727",
     "zh:519319ed8f4312ed76519652ad6cd9f98bc75cf4ec7990a5684c072cf5dd0a5d",
     "zh:7371c2cc28c94deb9dba62fbac2685f7dde47f93019273a758dd5a2794f72919",
