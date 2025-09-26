@@ -145,7 +145,7 @@ jobs:
       # https://github.com/marketplace/actions/datadog-synthetics-ci
 
       - name: Run Datadog synthetic tests
-        uses: datadog/synthetics-ci-github-action@e0ab3c755be8fbc43978d7bc95dbeb1278794ffa # v3.7.0
+        uses: datadog/synthetics-ci-github-action@676b9d61f8118d2fa134d964d56151714d755c0a # v3.8.1
         with:
           api-key: ${{ secrets.DATADOG_API_KEY }}
           app-key: ${{ secrets.DATADOG_APP_KEY }}
