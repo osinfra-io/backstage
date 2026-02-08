@@ -39,6 +39,7 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 
 import LightIcon from '@material-ui/icons/WbSunny';
 import { UnifiedThemeProvider } from '@backstage/theme';
+import { CssBaseline } from '@material-ui/core';
 import { osinfraTheme } from './themes/osinfra';
 
 import { HomepageCompositionRoot } from '@backstage/plugin-home';
@@ -84,7 +85,10 @@ const app = createApp({
     variant: 'dark',
     icon: <LightIcon />,
     Provider: ({ children }) => (
-      <UnifiedThemeProvider theme={osinfraTheme} children={children} />
+      <UnifiedThemeProvider theme={osinfraTheme}>
+        <CssBaseline />
+        {children}
+      </UnifiedThemeProvider>
     ),
   }]
 });

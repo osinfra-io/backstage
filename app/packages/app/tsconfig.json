@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "esModuleInterop": true,
+    "outDir": "../../dist-types/packages/app",
+    "rootDir": "../../"
+  },
+  "include": [
+    "src",
+    "../../config.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

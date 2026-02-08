@@ -135,6 +135,18 @@ catalog:
           frequency: { minutes: 02 }
           timeout: { minutes: 60 }
 
+  # Processor options for entity processing configuration
+  # See https://backstage.io/docs/features/software-catalog/configuration
+  # processorOptions:
+  #   priority: 10
+  #   disabled: false
+
+  # Provider options for catalog provider configuration
+  # See https://backstage.io/docs/features/software-catalog/configuration
+  # providerOptions:
+  #   priority: 10
+  #   disabled: false
+
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
