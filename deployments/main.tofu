@@ -16,7 +16,7 @@ module "datadog" {
 # https://github.com/osinfra-io/opentofu-google-project
 
 module "project" {
-  source = "github.com/osinfra-io/opentofu-google-project?ref=655916e58848e16af406e4968b25bb77fb0f1119" # v0.4.5
+  source = "github.com/osinfra-io/opentofu-google-project?ref=912e5f1e334e46f8048109e79ed4f30b32c036f1" # v0.6.0
 
   billing_account                 = var.project_billing_account
   cis_2_2_logging_sink_project_id = var.project_cis_2_2_logging_sink_project_id

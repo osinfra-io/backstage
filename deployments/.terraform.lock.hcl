@@ -41,6 +41,22 @@ provider "registry.opentofu.org/hashicorp/google" {
   ]
 }
 
+provider "registry.opentofu.org/hashicorp/google-beta" {
+  version = "7.21.0"
+  hashes = [
+    "h1:yvk3iIVqvUcmGClD72DmPaPguaUWt6KoYgwA0lvuePs=",
+    "zh:222c811bf1d5513a5299fc2defd7bdd08c44284edeea103cf70532837703c041",
+    "zh:2a3115bac4a098252df38285870471626d609a20c56b29f999ffe7137aaa387d",
+    "zh:5696ef380e8c1bc5a701aeb4e4db520b71a79e08acdacf130fef3abd16be8980",
+    "zh:703836b8e6fd0fe2ecdcb5557d7c29a0d2706a91c125065c8347b78d012d8f83",
+    "zh:7fa8312c6b52ee12304964fcf2f6adffd5320c7fc84cb3545a45e3795dc4e8a9",
+    "zh:8b3a090fa28ad2d192af45484ff92f532ec0b0da31fa2b3d05a8aed8e7e65f1d",
+    "zh:ae99e4fe32ff1f96039d1b6758d6f9f18affa0dc114772c072a2b21d15005f45",
+    "zh:c24d2f62bf0149817a0bf76023829171ecda335f4d6a379192367fa058219512",
+    "zh:c82a9b13b03ad418cb4672923cc3219e8ccc81e90e1a3928a5fbf0b0b05eb7a5",
+  ]
+}
+
 provider "registry.opentofu.org/hashicorp/random" {
   version = "3.7.2"
   hashes = [
