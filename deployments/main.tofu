@@ -1,8 +1,8 @@
 # Datadog Google Cloud Platform Integration Module (osinfra.io)
-# https://github.com/osinfra-io/opentofu-datadog-google-integration
+# https://github.com/osinfra-io/pt-arche-datadog-google-integration
 
 module "datadog" {
-  source = "github.com/osinfra-io/opentofu-datadog-google-integration?ref=3e87e321842678ad478ba2c8d007a7685338e8d7" # v0.3.5
+  source = "github.com/osinfra-io/pt-arche-datadog-google-integration?ref=3e87e321842678ad478ba2c8d007a7685338e8d7" # v0.3.5
   count  = var.datadog_enable ? 1 : 0
 
   api_key                            = var.datadog_api_key
@@ -13,10 +13,10 @@ module "datadog" {
 }
 
 # Google Project Module (osinfra.io)
-# https://github.com/osinfra-io/opentofu-google-project
+# https://github.com/osinfra-io/pt-arche-google-project
 
 module "project" {
-  source = "github.com/osinfra-io/opentofu-google-project?ref=912e5f1e334e46f8048109e79ed4f30b32c036f1" # v0.6.0
+  source = "github.com/osinfra-io/pt-arche-google-project?ref=912e5f1e334e46f8048109e79ed4f30b32c036f1" # v0.6.0
 
   billing_account                 = var.project_billing_account
   cis_2_2_logging_sink_project_id = var.project_cis_2_2_logging_sink_project_id
