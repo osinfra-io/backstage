@@ -16,7 +16,7 @@ module "datadog" {
 # https://github.com/osinfra-io/pt-arche-google-project
 
 module "project" {
-  source = "github.com/osinfra-io/pt-arche-google-project?ref=d51e04061b1a0f73ea56252cdc58eed01fb17e8e" # v0.6.7
+  source = "github.com/osinfra-io/pt-arche-google-project?ref=39a041123cc3154c651e47c6aa69c2ead4c4577b" # v0.6.7
 
   billing_account                 = var.project_billing_account
   cis_2_2_logging_sink_project_id = var.project_cis_2_2_logging_sink_project_id
