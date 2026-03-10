@@ -2,7 +2,7 @@
 # https://github.com/osinfra-io/pt-arche-datadog-google-integration
 
 module "datadog" {
-  source = "github.com/osinfra-io/pt-arche-datadog-google-integration?ref=3e87e321842678ad478ba2c8d007a7685338e8d7" # v0.3.5
+  source = "github.com/osinfra-io/pt-arche-datadog-google-integration?ref=a0f6388bd28937e49871f3e717740cf6775507ca" # v0.4.1
   count  = var.datadog_enable ? 1 : 0
 
   api_key                            = var.datadog_api_key
@@ -16,7 +16,7 @@ module "datadog" {
 # https://github.com/osinfra-io/pt-arche-google-project
 
 module "project" {
-  source = "github.com/osinfra-io/pt-arche-google-project?ref=912e5f1e334e46f8048109e79ed4f30b32c036f1" # v0.6.0
+  source = "github.com/osinfra-io/pt-arche-google-project?ref=39a041123cc3154c651e47c6aa69c2ead4c4577b" # v0.6.7
 
   billing_account                 = var.project_billing_account
   cis_2_2_logging_sink_project_id = var.project_cis_2_2_logging_sink_project_id
