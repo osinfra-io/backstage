@@ -28,7 +28,7 @@ See the [documentation](https://docs.osinfra.io/fundamentals/development-setup) 
 ### 🛠️ Tools
 
 - [pre-commit](https://github.com/pre-commit/pre-commit)
-- [osinfra-pre-commit-hooks](https://github.com/osinfra-io/pre-commit-hooks)
+- [osinfra-pre-commit-hooks](https://github.com/osinfra-io/pt-techne-pre-commit-hooks)
 
 ### 📋 Skills and Knowledge
 

@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version: 20.x
-          cache: 'yarn'
+          cache: "yarn"
           cache-dependency-path: |
             app/yarn.lock
             app/package.json
@@ -72,7 +72,6 @@ jobs:
           username: oauth2accesstoken
           password: ${{ steps.create_credentials.outputs.access_token }}
 
-
       # Build and Push Docker to Google Artifact Registry
       # https://github.com/marketplace/actions/build-and-push-docker-images
 
@@ -91,7 +90,7 @@ jobs:
 
   main:
     name: "Main"
-    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@e3c59e43f2458550c7f13b6369fb6978b6f42c6e # v0.2.9
+    uses: osinfra-io/pt-techne-opentofu-workflows/.github/workflows/plan-and-apply.yml@b250b03d5f6bd13afc5df9bd76b1729e465b7730 # v0.3.0
     if: github.actor != 'dependabot[bot]'
     needs: build_and_push
     with:
@@ -112,7 +111,7 @@ jobs:
 
   us_east1_b:
     name: "Sandbox Regional: us-east1-b"
-    uses: osinfra-io/github-opentofu-gcp-called-workflows/.github/workflows/plan-and-apply.yml@e3c59e43f2458550c7f13b6369fb6978b6f42c6e # v0.2.9
+    uses: osinfra-io/pt-techne-opentofu-workflows/.github/workflows/plan-and-apply.yml@b250b03d5f6bd13afc5df9bd76b1729e465b7730 # v0.3.0
     if: github.actor != 'dependabot[bot]'
     needs: main
     with:
@@ -140,7 +139,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: us_east1_b
     steps:
-
       # Datadog Synthetics CI
       # https://github.com/marketplace/actions/datadog-synthetics-ci
 
