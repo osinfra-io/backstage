@@ -11,7 +11,7 @@ repos:
       - id: trailing-whitespace
       - id: check-symlinks
 
-  - repo: https://github.com/osinfra-io/pre-commit-hooks
+  - repo: https://github.com/osinfra-io/pt-techne-pre-commit-hooks
     rev: v0.1.1
     hooks:
       - id: tofu-fmt
