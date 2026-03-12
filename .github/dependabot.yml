@@ -11,8 +11,13 @@ updates:
     schedule:
       interval: daily
 
-  - package-ecosystem: terraform
+  - package-ecosystem: opentofu
     directories:
       - "**/*"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: pre-commit
+    directory: /
     schedule:
       interval: daily
