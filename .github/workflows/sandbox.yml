@@ -7,6 +7,10 @@ on:
     paths-ignore:
       - "**.md"
 
+concurrency:
+  group: sandbox-${{ github.head_ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: read
   id-token: write
@@ -90,7 +94,7 @@ jobs:
 
   main:
     name: "Main"
-    uses: osinfra-io/pt-techne-opentofu-workflows/.github/workflows/plan-and-apply.yml@b250b03d5f6bd13afc5df9bd76b1729e465b7730 # v0.3.0
+    uses: osinfra-io/pt-techne-opentofu-workflows/.github/workflows/plan-and-apply.yml@5e0e5ea22c629ef678da26c0cecf640f56c15653 # v0.3.1
     if: github.actor != 'dependabot[bot]'
     needs: build_and_push
     with:
@@ -111,7 +115,7 @@ jobs:
 
   us_east1_b:
     name: "Sandbox Regional: us-east1-b"
-    uses: osinfra-io/pt-techne-opentofu-workflows/.github/workflows/plan-and-apply.yml@b250b03d5f6bd13afc5df9bd76b1729e465b7730 # v0.3.0
+    uses: osinfra-io/pt-techne-opentofu-workflows/.github/workflows/plan-and-apply.yml@5e0e5ea22c629ef678da26c0cecf640f56c15653 # v0.3.1
     if: github.actor != 'dependabot[bot]'
     needs: main
     with:
